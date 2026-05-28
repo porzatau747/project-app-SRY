@@ -1,0 +1,15 @@
+{
+  "name": "weekly-content-planner-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=web-app",
+    "build": "npm run build --workspaces"
+  },
+  "dependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

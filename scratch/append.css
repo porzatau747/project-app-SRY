@@ -1,0 +1,98 @@
+
+/* Trend Planner Refactored Classes */
+.tabSwitcherGroup {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabBtn {
+  padding: 6px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.listPanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.listHeader {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: #f8fafc;
+}
+
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  max-height: 500px;
+}
+
+.listItemCard {
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255,255,255,0.03);
+}
+
+.listItemContent {
+  flex: 1;
+  padding-right: 16px;
+}
+
+.listItemTitle {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.listItemTitle a {
+  text-decoration: none;
+  color: #e2e8f0;
+}
+
+.listItemMeta {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.tipsAddBtn {
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-color: #a78bfa;
+  color: #a78bfa;
+}
+
+.trendRadarBox {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.trendRadarItem {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.trendRadarLabel {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.trendRadarMeta {
+  font-size: 0.75rem;
+  color: #a8a29e;
+}

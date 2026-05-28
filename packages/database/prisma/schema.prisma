@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model InventoryItem {
+  code      String @id
+  product   String
+  qty       Int
+  cost      Float
+  sellPrice Float
+  itemType  String
+  agingDays Int
+}
+
+model WeeklyPlanPost {
+  id           String @id
+  day          String
+  postType     String
+  productFocus String
+  reason       String
+  productCode  String
+  category     String
+  priority     String
+  status       String
+  reminderAt   String
+  
+  generatedAsset String?
+}
+
+model AppState {
+  key   String @id
+  value String
+}

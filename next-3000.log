@@ -1,0 +1,76 @@
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.27:3000
+
+ ✓ Starting...
+ ✓ Ready in 3.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 7.7s (554 modules)
+ GET / 200 in 8480ms
+ GET / 200 in 983ms
+ GET / 200 in 592ms
+ GET / 200 in 215ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 654ms (545 modules)
+ GET / 404 in 1113ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 3.7s (891 modules)
+ ✓ Compiled in 169ms (376 modules)
+ GET / 500 in 5157ms
+ GET / 500 in 2473ms
+ GET / 500 in 290ms
+ GET / 500 in 278ms
+ GET / 500 in 282ms
+ GET / 500 in 329ms
+ GET / 500 in 281ms
+ GET / 500 in 295ms
+ GET / 500 in 308ms
+ GET / 500 in 293ms
+ GET / 500 in 283ms
+ GET / 200 in 629ms
+ ○ Compiling /api/upload-stock ...
+ ✓ Compiled /api/upload-stock in 1583ms (908 modules)
+ POST /api/upload-stock 200 in 2203ms
+ GET / 200 in 643ms
+ GET / 200 in 644ms
+ ○ Compiling /api/analyze-stock ...
+ ✓ Compiled /api/analyze-stock in 1682ms (1047 modules)
+ POST /api/analyze-stock 200 in 1976ms
+ ○ Compiling /api/generate-weekly-plan ...
+ ✓ Compiled /api/generate-weekly-plan in 556ms (1049 modules)
+ POST /api/generate-weekly-plan 200 in 779ms
+ GET / 200 in 665ms
+ POST /api/upload-stock 200 in 358ms
+ POST /api/analyze-stock 200 in 40ms
+ POST /api/generate-weekly-plan 200 in 31ms
+ ○ Compiling /api/approve-post ...
+ ✓ Compiled /api/approve-post in 731ms (1051 modules)
+ POST /api/approve-post 200 in 888ms
+ ○ Compiling /api/generate-post ...
+ ✓ Compiled /api/generate-post in 584ms (1053 modules)
+ POST /api/generate-post 200 in 869ms
+ ✓ Compiled in 544ms (514 modules)
+ GET / 200 in 840ms
+ GET / 200 in 847ms
+ ✓ Compiled in 1608ms (887 modules)
+ GET / 200 in 414ms
+ GET / 200 in 418ms
+ ✓ Compiled in 670ms (887 modules)
+ GET / 200 in 343ms
+ GET / 200 in 353ms
+ ✓ Compiled in 3.3s (944 modules)
+ ✓ Compiled in 669ms (564 modules)
+ GET / 200 in 587ms
+ GET / 200 in 595ms
+ ✓ Compiled in 268ms (564 modules)
+ GET / 200 in 403ms
+ GET / 200 in 407ms
+ ✓ Compiled in 263ms (564 modules)
+ GET / 200 in 368ms
+ GET / 200 in 372ms
+ ✓ Compiled in 680ms (958 modules)
+ GET / 200 in 320ms
+ GET / 200 in 326ms
+ ✓ Compiled in 411ms (564 modules)
+ GET / 200 in 370ms
+ GET / 200 in 370ms

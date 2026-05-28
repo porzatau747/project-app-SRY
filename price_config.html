@@ -1,0 +1,1686 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta name="msvalidate.01" content="F510B886DEBB3A2C786CA2029EC6AFB1">
+		<meta name="msvalidate.01" content="F4AEC5761819EDAB95F3723223E0843A">
+		<base href="https://branch.nescen.in.th/55000067/">
+		<title>MODEL PRICE CONFIG</title>
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+		<link rel="icon" type="image/png" href="https://branch.nescen.in.th/55000067/themes/branch_source/images/nescenlogo.png">
+ 
+		<!--Reset CSS -->
+		<link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/bootstrap-4.2.1/css/bootstrap-reboot.min.css">
+
+		<!--jQuery -->
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/jquery-3.3.1/jquery-3.3.1.js"></script>
+
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+
+		<!--Bootstrap 4 -->
+		<link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/bootstrap-4.2.1/css/bootstrap.min.css">
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/bootstrap-4.2.1/js/bootstrap.min.js"></script>
+
+		<!--Popper -->
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/popper-1.14.6/popper.min.js"></script>
+	   		 
+       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+		
+		 <!-- Datepicker -->
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/datepicker/jquery-ui.min.css">
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/datepicker/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/datepicker/jquery-ui.theme.min.css">
+
+        <!-- Pretty-checkbox -->
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/pretty-checkbox/pretty-checkbox.min.css">
+		
+		  <!-- Font-awesome -->
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/font-awesome-4.7.0/css/font-awesome.min.css">
+
+		<!-- Sweet Alert -->
+		<script src="https://fastly.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script><style>@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{position:fixed;background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validationerror{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;box-shadow:0 0 .625em #d9d9d9;overflow-y:hidden}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:initial;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon-text{font-size:2em;font-weight:700;line-height:1em}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:10px;background-color:transparent;z-index:1060;overflow-x:hidden;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem;box-sizing:border-box}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{align-items:center;justify-content:center;margin:1.25em auto 0;z-index:1}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{width:2.5em;height:2.5em;margin:.46875em;padding:0;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;box-sizing:border-box;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{display:inline-block;width:15px;height:15px;margin-left:5px;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff;content:'';-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal}.swal2-popup .swal2-styled{margin:0 .3125em;padding:.625em 2em;font-weight:500;box-shadow:none}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;transition:color .1s ease-out;border:none;border-radius:0;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer;overflow:hidden}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;z-index:1;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;font-size:1.125em;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);box-sizing:border-box}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;margin:1em auto;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:.75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validationerror{display:none;align-items:center;justify-content:center;padding:.625em;background:#f0f0f0;color:#666;font-size:1em;font-weight:300;overflow:hidden}.swal2-popup .swal2-validationerror::before{display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center;content:'!';zoom:normal}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;box-sizing:content-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;zoom:normal}.swal2-icon-text{font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;top:-.25em;left:-.25em;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%;z-index:2;box-sizing:content-box}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);z-index:1}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;height:.3125em;border-radius:.125em;background-color:#a5dc86;z-index:2}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progresssteps{align-items:center;margin:0 0 1.25em;padding:0;font-weight:600}.swal2-progresssteps li{display:inline-block;position:relative}.swal2-progresssteps .swal2-progresscircle{width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center;z-index:20}.swal2-progresssteps .swal2-progresscircle:first-child{margin-left:0}.swal2-progresssteps .swal2-progresscircle:last-child{margin-right:0}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep{background:#3085d6}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progresscircle{background:#add8e6}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progressline{background:#add8e6}.swal2-progresssteps .swal2-progressline{width:2.5em;height:.4em;margin:0 -1px;background:#3085d6;z-index:10}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}[dir=rtl] .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
+
+        <!-- loadding--> 
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/loadding/load.css">
+		
+		 <!-- number js--> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/df-number-format/2.1.6/jquery.number.min.js"></script>
+		
+		<!-- selectize -->
+		<link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/_css/selectize.default.css">
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/_js/selectize.js"></script>
+
+		<!-- moment js  -->
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/_js/moment-with-locales.min.js"></script>
+		
+        <!-- DataTables -->
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/css/buttons.bootstrap4.min.css">
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/css/select.bootstrap4.min.css">
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/jquery.dataTables.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/dataTables.buttons.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/buttons.bootstrap4.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/dataTables.select.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/jszip.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/_js/pdfmake.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/_js/vfs_fonts.js"></script> 
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/buttons.html5.min.js"></script>
+        <script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/buttons.print.min.js"></script>
+		<script src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/Datatables/js/buttons.colVis.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&amp;display=swap">
+		<link rel="stylesheet" href="https://branch.nescen.in.th/55000067/themes/branch_source/css/layout_model_price_config.css?v=1779957601">
+		<script src="https://fastly.jsdelivr.net/npm/sweetalert2@11"></script><style>:root{--swal2-outline: 0 0 0 3px rgba(100, 150, 200, 0.5);--swal2-container-padding: 0.625em;--swal2-backdrop: rgba(0, 0, 0, 0.4);--swal2-backdrop-transition: background-color 0.15s;--swal2-width: 32em;--swal2-padding: 0 0 1.25em;--swal2-border: none;--swal2-border-radius: 0.3125rem;--swal2-background: white;--swal2-color: #545454;--swal2-show-animation: swal2-show 0.3s;--swal2-hide-animation: swal2-hide 0.15s forwards;--swal2-icon-zoom: 1;--swal2-title-padding: 0.8em 1em 0;--swal2-html-container-padding: 1em 1.6em 0.3em;--swal2-input-border: 1px solid #d9d9d9;--swal2-input-border-radius: 0.1875em;--swal2-input-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;--swal2-input-background: transparent;--swal2-input-transition: border-color 0.2s, box-shadow 0.2s;--swal2-input-hover-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;--swal2-input-focus-border: 1px solid #b4dbed;--swal2-input-focus-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px rgba(100, 150, 200, 0.5);--swal2-progress-step-background: #add8e6;--swal2-validation-message-background: #f0f0f0;--swal2-validation-message-color: #666;--swal2-footer-border-color: #eee;--swal2-footer-background: transparent;--swal2-footer-color: inherit;--swal2-timer-progress-bar-background: rgba(0, 0, 0, 0.3);--swal2-close-button-position: initial;--swal2-close-button-inset: auto;--swal2-close-button-font-size: 2.5em;--swal2-close-button-color: #ccc;--swal2-close-button-transition: color 0.2s, box-shadow 0.2s;--swal2-close-button-outline: initial;--swal2-close-button-box-shadow: inset 0 0 0 3px transparent;--swal2-close-button-focus-box-shadow: inset var(--swal2-outline);--swal2-close-button-hover-transform: none;--swal2-actions-justify-content: center;--swal2-actions-width: auto;--swal2-actions-margin: 1.25em auto 0;--swal2-actions-padding: 0;--swal2-actions-border-radius: 0;--swal2-actions-background: transparent;--swal2-action-button-transition: background-color 0.2s, box-shadow 0.2s;--swal2-action-button-hover: black 10%;--swal2-action-button-active: black 10%;--swal2-confirm-button-box-shadow: none;--swal2-confirm-button-border-radius: 0.25em;--swal2-confirm-button-background-color: #7066e0;--swal2-confirm-button-color: #fff;--swal2-deny-button-box-shadow: none;--swal2-deny-button-border-radius: 0.25em;--swal2-deny-button-background-color: #dc3741;--swal2-deny-button-color: #fff;--swal2-cancel-button-box-shadow: none;--swal2-cancel-button-border-radius: 0.25em;--swal2-cancel-button-background-color: #6e7881;--swal2-cancel-button-color: #fff;--swal2-toast-show-animation: swal2-toast-show 0.5s;--swal2-toast-hide-animation: swal2-toast-hide 0.1s forwards;--swal2-toast-border: none;--swal2-toast-box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 1px 2px hsl(0deg 0% 0% / 0.075), 1px 2px 4px hsl(0deg 0% 0% / 0.075), 1px 3px 8px hsl(0deg 0% 0% / 0.075), 2px 4px 16px hsl(0deg 0% 0% / 0.075)}[data-swal2-theme=dark]{--swal2-dark-theme-black: #19191a;--swal2-dark-theme-white: #e1e1e1;--swal2-background: var(--swal2-dark-theme-black);--swal2-color: var(--swal2-dark-theme-white);--swal2-footer-border-color: #555;--swal2-input-background: color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background: color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color: var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background: rgba(255, 255, 255, 0.7)}@media(prefers-color-scheme: dark){[data-swal2-theme=auto]{--swal2-dark-theme-black: #19191a;--swal2-dark-theme-white: #e1e1e1;--swal2-background: var(--swal2-dark-theme-black);--swal2-color: var(--swal2-dark-theme-white);--swal2-footer-border-color: #555;--swal2-input-background: color-mix(in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10%);--swal2-validation-message-background: color-mix( in srgb, var(--swal2-dark-theme-black), var(--swal2-dark-theme-white) 10% );--swal2-validation-message-color: var(--swal2-dark-theme-white);--swal2-timer-progress-bar-background: rgba(255, 255, 255, 0.7)}}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:auto}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px var(--swal2-backdrop)}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}@media print{body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) .swal2-container{position:static !important}}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:var(--swal2-container-padding);overflow-x:hidden;transition:var(--swal2-backdrop-transition);-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:var(--swal2-backdrop)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;place-self:start center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;place-self:start end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;place-self:center center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;place-self:center end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;place-self:end center}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;place-self:end end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container)[popover]{width:auto;border:0}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:var(--swal2-width);max-width:100%;padding:var(--swal2-padding);border:var(--swal2-border);border-radius:var(--swal2-border-radius);background:var(--swal2-background);color:var(--swal2-color);font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) div:where(.swal2-popup).swal2-draggable{cursor:grab}div:where(.swal2-container) div:where(.swal2-popup).swal2-draggable div:where(.swal2-icon){cursor:grab}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging{cursor:grabbing}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging div:where(.swal2-icon){cursor:grabbing}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:var(--swal2-title-padding);color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;overflow-wrap:break-word;cursor:initial}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:var(--swal2-actions-justify-content);width:var(--swal2-actions-width);margin:var(--swal2-actions-margin);padding:var(--swal2-actions-padding);border-radius:var(--swal2-actions-border-radius);background:var(--swal2-actions-background)}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:var(--swal2-action-button-transition);border:none;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){border-radius:var(--swal2-confirm-button-border-radius);background:initial;background-color:var(--swal2-confirm-button-background-color);box-shadow:var(--swal2-confirm-button-box-shadow);color:var(--swal2-confirm-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):hover{background-color:color-mix(in srgb, var(--swal2-confirm-button-background-color), var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):active{background-color:color-mix(in srgb, var(--swal2-confirm-button-background-color), var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny){border-radius:var(--swal2-deny-button-border-radius);background:initial;background-color:var(--swal2-deny-button-background-color);box-shadow:var(--swal2-deny-button-box-shadow);color:var(--swal2-deny-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):hover{background-color:color-mix(in srgb, var(--swal2-deny-button-background-color), var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):active{background-color:color-mix(in srgb, var(--swal2-deny-button-background-color), var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){border-radius:var(--swal2-cancel-button-border-radius);background:initial;background-color:var(--swal2-cancel-button-background-color);box-shadow:var(--swal2-cancel-button-box-shadow);color:var(--swal2-cancel-button-color);font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):hover{background-color:color-mix(in srgb, var(--swal2-cancel-button-background-color), var(--swal2-action-button-hover))}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):active{background-color:color-mix(in srgb, var(--swal2-cancel-button-background-color), var(--swal2-action-button-active))}div:where(.swal2-container) button:where(.swal2-styled):focus-visible{outline:none;box-shadow:var(--swal2-action-button-focus-box-shadow)}div:where(.swal2-container) button:where(.swal2-styled)[disabled]:not(.swal2-loading){opacity:.4}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){margin:1em 0 0;padding:1em 1em 0;border-top:1px solid var(--swal2-footer-border-color);background:var(--swal2-footer-background);color:var(--swal2-footer-color);font-size:1em;text-align:center;cursor:initial}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:var(--swal2-border-radius);border-bottom-left-radius:var(--swal2-border-radius)}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:var(--swal2-timer-progress-bar-background)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em;cursor:initial}div:where(.swal2-container) button:where(.swal2-close){position:var(--swal2-close-button-position);inset:var(--swal2-close-button-inset);z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:var(--swal2-close-button-transition);border:none;border-radius:var(--swal2-border-radius);outline:var(--swal2-close-button-outline);background:rgba(0,0,0,0);color:var(--swal2-close-button-color);font-family:monospace;font-size:var(--swal2-close-button-font-size);cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:var(--swal2-close-button-hover-transform);background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus-visible{outline:none;box-shadow:var(--swal2-close-button-focus-box-shadow)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-html-container){z-index:1;justify-content:center;margin:0;padding:var(--swal2-html-container-padding);overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;overflow-wrap:break-word;word-break:break-word;cursor:initial}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:var(--swal2-input-transition);border:var(--swal2-input-border);border-radius:var(--swal2-input-border-radius);background:var(--swal2-input-background);box-shadow:var(--swal2-input-box-shadow);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):hover,div:where(.swal2-container) input:where(.swal2-file):hover,div:where(.swal2-container) textarea:where(.swal2-textarea):hover{box-shadow:var(--swal2-input-hover-box-shadow)}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:var(--swal2-input-focus-border);outline:none;box-shadow:var(--swal2-input-focus-box-shadow)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:var(--swal2-background)}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:var(--swal2-input-background);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:var(--swal2-input-background);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:var(--swal2-background);color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:var(--swal2-validation-message-background);color:var(--swal2-validation-message-color);font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:var(--swal2-progress-step-background);color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:var(--swal2-progress-step-background)}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;zoom:var(--swal2-icon-zoom);border:.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:#f8bb86;color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:#3fc3ee;color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:#87adbd;color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:var(--swal2-show-animation)}.swal2-hide{animation:var(--swal2-hide-animation)}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;border:var(--swal2-toast-border);background:var(--swal2-background);box-shadow:var(--swal2-toast-box-shadow);pointer-events:auto}.swal2-toast>*{grid-column:2}.swal2-toast h2:where(.swal2-title){margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-toast .swal2-loading{justify-content:center}.swal2-toast input:where(.swal2-input){height:2em;margin:.5em;font-size:1em}.swal2-toast .swal2-validation-message{font-size:1em}.swal2-toast div:where(.swal2-footer){margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-toast button:where(.swal2-close){grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-toast div:where(.swal2-html-container){margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-toast div:where(.swal2-html-container):empty{padding:0}.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-toast div:where(.swal2-actions){justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-toast button:where(.swal2-styled){margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;border-radius:50%}.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-toast.swal2-show{animation:var(--swal2-toast-show-animation)}.swal2-toast.swal2-hide{animation:var(--swal2-toast-hide-animation)}@keyframes swal2-show{0%{transform:translate3d(0, -50px, 0) scale(0.9);opacity:0}100%{transform:translate3d(0, 0, 0) scale(1);opacity:1}}@keyframes swal2-hide{0%{transform:translate3d(0, 0, 0) scale(1);opacity:1}100%{transform:translate3d(0, -50px, 0) scale(0.9);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}</style>		
+
+	<style type="text/css" rel="stylesheet">.slickgrid_747657 .slick-group-header-column { left: 1000px; } .slickgrid_747657 .slick-header-column { left: 1000px; } .slickgrid_747657 .slick-top-panel { height:25px; } .slickgrid_747657 .slick-preheader-panel { height:24px; } .slickgrid_747657 .slick-headerrow-columns { height:25px; } .slickgrid_747657 .slick-footerrow-columns { height:25px; } .slickgrid_747657 .slick-cell { height:30px; } .slickgrid_747657 .slick-row { height:30px; } .slickgrid_747657 .l0 { } .slickgrid_747657 .r0 { } .slickgrid_747657 .l1 { } .slickgrid_747657 .r1 { } .slickgrid_747657 .l2 { } .slickgrid_747657 .r2 { } .slickgrid_747657 .l3 { } .slickgrid_747657 .r3 { } .slickgrid_747657 .l4 { } .slickgrid_747657 .r4 { } .slickgrid_747657 .l5 { } .slickgrid_747657 .r5 { } .slickgrid_747657 .l6 { } .slickgrid_747657 .r6 { } .slickgrid_747657 .l7 { } .slickgrid_747657 .r7 { } .slickgrid_747657 .l8 { } .slickgrid_747657 .r8 { } .slickgrid_747657 .l9 { } .slickgrid_747657 .r9 { } .slickgrid_747657 .l10 { } .slickgrid_747657 .r10 { } .slickgrid_747657 .l11 { } .slickgrid_747657 .r11 { } .slickgrid_747657 .l12 { } .slickgrid_747657 .r12 { } .slickgrid_747657 .l13 { } .slickgrid_747657 .r13 { } .slickgrid_747657 .l14 { } .slickgrid_747657 .r14 { } .slickgrid_747657 .l15 { } .slickgrid_747657 .r15 { } .slickgrid_747657 .l16 { } .slickgrid_747657 .r16 { }</style></head>
+	<body><a href="https://branch.nescen.in.th/cdn-cgi/content?id=0KF2c.KRWGaT3oIfQw3d8a9Oy1iqr9kS3lb0ZxZQrmg-1779957601.3845634-1.0.1.1-gqrpQ9pHa6zO9yNcrdb6f0EB5emPA6rn7vpnKDuq91A" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+		        <div class="lds-css ng-scope text-center" id="loading" style="z-index: 9999; display: none;">
+			<div class="lds-spinner text-center" style="100%;height:100%">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<h2></h2>
+			</div>
+		</div>
+		<span id="alertplay2" style="display:none;"></span>
+		<span style="display:none;">
+			<audio src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/audio/DING.mp3" type="audio/mp3" controls="controls"></audio><audio src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/audio/oh_no.mp3" type="audio/mp3" controls="controls"></audio>		</span>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://img.advice.co.th/images_nas/SlickGrid_new/slick.grid.css">
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" integrity="sha384-d1+X9echFKcyDg/YjNlESq7CtWnkXrVU0aWe1SO/oF+zEqSNbH/KReB6zC0abRtz" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+<script src="https://img.advice.co.th/images_nas/SlickGrid_new/lib/jquery.event.drag-2.3.0.js"></script> 
+<script src="https://img.advice.co.th/images_nas/SlickGrid_new/lib/jquery.mousewheel.js"></script> 
+<script src="https://img.advice.co.th/images_nas/SlickGrid_new/slick.core.js"></script> 
+<script src="https://img.advice.co.th/images_nas/SlickGrid_new/slick.grid.js"></script> 
+<script src="https://img.advice.co.th/images_nas/SlickGrid_new/slick.dataview.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script><!-- https://alertifyjs.com/guide.html -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    
+<style>
+    .slick-row.active .slick-cell {
+        background-color: #FFB !important;
+    }
+    .alertify .ajs-dialog{
+        margin: 2% auto;
+    }
+    .alertify .ajs-footer{
+        min-height: 0px;
+    }
+    .row-negative .slick-cell {
+        background-color: #ffcccc !important;
+    }
+</style>
+
+<div class="wrapper">
+    <a id="show-sidebar" class="btn btn-dark"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h5 class="m-0">
+                    PRODUCT CATEGORY
+                    <span id="close-sidebar" style="cursor: pointer; float: right;">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </h5>
+            </div>
+            <div class="sidebar-menu" id="menu"><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('01', '', 'Accessories IT','');">Accessories IT</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '02', '02 : FAN','');">02 : FAN</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '0B', '0B : WEBCAM','');">0B : WEBCAM</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '0H', '0H : Gaming Accessories','');">0H : Gaming Accessories</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '0Z', '0Z : DEMO Gaming Accessories','');">0Z : DEMO Gaming Accessories</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '11', '11 : KEYBOARD','');">11 : KEYBOARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '12', '12 : MOUSE','');">12 : MOUSE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '15', '15 : SPEAKER','');">15 : SPEAKER</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '17', '17 : ACCESSORIES','');">17 : ACCESSORIES</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '18', '18 : UPS','');">18 : UPS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '1B', '1B : STREAMERS','');">1B : STREAMERS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '1W', '1W : สินค้า Special Deal','');">1W : สินค้า Special Deal</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '26', '26 : USB DRIVE','');">26 : USB DRIVE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '27', '27 : CD ACCESSORIES','');">27 : CD ACCESSORIES</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '28', '28 : SOFTWARE','');">28 : SOFTWARE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '29', '29 : MEMORY CARD','');">29 : MEMORY CARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '2E', '2E : Bundle Mobile','');">2E : Bundle Mobile</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '2I', '2I : Gaming Chairs &amp; Desk','');">2I : Gaming Chairs &amp; Desk</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '2J', '2J : Gaming Microphone &amp; Headset','');">2J : Gaming Microphone &amp; Headset</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '2L', '2L : Gaming Keyboard','');">2L : Gaming Keyboard</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '2S', '2S : Gaming Mouse','');">2S : Gaming Mouse</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '30', '30 : DIGITAL CAMERA','');">30 : DIGITAL CAMERA</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '33', '33 : CONTROLLER','');">33 : CONTROLLER</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '35', '35 : USB ACCESSORIES','');">35 : USB ACCESSORIES</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3E', '3E : SPEAKER HI-END','');">3E : SPEAKER HI-END</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3L', '3L : DEMO Speaker Hi-End                                         ','');">3L : DEMO Speaker Hi-End                                         </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3O', '3O : DEMO UPS                                                    ','');">3O : DEMO UPS                                                    </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3P', '3P : Special Promotion','');">3P : Special Promotion</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3R', '3R : DEMO Gaming Microphone&amp;Headset','');">3R : DEMO Gaming Microphone&amp;Headset</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3S', '3S : DEMO KEYBOARD                                               ','');">3S : DEMO KEYBOARD                                               </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3U', '3U : DEMO MOUSE','');">3U : DEMO MOUSE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3V', '3V : DEMO Gaming Mouse','');">3V : DEMO Gaming Mouse</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '3W', '3W : DEMO Gaming Keyboard','');">3W : DEMO Gaming Keyboard</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '40', '40 : ENCLOSURE','');">40 : ENCLOSURE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '41', '41 : HeadPhone &amp; Mic.','');">41 : HeadPhone &amp; Mic.</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '42', '42 : TV&amp;FM TUNER','');">42 : TV&amp;FM TUNER</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '44', '44 : ACCESSORIES (Cable)','');">44 : ACCESSORIES (Cable)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '45', '45 : ACCESSORIES (Cleaning)','');">45 : ACCESSORIES (Cleaning)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '46', '46 : N/B ACCESORIES','');">46 : N/B ACCESORIES</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '4U', '4U : DEMO Chair &amp; Desk','');">4U : DEMO Chair &amp; Desk</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', '8J', '8J : ACCESSORIES MONITOR','');">8J : ACCESSORIES MONITOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', 'G1', 'G1 : Game Console','');">G1 : Game Console</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', 'OF', 'OF : อุปกรณ์สำนักงาน','');">OF : อุปกรณ์สำนักงาน</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="01" onclick="loadData('', 'ZZ', 'ZZ : DEMO CONTROLLER','');">ZZ : DEMO CONTROLLER</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('02', '', 'CCTV','');">CCTV</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="02" onclick="loadData('', '0A', '0A : CCTV','');">0A : CCTV</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="02" onclick="loadData('', 'SC', 'SC : Smart IP CAMERA','');">SC : Smart IP CAMERA</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('03', '', 'Spare parts','');">Spare parts</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="03" onclick="loadData('', '2C', '2C : อะไหล่โน๊ตบุค','');">2C : อะไหล่โน๊ตบุค</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="03" onclick="loadData('', '2Y', '2Y : อะไหล่ Apple','');">2Y : อะไหล่ Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="03" onclick="loadData('', '3C', '3C : Adapter N/B','');">3C : Adapter N/B</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="03" onclick="loadData('', '3F', '3F : อะไหล่ Android','');">3F : อะไหล่ Android</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="03" onclick="loadData('', '4W', '4W : อะไหล่ IT','');">4W : อะไหล่ IT</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('04', '', 'Desktop &amp; AIO &amp; Server','');">Desktop &amp; AIO &amp; Server</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '00', '00 : Server','');">00 : Server</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '0Y', '0Y : Computer Set Acer (Commercial)','');">0Y : Computer Set Acer (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1I', '1I : Computer Set Acer','');">1I : Computer Set Acer</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1J', '1J : Computer Set Lenovo','');">1J : Computer Set Lenovo</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1K', '1K : Computer Set Dell','');">1K : Computer Set Dell</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1L', '1L : Computer Set HP','');">1L : Computer Set HP</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1M', '1M : Computer Set Asus','');">1M : Computer Set Asus</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1N', '1N : Computer Set MSI','');">1N : Computer Set MSI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '1O', '1O : Computer Set (Mini PC)','');">1O : Computer Set (Mini PC)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '43', '43 : Computer Set Huawei','');">43 : Computer Set Huawei</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', '48', '48 : Computer Set Asus (Commercial) ','');">48 : Computer Set Asus (Commercial) </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', 'AG', 'AG : Computer Set HP (Commercial)','');">AG : Computer Set HP (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', 'AI', 'AI : Computer Set Lenovo (Commercial)','');">AI : Computer Set Lenovo (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', 'AK', 'AK : Computer Set Dell (Commercial)','');">AK : Computer Set Dell (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="04" onclick="loadData('', 'IA', 'IA : AI Supercomputer','');">IA : AI Supercomputer</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('05', '', 'DIY','');">DIY</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '01', '01 : CPU','');">01 : CPU</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '03', '03 : RAM','');">03 : RAM</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '04', '04 : BUNDLE COMSET','');">04 : BUNDLE COMSET</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '05', '05 : HARDDISK','');">05 : HARDDISK</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '06', '06 : MAINBOARD','');">06 : MAINBOARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '07', '07 : MONITOR','');">07 : MONITOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '08', '08 : VGA CARD','');">08 : VGA CARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '09', '09 : CASE','');">09 : CASE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '0W', '0W : Computer Set (DIY)                                          ','');">0W : Computer Set (DIY)                                          </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '10', '10 : POWER SUPPLY','');">10 : POWER SUPPLY</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '13', '13 : CD-ROM','');">13 : CD-ROM</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '14', '14 : SOUND CARD','');">14 : SOUND CARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '2T', '2T : DEMO MONITOR','');">2T : DEMO MONITOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '39', '39 : SSD','');">39 : SSD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '3Q', '3Q : DEMO CASE','');">3Q : DEMO CASE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="05" onclick="loadData('', '4X', '4X : DIY clearance','');">4X : DIY clearance</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('06', '', 'Home Appliances','');">Home Appliances</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', '0C', '0C : PROJECTOR','');">0C : PROJECTOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', '0J', '0J : อุปกรณ์ไฟฟ้า','');">0J : อุปกรณ์ไฟฟ้า</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', '0V', '0V : Television','');">0V : Television</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', '1U', '1U : Smart Home ','');">1U : Smart Home </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', 'H0', 'H0 : Solar Cell ','');">H0 : Solar Cell </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="06" onclick="loadData('', 'TY', 'TY : TOY
+
+','');">TY : TOY
+
+</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('07', '', 'Android','');">Android</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '0L', '0L : Smartphone VIVO','');">0L : Smartphone VIVO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '0Q', '0Q : Smartphone SAMSUNG','');">0Q : Smartphone SAMSUNG</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '0U', '0U : Smartphone XIAOMI','');">0U : Smartphone XIAOMI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1E', '1E : Smartphone WIKO','');">1E : Smartphone WIKO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1H', '1H : Smartphone ASUS','');">1H : Smartphone ASUS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1Q', '1Q : Tablet ASUS','');">1Q : Tablet ASUS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1R', '1R : Tablet HUAWEI','');">1R : Tablet HUAWEI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1S', '1S : Tablet LENOVO','');">1S : Tablet LENOVO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1V', '1V : Smartphone HUAWEI','');">1V : Smartphone HUAWEI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1X', '1X : Tablet OPPO','');">1X : Tablet OPPO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '1Y', '1Y : Tablet XIAOMI','');">1Y : Tablet XIAOMI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2A', '2A : Tablet REALME ','');">2A : Tablet REALME </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2D', '2D : Smartphone REALME','');">2D : Smartphone REALME</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2F', '2F : Tablet SAMSUNG','');">2F : Tablet SAMSUNG</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2H', '2H : Smartphone LENOVO','');">2H : Smartphone LENOVO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2K', '2K : Tablet VIVO','');">2K : Tablet VIVO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2M', '2M : Tablet WIKO','');">2M : Tablet WIKO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2N', '2N : Tablet XIAOMI','');">2N : Tablet XIAOMI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2V', '2V : Feature Phone','');">2V : Feature Phone</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2W', '2W : Demo','');">2W : Demo</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2X', '2X : Smartphone OPPO ','');">2X : Smartphone OPPO </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '2Z', '2Z : TABLET(C)','');">2Z : TABLET(C)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '36', '36 : Smartphone TECNO','');">36 : Smartphone TECNO</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '3H', '3H : Smartphone HONOR','');">3H : Smartphone HONOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '3I', '3I : (Clearance) Smartphone HONOR','');">3I : (Clearance) Smartphone HONOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '3J', '3J : Tablet HONOR','');">3J : Tablet HONOR</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '3Z', '3Z : SMART PHONE(C)','');">3Z : SMART PHONE(C)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '4F', '4F : Smartphone INFINIX','');">4F : Smartphone INFINIX</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', '4V', '4V : Smartphone ZTE','');">4V : Smartphone ZTE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="07" onclick="loadData('', 'SP', 'SP : Smartphone Other','');">SP : Smartphone Other</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('08', '', 'Mobile Accessories','');">Mobile Accessories</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="08" onclick="loadData('', '0M', '0M : Power Bank','');">0M : Power Bank</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="08" onclick="loadData('', '0N', '0N : Cable &amp; Charger','');">0N : Cable &amp; Charger</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="08" onclick="loadData('', '0O', '0O : Gadget','');">0O : Gadget</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="08" onclick="loadData('', 'CB', 'CB : Cable','');">CB : Cable</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="08" onclick="loadData('', 'CH', 'CH : Charger','');">CH : Charger</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('09', '', 'Network','');">Network</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '0K', '0K : NAS','');">0K : NAS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '16', '16 : MODEM','');">16 : MODEM</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '23', '23 : LANCARD','');">23 : LANCARD</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '24', '24 : HUB','');">24 : HUB</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '25', '25 : LAN - ACCESSORIES','');">25 : LAN - ACCESSORIES</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="09" onclick="loadData('', '32', '32 : WIRELESS LAN','');">32 : WIRELESS LAN</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('10', '', 'Notebook','');">Notebook</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '0I', '0I : Notebook Acer (Commercial)','');">0I : Notebook Acer (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '0T', '0T : Notebook Dell','');">0T : Notebook Dell</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '1C', '1C : Notebook HP','');">1C : Notebook HP</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '1D', '1D : Notebook Asus','');">1D : Notebook Asus</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '1F', '1F : Notebook INTEL','');">1F : Notebook INTEL</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '1G', '1G : Notebook Acer','');">1G : Notebook Acer</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '1T', '1T : Notebook LG','');">1T : Notebook LG</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '2G', '2G : Notebook Xiaomi                                             ','');">2G : Notebook Xiaomi                                             </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '2P', '2P : Notebook HUAWEI','');">2P : Notebook HUAWEI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '2U', '2U : DEMO Notebook','');">2U : DEMO Notebook</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '38', '38 : Notebook Lenovo','');">38 : Notebook Lenovo</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '3A', '3A : Notebook MSI','');">3A : Notebook MSI</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '47', '47 : Notebook Gigabyte','');">47 : Notebook Gigabyte</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '4A', '4A : Notebook Asus (Commercial)','');">4A : Notebook Asus (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '4B', '4B : Notebook Fujitsu','');">4B : Notebook Fujitsu</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '4D', '4D : Notebook Fujitsu (Commercial) ','');">4D : Notebook Fujitsu (Commercial) </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', '4E', '4E : Notebook Infinix','');">4E : Notebook Infinix</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', 'AA', 'AA : Notebook HP (Commercial)','');">AA : Notebook HP (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', 'AC', 'AC : Notebook Lenovo (Commercial)','');">AC : Notebook Lenovo (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', 'AE', 'AE : Notebook Dell (Commercial)','');">AE : Notebook Dell (Commercial)</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', 'AP', 'AP : Notebook Microsoft','');">AP : Notebook Microsoft</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="10" onclick="loadData('', 'AS', 'AS : Notebook Avita','');">AS : Notebook Avita</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('11', '', 'Printing &amp; Image','');">Printing &amp; Image</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '19', '19 : SCANNER + CAMERA','');">19 : SCANNER + CAMERA</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '1A', '1A : PAPER','');">1A : PAPER</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '20', '20 : PRINTER','');">20 : PRINTER</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '21', '21 : ผ้าหมึก','');">21 : ผ้าหมึก</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '22', '22 : น้ำหมึก','');">22 : น้ำหมึก</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '31', '31 : TONER ORIGINAL','');">31 : TONER ORIGINAL</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '37', '37 : BARCODE','');">37 : BARCODE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', '3G', '3G : DEMO PRINTER                                                ','');">3G : DEMO PRINTER                                                </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="11" onclick="loadData('', 'AM', 'AM : TONER REMENU','');">AM : TONER REMENU</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('12', '', 'iPhone','');">iPhone</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="12" onclick="loadData('', '0D', '0D : Smartphone APPLE','');">0D : Smartphone APPLE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="12" onclick="loadData('', 'G0', 'G0 : Demo Smartphone APPLE','');">G0 : Demo Smartphone APPLE</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('13', '', 'Mac','');">Mac</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="13" onclick="loadData('', '3B', '3B : Demo Mac','');">3B : Demo Mac</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="13" onclick="loadData('', '4C', '4C : Computer Set Apple','');">4C : Computer Set Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="13" onclick="loadData('', 'AO', 'AO : Notebook Apple','');">AO : Notebook Apple</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('14 ', '', 'Apple Accessories','');">Apple Accessories</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', '1Z', '1Z : Apple Care+','');">1Z : Apple Care+</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', '2B', '2B : Apple Watch','');">2B : Apple Watch</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', '2Q', '2Q : Film&amp;Case iOS','');">2Q : Film&amp;Case iOS</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', '3M', '3M : Accessories Apple','');">3M : Accessories Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'A0', 'A0 : Bundle Apple','');">A0 : Bundle Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'AW', 'AW : Airpods','');">AW : Airpods</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'AY', 'AY : Apple iPad Accessories','');">AY : Apple iPad Accessories</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BA', 'BA : Apple Mac Accessories','');">BA : Apple Mac Accessories</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BC', 'BC : Apple TV &amp; monitor','');">BC : Apple TV &amp; monitor</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BE', 'BE : HomePod','');">BE : HomePod</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BG', 'BG : Adapter &amp; Cable Apple','');">BG : Adapter &amp; Cable Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BI', 'BI : Case iPhone Apple','');">BI : Case iPhone Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BK', 'BK : Apple watch Band','');">BK : Apple watch Band</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BM', 'BM : Case iPad Apple','');">BM : Case iPad Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BO', 'BO : Airtag','');">BO : Airtag</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BQ', 'BQ : Film Hydro Apple Watch','');">BQ : Film Hydro Apple Watch</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BS', 'BS : Film Hydro iPad','');">BS : Film Hydro iPad</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'BU', 'BU : Film Hydro iPhone','');">BU : Film Hydro iPhone</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'CK', 'CK : Case iPad 3rdParty','');">CK : Case iPad 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'CM', 'CM : Case AirPods 3rdParty','');">CM : Case AirPods 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'CO', 'CO : Case iPhone 3rdParty','');">CO : Case iPhone 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'CW', 'CW : Case Apple Watch 3rdParty','');">CW : Case Apple Watch 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'FA', 'FA : Film Mac 3rdParty','');">FA : Film Mac 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'FI', 'FI : Film iPhone 3rdParty','');">FI : Film iPhone 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'FK', 'FK : Film iPad 3rdParty','');">FK : Film iPad 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'FM', 'FM : Film Apple Watch 3rdParty','');">FM : Film Apple Watch 3rdParty</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'J0', 'J0 : Demo Apple Watch','');">J0 : Demo Apple Watch</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'K0', 'K0 : Demo Accessories Apple','');">K0 : Demo Accessories Apple</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="14 " onclick="loadData('', 'SA', 'SA : Strap Apple Watch 3rdParty','');">SA : Strap Apple Watch 3rdParty</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('15', '', 'Android Accessories','');">Android Accessories</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '0G', '0G : SIM Prepaid/Postpaid','');">0G : SIM Prepaid/Postpaid</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '0P', '0P : Film&amp;Case Android','');">0P : Film&amp;Case Android</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '0R', '0R : Smartphone Film&amp;Case 3','');">0R : Smartphone Film&amp;Case 3</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '2O', '2O : Smart Watch','');">2O : Smart Watch</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '2R', '2R : Tablet Film&amp;Case','');">2R : Tablet Film&amp;Case</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', '3D', '3D : Accessories Android                                         ','');">3D : Accessories Android                                         </a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="15" onclick="loadData('', 'SR', 'SR : Smart Ring','');">SR : Smart Ring</a>
+                             </li></ul><ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('16', '', 'iPad','');">iPad</a>
+                            </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="16" onclick="loadData('', '1P', '1P : Tablet APPLE','');">1P : Tablet APPLE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="16" onclick="loadData('', '3N', '3N : Tablet APPLE','');">3N : Tablet APPLE</a>
+                             </li><li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" aria-expanded="false" data-cateno="16" onclick="loadData('', 'F0', 'F0 : Demo Tablet APPLE','');">F0 : Demo Tablet APPLE</a>
+                             </li></ul></div>
+        </div>
+    </nav>
+    <div id="content"> 
+        <div class="row m-0">
+            <div class="col-4 p-0">
+                <div class="card">
+                    <div class="card-body" id="text-menu"></div>
+                    <input type="text" class="d-none" id="class-id">
+                    <input type="text" class="d-none" id="cate-no">
+                    <button class="btn btn-success" style="width: 100px !important;position: absolute;right: 10px;top: 15px;" id="btn_config_group" disabled="">CONFIG Price</button>
+                </div>
+            </div>
+            <div class="col-8 pl-1 pr-0"> 
+                <div class="card">
+                    <div class="card-body form-inline" style="gap: 5px;">
+                        <span>SEARCH :</span> 
+                        <input type="text" class="form-control w-200-px" id="searchString" placeholder="Enter">
+                        <span>MODEL :</span> 
+                        <input type="text" class="form-control w-200-px text-center" value="55000067" disabled="">
+                        <button type="button" class="btn btn-outline-success w-100-px" onclick="saveConfig();"><i class="fa fa-floppy-o"></i> SAVE</button>
+                        <a href="https://branch.nescen.in.th/55000067/index.php/shop/menu" class="btn btn-outline-danger w-100-px"><i class="fa fa-angle-left"></i> HOME</a>
+                    </div>
+                </div> 
+            </div>
+        </div> 
+        <div class="row m-0 mt-2">
+            <div id="myGrid" style="width: 100%; height: 88vh; overflow: hidden; outline: 0px; position: relative;" class="slickgrid_747657 ui-widget"><div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;"></div><div class="slick-pane slick-pane-header slick-pane-left" tabindex="0" style="width: 100%;"><div class="slick-preheader-panel ui-state-default slick-header" style="overflow:hidden;position:relative;"><div class="slick-header-columns" style="left: -1000px; width: 3600px;"><div class="ui-state-default slick-header-column bg_ode" data-group="ราคาจากสำนักงานใหญ่" style="width: 781px;"><span class="slick-column-name">ราคาจากสำนักงานใหญ่</span></div><div class="ui-state-default slick-header-column bg_001" data-group="Model :  (ร้าน 55000067)" style="width: 801px;"><span class="slick-column-name">Model :  (ร้าน 55000067)</span></div></div><div style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 1600px;"></div></div><div class="slick-header ui-state-default slick-header-left"><div class="slick-header-columns slick-header-columns-left" style="left: -1000px; width: 2600px;" unselectable="on"><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657code" title="" style="width: 71px;"><span class="slick-column-name">Code</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657product_name" title="" style="width: 291px;"><span class="slick-column-name">Product Name</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657sp1" title="" style="width: 81px;"><span class="slick-column-name">ขายปลีก (SRP)</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657sp5" title="" style="width: 71px;"><span class="slick-column-name">Technicial</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657sp2" title="" style="width: 71px;"><span class="slick-column-name">Dealer</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657sp3" title="" style="width: 71px;"><span class="slick-column-name">Franchise</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_ode slick-header-sortable" id="slickgrid_747657sp4" title="" style="width: 71px;"><span class="slick-column-name">Nescen</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657config_sp1_001" title="" style="width: 71px;"><span class="slick-column-name">+Config</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657sp1_001" title="" style="width: 81px;"><span class="slick-column-name">ขายปลีก (SRP)</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657config_sp5_001" title="" style="width: 71px;"><span class="slick-column-name">+Config</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657sp5_001" title="" style="width: 71px;"><span class="slick-column-name">Technicial</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657config_sp2_001" title="" style="width: 71px;"><span class="slick-column-name">+Config</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657sp2_001" title="" style="width: 71px;"><span class="slick-column-name">Dealer</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657config_sp3_001" title="" style="width: 71px;"><span class="slick-column-name">+Config</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657sp3_001" title="" style="width: 71px;"><span class="slick-column-name">Franchise</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657config_sp4_001" title="" style="width: 71px;"><span class="slick-column-name">+Config</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div><div class="ui-state-default slick-header-column text-center bg_001 slick-header-sortable" id="slickgrid_747657sp4_001" title="" style="width: 71px;"><span class="slick-column-name">Nescen</span><span class="slick-sort-indicator"></span><div class="slick-resizable-handle"></div></div></div></div></div><div class="slick-pane slick-pane-header slick-pane-right" tabindex="0" style="display: none;"><div class="slick-header ui-state-default slick-header-right"><div class="slick-header-columns slick-header-columns-right" style="left: -1000px; width: 0px;" unselectable="on"></div></div></div><div class="slick-pane slick-pane-top slick-pane-left" tabindex="0" style="top: 50px; height: 580.594px; width: 100%;"><div class="slick-headerrow ui-state-default" style="display: none; width: 1011px;"><div style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 1600px;"></div><div class="slick-headerrow-columns slick-headerrow-columns-left" style="width: 1600px;"></div></div><div class="slick-top-panel-scroller ui-state-default" style="display: none;"><div class="slick-top-panel" style="width:10000px"></div></div><div class="slick-viewport slick-viewport-top slick-viewport-left" tabindex="0" hidefocus="" style="overflow: auto; height: 580.594px; width: 100%;"><div class="grid-canvas grid-canvas-top grid-canvas-left" tabindex="0" hidefocus="" style="height: 580.594px; width: 1600px;"></div></div></div><div class="slick-pane slick-pane-top slick-pane-right" tabindex="0" style="display: none;"><div class="slick-headerrow ui-state-default" style="display: none;"><div style="display: block; height: 1px; position: absolute; top: 0px; left: 0px; width: 1600px;"></div><div class="slick-headerrow-columns slick-headerrow-columns-right"></div></div><div class="slick-top-panel-scroller ui-state-default" style="display: none;"><div class="slick-top-panel" style="width:10000px"></div></div><div class="slick-viewport slick-viewport-top slick-viewport-right" tabindex="0" hidefocus="" style="overflow: auto; height: 580.594px;"><div class="grid-canvas grid-canvas-top grid-canvas-right" tabindex="0" hidefocus="" style="height: 580.594px;"></div></div></div><div class="slick-pane slick-pane-bottom slick-pane-left" tabindex="0" style="display: none;"><div class="slick-viewport slick-viewport-bottom slick-viewport-left" tabindex="0" hidefocus="" style="overflow: auto;"><div class="grid-canvas grid-canvas-bottom grid-canvas-left" tabindex="0" hidefocus=""></div></div></div><div class="slick-pane slick-pane-bottom slick-pane-right" tabindex="0" style="display: none;"><div class="slick-viewport slick-viewport-bottom slick-viewport-right" tabindex="0" hidefocus="" style="overflow: auto;"><div class="grid-canvas grid-canvas-bottom grid-canvas-right" tabindex="0" hidefocus=""></div></div></div><div tabindex="0" hidefocus="" style="position:fixed;width:0;height:0;top:0;left:0;outline:0;"></div></div>  
+        </div>
+    </div>
+</div>
+
+<script>
+    let arrPrice        = [];
+    let arrModel        = [];
+    let arrModelMaster  = [];
+    let arrDataOld      = [];
+    let list_apply      = [];
+    let applymain_type  = "";
+    let bg_not_config   = "#ff9292";
+    let dataView;
+    let grid;
+
+    $(document).ready( function() {
+        $('#close-sidebar, #show-sidebar').click( function() {
+            $('#sidebar, #content').toggleClass('active');
+        });
+        $("#searchString").keyup(function(event){
+            if(event.keyCode == 13){
+                updateFilter();
+            }
+        });
+        $('#select-model').on('change', function() {
+            let value = $(this).val();
+            if( value.length <= 0){
+                arrModel = arrModelMaster;
+            }else{
+                arrModel = arrModelMaster.filter(item => value.includes(item.model));
+            }
+            setTblPrice();
+        });
+        getMenu();
+    });
+
+    function disabled_config(){
+        $("#btn_config_group").attr("disabled",true).attr("onclick","");;
+    }
+
+    async function config_group(main_type,title){
+        if(!alertify.show_dialog){
+		  	alertify.dialog('show_dialog', function factory() {
+				return{
+					main:function(title, message,model) {
+						this.title 	    = title;
+						this.message    = message;
+						this.model      = model;
+					},
+					setup:function() {
+						return {
+							focus: {
+								element : 0
+							},
+							options: {
+								maximizable		 : false,
+								closableByDimmer : false,
+								autoReset		 : false,
+								resizable		 : false,
+								closable		 : true
+							}
+						};
+					},
+					build:function() {
+					},
+					prepare:function() {
+						this.setHeader(this.title);
+						this.setContent(this.message);
+						this.elements.footer.style.visibility = "hidden";
+					},
+					hooks: {
+						onshow: async function() {
+							this.elements.dialog.style.maxWidth     = "none"; 
+                            this.elements.dialog.style.width        = "60%";
+                            let data_price = [];
+                            let list_price = [
+                                {"field":"saleprice1","column_name":"ขายปลีก (SRP)"}
+                                ,{"field":"saleprice5","column_name":"Technicial"}
+                                ,{"field":"saleprice2","column_name":"Dealer"}
+                                ,{"field":"saleprice3","column_name":"Franchise"}
+                                ,{"field":"saleprice4","column_name":"Nescen"}
+                            ]; 
+                            let columns     = [
+                                {   render: function (data, type, full, meta){  
+                                                    return full.column_name;
+                                                } , class:"text-center"
+                                }
+                            ];
+                            let loop = 1;
+                            for(let price of list_price){
+                                let detail_price = {saleprice:price.field,column_name:price.column_name}
+                                for(let dtl of  this.model){
+                                    let key = dtl.model+"_last_saleprice"
+                                    detail_price[key] = dtl[price.field];
+                                    if(loop == 1){
+                                        columns.push(
+                                            {   render: function (data, type, full, meta){
+                                                    let last_price = full[key];
+                                                    if(last_price != ""){
+                                                        last_price = numeral(last_price).format("0,000.00");
+                                                    }else{
+                                                        last_price = "-";
+                                                    }
+                                                    return last_price;
+                                                } , class:"text-right"}
+                                            ,{ 
+                                                render: function (data, type, full, meta){
+                                                    return `<input type"text" class="form-control inp-saleprice text-right" data-model="${dtl.model}" style="background:${bg_not_config};height:20px;"  data-saleprice="${full.saleprice}" data-pricecf="${full[dtl.model+'_last_saleprice']}"  />`;
+                                                }, 
+                                                class:"text-center",
+                                                width:"5%"
+                                            }
+                                        );
+                                    }
+                                }
+                                data_price.push(detail_price);
+                                loop++;
+                            }
+                            console.log(data_price);
+                            $("#config_price_all").DataTable({
+                                data: data_price
+                                ,info: false
+                                ,destroy: true
+                                ,scrollY: '200px'
+                                ,paging: false
+                                ,searching: false
+                                ,ordering: false
+                                ,columns: columns 
+                                ,"createdRow": function( row, data, dataIndex ) {
+                                   
+                                }
+                            });
+                            setTimeout(() => {
+                                    $('.inp-saleprice').toArray().forEach(
+                                        function(field){
+                                        new Cleave(field, {
+                                            numeral : true
+                                        });
+                                    })
+                                    $('.inp-saleprice').blur(function(){
+                                        let val = $(this).val();
+                                        if(val != ""){
+                                            val = numeral(val).format("0,000.00");
+                                        }
+                                        set_config_color(); 
+                                        $(this).val(val);
+                                    }).focus(function(){
+                                        $(this).select();
+                                    });
+                                    set_config_color();
+                            }, 300);
+						}
+					}
+				}
+			});
+		}
+        let res     = await sendAjax('get_config_menu_branch', {main_type:main_type});
+        let model   = res.data.config_price;
+        let th1     = ``;
+        let th2     = ``;
+        for(let detail of model){
+            th1 += `<th colspan="2" style="background:${detail.model_color};text-align:center" >Model ${detail.model_desc} <br> (ร้าน 55000067)</th>`;
+            th2 += `<th style="background:${detail.model_color};text-align:center !important;">ล่าสุด</th><th  style="background:${detail.model_color};text-align:center !important;" >config</th>`;
+        }
+        let thead   = `<thead>
+         
+            <tr>
+                <th rowspan="2" style="vertical-align: middle;" >Saleprice CF</th>
+                ${th1}
+            </tr>
+            <tr>
+                ${th2}
+            </tr>
+        </thead>`;
+		alertify.show_dialog("Config Price",`
+            <div>
+                <div class="row" style="font-size: 20px;" >
+                    <div class="col-md-12" >
+                        หมวด ${title}
+                    </div>
+                    <div class="col-md-12" >
+                        <div class="" style="font-size: 12px;line-height: 2;" >
+                            <button class="btn btn-primary  mr-2 btn-sm" onclick="use_last_config()" >ใช้ CONFIG ล่าสุด</button> 
+                            ** ใช้ CONFIG ล่าสุด คือ การนำข้อมูล CONFIG ครั้งล่าสุดมา DEFAULT 
+                        </div>
+                        <div class="" style="margin-top: 5px;font-size: 12px;line-height: 2;" >
+                            <button class="btn btn-secondary  mr-2  btn-sm" onclick="clear_last_config()" style="width:92px;background:#ff9292;" >DEFAULT ไม่ปรับ	</button> 
+                             ** DEFAULT ไม่ปรับ คือ ทำให้ทุก Config มีค่าเริ่มต้นเป็นว่าง (ไม่ปรับ)
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table id="config_price_all" class="table table-bordered " >
+                        ${thead}
+                    </table>
+                </div>
+                <div>
+                    Lasted Update : <span id="last_update" >${res.data.last_update_by} ${res.data.by_name}</span>
+                    <div style="width: 25px;height: 15px;background: ${bg_not_config};display: inline-block;border: 1px solid black;margin-left: 10px;"></div> รายการที่เป็นว่างจะไม่ถูกนำไป Config Price
+                </div>
+                <div style="margin-top: 5px;" >
+                    เงื่อนไข
+                    <br>
+                    1. ถ้าต้องการ Config Price : ให้ทำการใส่ตัวเลขในคอลัมน์ของ Saleprice ของ Model นั้นๆ 
+                    <br> 
+                    &nbsp;&nbsp;&nbsp; 1.1 ตัวเลขบวก (ตัวอักษรสีเขียว)
+                    <br> 
+                    &nbsp;&nbsp;&nbsp; 1.2 ตัวเลข 0 (ตัวอักษรสีแดง)
+                    <br> 
+                    &nbsp;&nbsp;&nbsp; 1.3 ตัวเลขติดลบ (ตัวอักษรสีแดง)
+                    <br>
+                    2. ถ้าไม่ต้องการ Config Price : ให้ทำการลบข้อมูลเป็นว่าง พื้นหลังจะเป็นสีชมพู (จะไม่มีผลในการ Config Price)
+                </div>
+                <div class="text-center" style="margin-top: 10px;">
+                    <button class="btn btn-success" style="font-size: 14px;width: 85px;" onclick="apply_config('${main_type}')" >Apply</button>
+                    <button class="btn btn-danger" style="font-size: 14px;width: 85px;" onclick="$('.ajs-close').click()" >Close</button>
+                </div>
+            </div>
+        `,model);
+    }
+
+    function set_config_color(){
+        $( ".inp-saleprice" ).each(function( index ) {
+            let val = $(this).val(); 
+            $(this).css("background",bg_not_config).css("color","black");
+            if(val != ""){
+                $(this).css("background","");
+                val = numeral(val).value();
+                if(val == 0){
+                    $(this).css("color","red");
+                }else{
+                    $(this).css("color","green");
+                }
+            }
+        });
+    }
+
+    async function apply_config(main_type){
+        list_apply  = [];
+        $(".inp-saleprice").each(function( index ) {
+            let price       = $(this).val();
+            let pricecf     = $(this).data("pricecf");
+            let model       = $(this).data("model");
+            let saleprice   = $(this).data("saleprice");
+            if(price != ""){
+                price       = numeral(price).value();
+                pricecf     = numeral(pricecf).value();
+                //if(price != pricecf){
+                    list_apply.push({
+                        model:model
+                        ,saleprice:saleprice
+                        ,price:price
+                    });
+                //}
+            }
+        });
+        let length  = dataView.getItems().length - 1; 
+        if(list_apply.length > 0){
+            applymain_type  = main_type;
+            let text_menu   = $("#text-menu").text().replace("หมวด ", "");
+            await loadData('', main_type, text_menu,""); 
+            //let res = await sendAjax('update_config', {main_type:main_type,list_config:list_apply});
+            for(let detail of list_apply){
+                let indexprice = parseInt(detail.saleprice.slice(-1));
+                for(i=0; i<= length; i++){
+                    let elem        = `config_sp${indexprice}_${detail.model}_${i}`; 
+                    let item        = dataView.getItem(i);
+                    item['edit']    = "T";
+                    item[`config_sp${indexprice}_${detail.model}`]  = detail.price;
+                    dataView.updateItem(item.id, item); 
+                    grid.render();
+                } 
+            }
+        }
+        $('.ajs-close').click();
+    }
+
+    function use_last_config(){
+        $(".inp-saleprice").each(function( index ) {
+            let pricecf = $(this).data("pricecf");
+            $(this).val(pricecf);
+        });
+        set_config_color();
+    }
+
+    function clear_last_config(){
+        $(".inp-saleprice").each(function( index ) { 
+            $(this).val('');
+        });
+        set_config_color();
+    }
+
+    async function getMenu() {
+        let res         = await sendAjax('getMenuBranch', {});
+        let textMenu    = "";
+        let data        = res.menu;
+        arrModel        = res.model;
+        arrModelMaster  = res.model; 
+
+        $.each(data, function(index1, lv1) {
+            textMenu += `<ul class="list-unstyled components">
+                            <li class="header-menu">
+                                <a class="CTAs" onclick="loadData('${lv1.sub_cate_no}', '', '${lv1.sub_cate_name_eng}','');"
+                                >${lv1.sub_cate_name_eng}</a>
+                            </li>`;
+            $.each(lv1.menu_list, function(index2, lv2) {
+                textMenu += `<li class="sidebar-dropdown"> 
+					            <a data-toggle="collapse" 
+                                   aria-expanded="false" 
+						           data-cateno="${lv1.sub_cate_no}"
+                                   onclick="loadData('', '${lv2.class_id}', '${lv2.class_id} : ${lv2.class_name_eng}','');"
+                                >${lv2.class_id} : ${lv2.class_name_eng}</a>
+                             </li>`;
+            });
+            textMenu += `</ul>`;
+        });
+        
+        arrModel.forEach(item => {
+        $('#select-model').append(new Option(item.model_desc, item.model, false, false));
+        });
+        $('#select-model').select2({
+            placeholder : "",
+            allowClear  : true,
+            width       : '270px'
+        });
+        $('#menu').html(textMenu);
+        setTblPrice();
+    }
+
+    async function loadData(cateNo, classId, title,searchtext) {
+        if(searchtext != "" || classId == ""){
+            disabled_config();
+        }else{
+            $("#btn_config_group").attr("disabled",false).attr("onclick","config_group('"+classId+"','"+title+"')");
+        }
+
+        if(searchtext == ""){
+            $('#searchString').val("")
+        }
+
+        if(cateNo == "" && classId == "" && searchtext == ""){
+            return false
+        }
+        let res    = await sendAjax('getProductBranch', { cate_no : cateNo, class_id : classId,searchtext:searchtext});
+        arrPrice   = res;
+        arrDataOld = res.map(obj => ({ ...obj }));
+        $('#text-menu').html("");
+        if(title != ""){
+            $('#text-menu').html("หมวด " + title);
+        }
+        $('#class-id' ).val(classId);
+        $('#cate-no'  ).val(cateNo);
+        setTblPrice();
+    }
+ 
+    function setTblPrice() {
+        let group_hq    = "ราคาจากสำนักงานใหญ่";
+        let columns = [
+            { 
+                id             : "code",         
+                name           : "Code",         
+                field          : "code",         
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-center",
+                sortable       : true,
+                sorter         : sorterString,
+                columnGroup    :group_hq
+            },
+            { 
+                id             : "product_name", 
+                name           : "Product Name", 
+                field          : "product_name", 
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-left",
+                width          : 300, 
+                sortable       : true,
+                sorter         : sorterString,
+                columnGroup    :group_hq
+            }, 
+            {   
+                id             : "sp1",          
+                name           : "ขายปลีก (SRP)",  
+                field          : "sp1",          
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-right", 
+                formatter      : formatFloat,
+                sortable       : true,
+                sorter         : sorterNumeric,
+                columnGroup    :group_hq,
+                width          :90, 
+            },
+            { 
+                id             : "sp5",          
+                name           : "Technicial",  
+                field          : "sp5",          
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-right", 
+                formatter      : formatFloat,
+                sortable       : true,
+                sorter         : sorterNumeric,
+                columnGroup    :group_hq 
+            },
+            { 
+                id             : "sp2",          
+                name           : "Dealer",  
+                field          : "sp2",          
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-right", 
+                formatter      : formatFloat,
+                sortable       : true,
+                sorter         : sorterNumeric,
+                columnGroup    :group_hq 
+            },
+            { 
+                id             : "sp3",          
+                name           : "Franchise",  
+                field          : "sp3",          
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-right", 
+                formatter      : formatFloat,
+                sortable       : true,
+                sorter         : sorterNumeric,
+                columnGroup    :group_hq
+             },
+            { 
+                id             : "sp4",          
+                name           : "Nescen",  
+                field          : "sp4",         
+                headerCssClass : "text-center bg_ode", 
+                cssClass       : "text-right", 
+                formatter      : formatFloat,
+                sortable       : true,
+                sorter         : sorterNumeric,
+                columnGroup    :group_hq 
+            }
+        ];
+        
+        for (const val of arrModel) {
+            $('<style>.bg_'+val.model+' { background: '+val.model_color+' !important; }</style>').appendTo('body');
+            let qty_model = "";
+            let group = `Model : ${val.model_desc} (ร้าน 55000067)`;
+            columns.push(
+            { 
+                id             : `config_sp1_${val.model}`, 
+                name           : "+Config",        
+                field          : `config_sp1_${val.model}`,
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-center", 
+                formatter      : formatInput, 
+                columnGroup    : group,
+                focusable      : false,
+                sortable       : true,
+                sorter         : sorterNumeric
+            },
+            { 
+                id             : `sp1_${val.model}`,        
+                name           : "ขายปลีก (SRP)", 
+                field          : "sp1",                     
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-right",  
+                formatter      : formatSpan, 
+                columnGroup    : group,
+                sortable       : true,
+                sorter         : sorterComputedSP,
+                width          :90, 
+            },
+            { 
+                id             : `config_sp5_${val.model}`, 
+                name           : "+Config",        
+                field          : `config_sp5_${val.model}`, 
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-center", 
+                formatter      : formatInput, 
+                columnGroup    : group,
+                focusable      : false,
+                sortable       : true,
+                sorter         : sorterNumeric 
+            },
+            { 
+                id             : `sp5_${val.model}`,        
+                name           : "Technicial", 
+                field          : "sp5",                     
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-right",  
+                formatter      : formatSpan, 
+                columnGroup    : group,
+                sortable       : true,
+                sorter         : sorterComputedSP 
+            },
+            { 
+                id             : `config_sp2_${val.model}`, 
+                name           : "+Config",        
+                field          : `config_sp2_${val.model}`, 
+                headerCssClass : `text-center bg_${val.model}`,
+                cssClass       : "text-center", 
+                formatter      : formatInput, 
+                columnGroup    : group,
+                focusable      : false,
+                sortable       : true,
+                sorter         : sorterNumeric
+            },
+            {   
+                id             : `sp2_${val.model}`,        
+                name           : "Dealer", 
+                field          : "sp2",                     
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-right",  
+                formatter      : formatSpan, 
+                columnGroup    : group,
+                sortable       : true,
+                sorter         : sorterComputedSP
+            },
+            { 
+                id             : `config_sp3_${val.model}`, 
+                name           : "+Config",        
+                field          : `config_sp3_${val.model}`, 
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-center", 
+                formatter      : formatInput, 
+                columnGroup    : group,
+                focusable      : false,
+                sortable       : true,
+                sorter         : sorterNumeric
+            },
+            { 
+                id             : `sp3_${val.model}`,        
+                name           : "Franchise", 
+                field          : "sp3",                     
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-right",  
+                formatter      : formatSpan, 
+                columnGroup    : group,
+                sortable       : true,
+                sorter         : sorterComputedSP 
+            },
+            { 
+                id             : `config_sp4_${val.model}`, 
+                name           : "+Config",        
+                field          : `config_sp4_${val.model}`, 
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-center", 
+                formatter      : formatInput, 
+                columnGroup    : group,
+                focusable      : false,
+                sortable       : true,
+                sorter         : sorterNumeric
+            },
+            { 
+                id             : `sp4_${val.model}`,       
+                name           : "Nescen", 
+                field          : "sp4",                    
+                headerCssClass : `text-center bg_${val.model}`, 
+                cssClass       : "text-right",  
+                formatter      : formatSpan, 
+                columnGroup    : group,
+                sortable       : true,
+                sorter         : sorterComputedSP 
+            }
+        )};
+
+        let options  = {
+            enableCellNavigation   : true,
+            enableColumnReorder    : false,
+            createPreHeaderPanel   : true,
+            showPreHeaderPanel     : true,
+            preHeaderPanelHeight   : 24,
+            explicitInitialization : true,
+            rowHeight              : 30,
+            multiColumnSort        : true,
+            enableTextSelectionOnCells: true,
+            //frozenColumn           : 6
+        };
+
+        dataView = new Slick.Data.DataView();
+        grid     = new Slick.Grid('#myGrid', dataView, columns, options);
+
+        dataView.onRowCountChanged.subscribe( function(e, args) {
+            grid.updateRowCount();
+            grid.render();
+        });
+
+        dataView.onRowsChanged.subscribe( function(e, args) {
+            grid.invalidateRows(args.rows);
+            grid.render();
+        });
+
+        dataView.getItemMetadata = function (row) {
+            const item = dataView.getItem(row);
+            if (!item) return;
+            let isNegative = false;
+            const priceColumns = columns.filter(c =>
+                /(^sp[1-5]$)|(^sp[1-5]_.*$)|(config_sp[1-5]_.*$)/.test(c.id)
+            );
+            for (let col of priceColumns) {
+                let value = item[col.field] ?? item[col.id];
+                let formatted = "";
+                if (typeof col.formatter == "function") {
+                    try {
+                        formatted = col.formatter(row, 0, value, col, item) || "";
+                    } catch (e) {
+                        formatted = "";
+                    }
+                } else {
+                    formatted = value ?? "";
+                }
+                formatted = formatted.toString().replace(/<\/?[^>]+>/g, "").trim();
+                const numericStr = formatted.replace(/[^0-9\.\-]/g, "");
+                if (numericStr == "") continue;
+                const num = parseFloat(numericStr);
+                if (!isNaN(num) && num < 0) {
+                    isNegative = true;
+                    break;
+                }
+            }
+
+            if (isNegative) {
+                return {
+                    cssClasses: "row-negative"
+                };
+            }
+        };
+
+
+        grid.onSort.subscribe( function(e, args) {
+            var cols = args.sortCols;
+            dataView.sort( function(dataRow1, dataRow2) {
+                for (var i = 0, l = cols.length; i < l; i++) {
+                    var sortdir = cols[i].sortAsc ? 1 : -1;
+                    var sortcol = cols[i].sortCol.field;
+                    var sortid  = cols[i].sortCol.id;
+                    var result  = cols[i].sortCol.sorter(dataRow1, dataRow2, sortcol, sortdir, sortid);
+                    if( result != 0){
+                        return result;
+                    }
+                }
+                return 0;
+            });
+            args.grid.invalidateAllRows();
+            args.grid.render();
+        });
+
+        grid.init();
+        grid.onColumnsResized.subscribe(createHeader);
+        grid.onColumnsReordered.subscribe(createHeader);
+
+        createHeader();
+        
+        dataView.beginUpdate();
+        dataView.setItems(arrPrice);
+        dataView.setFilterArgs({
+            searchString: ""
+        });
+        dataView.setFilter(myFilter);
+        dataView.endUpdate();
+    }
+
+    function myFilter(item, args) {
+        var regex = args.searchString;//new RegExp(, "i"); 
+        if (args.searchString != ""){
+            regex = regex.toUpperCase()
+            if(item.code.toString().toUpperCase().search(regex) == -1 && $.trim(item.product_name.toString().toUpperCase()).indexOf(regex) == -1 ) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function updateFilter() {
+        let searchString = $("#searchString").val();
+        loadData("", "", "",searchString);
+        /* 
+        dataView.setFilterArgs({
+            searchString: searchString 
+        });
+        dataView.refresh(); 
+        */
+    }
+
+    function createHeader() {
+        let preHeader               = grid.getPreHeaderPanel();
+            preHeader.innerHTML     = "";
+            preHeader.className     = "slick-header-columns";
+            preHeader.style.cssText = `left: -1000px; width: ${grid.getHeadersWidth()}px;`;
+            preHeader.parentElement.classList.add('slick-header');
+
+        let columns    = grid.getColumns();
+        let headerDiff = grid.getHeaderColumnWidthDiff();
+        let lastGroup  = "";
+        let widthTotal = 0;
+        let headerElm;
+        
+        columns.forEach((col, i) => {
+            if(lastGroup === col.columnGroup && i > 0){
+                widthTotal             += col.width;
+                headerElm.style.width   = `${widthTotal - headerDiff}px`;
+            }else{
+                let str                 = col.id.substr(-3);
+                widthTotal              = col.width;
+                headerElm               = document.createElement('div');
+                headerElm.className     = `ui-state-default slick-header-column bg_${str}`;
+                headerElm.style.width   = `${col.width - headerDiff}px`;
+                headerElm.dataset.group = col.columnGroup || "";
+
+                let span                = document.createElement('span');
+                span.className          = "slick-column-name";
+                span.textContent        = col.columnGroup || "";
+                headerElm.appendChild(span);
+                preHeader.appendChild(headerElm);
+            }
+            lastGroup = col.columnGroup;
+        });
+    }
+
+    function formatInput(row, cell, value, columnDef, dataContext) {
+        setTimeout(() => {
+            const inputSel = `.config-${row}-${cell}`;
+            if ($(inputSel).length && !$(inputSel).data('cleave-initialized')) {
+                $(inputSel).attr("onkeyup",`focusInput(event,'${row}','${cell}')`);
+                new Cleave(inputSel, {
+                    numeral : true
+                });
+                $(inputSel).data('cleave-initialized', true).blur( function() {
+                    let configNew = numeral(this.value).value() || 0;
+                    let configOld = parseFloat(arrDataOld?.[dataContext.id]?.[columnDef.id]) || 0;
+                    let salePrice = parseFloat(dataContext[columnDef.id.match(/_(.*?)_/)[1]]) || 0;
+                    let price     = configNew + salePrice;
+                    if (price < 0) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'แจ้งเตือน',
+                            text: 'พบรายการสินค้าที่มียอดติดลบ กรุณาตรวจสอบ',
+                            allowOutsideClick: false
+                        });
+
+                        configNew = 0;
+                        this.value = "0.00";
+                    }
+
+                    if(configOld != configNew){ 
+                        dataContext.edit = "T"; 
+                    } 
+                    dataContext[columnDef.id] = configNew; 
+                    dataView.updateItem(dataContext.id, dataContext); 
+                    grid.render();
+                }).focus( function() {
+                    $(this).select();
+                });
+            }
+        }, 0);
+
+        let num = parseFloat(value) || 0;
+        let background = "";
+        if (num == 0)      background = "background-color: #FFF8E1;";
+        else if (num < 0)  background = "background-color: #DD9B9B;";
+        else               background = "background-color: #FFF;";
+        return `<input type="text"  
+                       class="form-control text-right  config-${row}-${cell} w-100 h-100 ${columnDef.id}_${dataContext.id}" 
+                       style="${background}"
+                       value="${numeral(value).format('0,0.00')}"
+                >`;
+    }
+
+    function focusInput(event,row,cell){
+        row     = parseInt(row);
+        cell    = parseInt(cell);
+        let next_elem   = "";
+        if(event.keyCode == '13'){
+            next_elem = `config-${(row+1)}-${cell}`;
+        }/*else if(event.keyCode == '37'){//ArrowLeft
+            next_elem = `config-${(row)}-${(cell-2)}`;
+        }else if(event.keyCode == '39'){//ArrowRight
+            next_elem = `config-${(row)}-${(cell+2)}`;
+        }*/else if(event.keyCode == '38'){//ArrowUp
+            next_elem = `config-${(row-1)}-${cell}`;
+        }else if(event.keyCode == '40'){//ArrowDown
+            next_elem = `config-${(row+1)}-${cell}`;
+        }
+        if(next_elem != "" && $( ".form-control" ).hasClass( next_elem )){
+            $(`.${next_elem}`).focus().select();
+        }
+    }
+    
+    function formatSpan(row, cell, value, columnDef, dataContext) {  
+        let config    = parseFloat(dataContext['config_' + columnDef.id]) || 0;
+        let salePrice = parseFloat(value) || 0;        
+        let price     = config + salePrice;
+
+             if(parseFloat(price) == parseFloat(salePrice)){ color = "color: #FF8F00;"; } // เหลืองส้ม
+        else if(parseFloat(price) <  parseFloat(salePrice)){ color = "color: #ff413e;"; } // แดง
+        else if(parseFloat(price) >  parseFloat(salePrice)){ color = "color: #10cc07;"; } // เขียว
+
+        return `<span style="${color}">${numeral(price).format('0,0.00')}</span>`;
+    }
+
+    function formatFloat(row, cell, value, columnDef, dataContext) {
+        return numeral(value).format('0,0.00');
+    }
+
+    function sorterString(a, b, sortcol, sortdir, sortid) {
+        var x = a[sortcol];
+        var y = b[sortcol];
+
+        return sortdir * (x === y ? 0 : (x > y ? 1 : -1));
+    }
+
+    function sorterNumeric(a, b, sortcol, sortdir, sortid) {
+        var x = parseFloat(a[sortcol]) || 0;
+        var y = parseFloat(b[sortcol]) || 0;
+
+        return sortdir * (x === y ? 0 : (x > y ? 1 : -1));
+    }
+
+    function sorterComputedSP(a, b, sortcol, sortdir, sortid) {
+        var x = (parseFloat(a[sortcol]) || 0) + (parseFloat(a[`config_${sortid}`]) || 0);
+        var y = (parseFloat(b[sortcol]) || 0) + (parseFloat(b[`config_${sortid}`]) || 0);
+
+        return sortdir * (x === y ? 0 : (x > y ? 1 : -1));
+    }
+    // function hasNegativeTotal(data, applyModel) {
+    //     const baseKeys = ["sp1", "sp2", "sp3", "sp4", "sp5"];
+
+    //     for (let item of data) {
+    //         for (let base of baseKeys) {
+
+    //             let basePrice = parseFloat(item[base]) || 0;
+
+    //             let configKey = `config_${base}_${applyModel}`;
+
+    //             if (item.hasOwnProperty(configKey)) {
+    //                 let cfg = parseFloat(item[configKey]) || 0;
+    //                 let total = basePrice + cfg;
+
+    //                 if (total < 0) {
+    //                     console.log("ติดลบที่:", base, configKey, "=", total, "ที่", item.code);
+    //                     return true;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
+    function hasNegativeTotal(data, applyModel) {
+    const baseKeys = ["sp1", "sp2", "sp3", "sp4", "sp5"];
+
+    for (let item of data) {
+
+        for (let base of baseKeys) {
+            for(let model of arrModel){
+                let configKey = `config_${base}_${model.model}`;
+                if (item.hasOwnProperty(configKey)) {
+                    let basePrice = parseFloat(item[base]) || 0;
+                    let cfg = parseFloat(item[configKey]);
+                    if (isNaN(cfg)) cfg = 0;
+                    let total = basePrice + cfg;
+                    if (total < 0) {
+                        console.log("ติดลบที่:", base, configKey, "=", total, "ที่", item.code);
+                        return true;
+                    }
+                }
+                
+            }
+
+            // let basePrice = parseFloat(item[base]) || 0;
+
+            // // หา config ที่ตรง base จริงๆ
+            // let configKeys = Object.keys(item).filter(k => k.startsWith(`config_${base}`));
+
+            // for (let configKey of configKeys) {
+
+            //     let cfg = parseFloat(item[configKey]);
+            //     if (isNaN(cfg)) cfg = 0;
+
+            //     let total = basePrice + cfg;
+
+            //     if (total < 0) {
+            //         console.log("ติดลบที่:", base, configKey, "=", total, "ที่", item.code);
+            //         return true;
+            //     }
+            // }
+        }
+    }
+    return false;
+}
+
+    function saveConfig() {
+        let data = dataView.getItems().filter(x => x.edit == "T");
+        if( data.length <= 0){
+            Swal.fire({
+                icon              : 'error',
+                title             : 'แจ้งเตือน',
+                text              : 'กรุณาแก้ไขราคา Config ก่อนทำการบันทึกข้อมูล',
+                allowOutsideClick : false
+            });
+            return false;
+        }
+        if (hasNegativeTotal (data)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'พบราคาติดลบ',
+                text: 'กรุณาแก้ไขราคาให้ถูกต้องก่อนทำการบันทึกข้อมูล',
+                allowOutsideClick: false
+            });
+            return false;
+        }
+        console.log("data",data);
+        Swal.fire({
+            title              : 'แจ้งเตือน',
+            text               : 'ต้องการบันทึกข้อมูล ใช่หรือไม่ ?',
+            icon               : 'warning',
+            allowOutsideClick  : false,
+            showCancelButton   : true,
+            confirmButtonColor : '#28A745',
+            cancelButtonColor  : '#DC3545',
+            confirmButtonText  : 'SAVE',
+            cancelButtonText   : 'CLOSE'
+        }).then(async (result) => {
+            if(result.isConfirmed){
+                if(list_apply.length > 0){
+                    let res = await sendAjax('update_config_branch', {main_type:applymain_type,list_config:list_apply});
+                    applymain_type  = "";
+                    list_apply      = [];
+                }
+                let res = await sendAjax('saveConfigBranch', { data : JSON.stringify(data) });
+                if( res == "SUCCESS"){
+                    Swal.fire({
+                        icon              : 'success',
+                        title             : 'บันทึกข้อมูล',
+                        text              : 'บันทึกข้อมูลสำเร็จ',
+                        allowOutsideClick : false,
+                        didClose          : () => { 
+                            
+                            let classId = $('#class-id').val();
+                            let cateNo  = $('#cate-no').val();
+                            let title   = $('#text-menu').text();
+                            let code   = $('#searchString').val();
+                            loadData(cateNo, classId, title,code); 
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    async function sendAjax(path, obj) {
+		$('#loading').show();
+		let result;
+		try {
+			result = await $.ajax({
+				type     : 'POST',
+				url      : 'https://branch.nescen.in.th/55000067/index.php/shop/model_price_config/' + path,
+				dataType : 'json',
+				data     : obj
+			});
+			$('#loading').hide();
+			return result;
+		} catch(err) {
+			$('#loading').hide();
+		}
+	}
+</script>	
+
+		<script>
+		
+		function numberWithCommas(num) {
+			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		} 
+
+		function playsound(mix){
+			if(mix == 1){
+				$('#alertplay2').html('<audio id="alertplay" src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/audio/DING.mp3" type="audio/mp3" controls="controls"></audio>');
+				
+			}else if(mix == 2){
+				$('#alertplay2').html('<audio id="alertplay" src="https://branch.nescen.in.th/55000067/themes/bootstrap4_theme/audio/oh_no.mp3" type="audio/mp3" controls="controls"></audio>');
+				
+			}
+			$('#alertplay')[0].play();
+		}
+		
+		function error_ajax(jqXHR, exception){
+			var msg = '';
+			if (jqXHR.status === 0) {
+				msg = 'Not connect. Verify Network.';
+			} else if (jqXHR.status == 404) {
+				msg = 'Requested page not found. [404]';
+			} else if (jqXHR.status == 500) {
+				msg = 'Internal Server Error [500].';
+			} else if (exception === 'parsererror') {
+				msg = 'Requested JSON parse failed.';
+			} else if (exception === 'timeout') {
+				msg = 'Time out error.';
+			} else if (exception === 'abort') {
+				msg = 'Ajax request aborted.';
+			} else {
+				msg = 'Uncaught Error.' + jqXHR.responseText;
+			}
+			var alert = mess_alert('error','ผิดพลาด',msg);
+			return alert; 
+		}
+		
+		function mess_alert(type,title,msg,func){
+			//alert(func);
+			var obj = {
+				type: type,
+				title: title,
+				};
+			obj.html = msg;
+			obj.showCloseButton = false;
+			obj.showCancelButton = false;
+			obj.focusConfirm = false;
+			obj.allowOutsideClick= false;
+			obj.confirmButtonText = 'OK';
+			swal(obj).then((result) => {
+				if (result.value) {
+					func();
+				}
+			})
+			if(func == undefined){
+				obj.text = msg; 
+				swal(obj);
+			}
+			
+		}
+	
+		function mess_confirm(title,text,type,func){
+			swal({
+			title: title,
+				text: text,
+				type: type,
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes'
+			}).then((result) => {
+				if (result.value) {
+					func();
+				}
+			})
+		}
+		function tel_ajax(e){
+			$(e).popover({
+				html: true,
+				trigger: 'manual',
+				content: function() {
+				return $.ajax({url: 'https://branch.nescen.in.th/55000067/index.php/shop/query_pos/tel_decode/' + $(e).data('tel'),
+								dataType: 'html',
+								async: false}).responseText; 
+				}
+			}).click(function(e) { 
+			$(e).popover('toggle');
+			}); 
+			$(e).popover('toggle'); 
+		}
+
+	</script>
+	
+<style>.bg_001 { background: #f2f2f2 !important; }</style></body></html>

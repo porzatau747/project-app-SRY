@@ -1,0 +1,62 @@
+import { NextResponse } from "next/server";
+import puppeteer from "puppeteer";
+import { updatePlannerState } from "../../../services/storage";
+import { calculateMarkedUpPrice } from "../../../utils/categoryUtils";
+
+export async function POST(request: Request) {
+  try {
+    const { code } = await request.json();
+    if (!code) {
+      return NextResponse.json({ error: "Product code is required" }, { status: 400 });
+    }
+
+    const browser = await puppeteer.launch({ headless: true });
+    const page = await browser.newPage();
+    
+    // Advice search URL
+    const url = `https://www.advice.co.th/product/search?keyword=${encodeURIComponent(code)}`;
+    
+    await page.goto(url, { waitUntil: "networkidle2" });
+
+    // Try to extract price
+    const priceStr = await page.evaluate(() => {
+      // Find the price element. Advice usually has .price or .product-price
+      const el = document.querySelector('.price, .product-price, [class*="price-sal"]');
+      return el ? el.textContent : null;
+    });
+
+    await browser.close();
+
+    if (!priceStr) {
+      return NextResponse.json({ error: "ไม่พบราคาใน Advice" }, { status: 404 });
+    }
+
+    // Clean up price string, e.g. "21,000.-" -> 21000
+    const rawPrice = priceStr.replace(/[^0-9.]/g, '');
+    const price = parseFloat(rawPrice);
+
+    let markedUpPrice = price;
+
+    // Persist and apply markup
+    await updatePlannerState((state) => {
+      const itemIndex = state.inventory.findIndex(i => i.code === code);
+      if (itemIndex > -1) {
+        const itemType = state.inventory[itemIndex].itemType;
+        const finalPrice = calculateMarkedUpPrice(price, itemType) ?? price;
+        markedUpPrice = finalPrice;
+        
+        state.inventory[itemIndex] = {
+          ...state.inventory[itemIndex],
+          sellPrice: finalPrice,
+          projectedRevenue: Number((finalPrice * state.inventory[itemIndex].qty).toFixed(2))
+        };
+      }
+      return state;
+    });
+
+    return NextResponse.json({ price: markedUpPrice });
+  } catch (error: any) {
+    console.error("Scrape error:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
