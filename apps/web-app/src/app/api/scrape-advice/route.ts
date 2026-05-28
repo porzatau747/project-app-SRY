@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
+import chromium from "@sparticuz/chromium";
 import { updatePlannerState } from "../../../services/storage";
 import { calculateMarkedUpPrice } from "../../../utils/categoryUtils";
 
@@ -10,7 +11,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Product code is required" }, { status: 400 });
     }
 
-    const browser = await puppeteer.launch({ headless: true });
+    const isLocal = process.env.NODE_ENV === "development";
+
+    const executablePath = isLocal 
+      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      : await chromium.executablePath();
+
+    const browser = await puppeteer.launch({ 
+      args: isLocal ? [] : chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath,
+      headless: isLocal ? true : chromium.headless,
+    });
     const page = await browser.newPage();
     
     // Advice search URL
