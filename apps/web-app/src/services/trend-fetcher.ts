@@ -80,14 +80,19 @@ export function parseFeed(xml: string, config: FeedConfig): ParsedFeedItem[] {
 }
 
 export async function fetchFeed(config: FeedConfig): Promise<ParsedFeedItem[]> {
-  const response = await fetch(config.url, {
-    headers: { "User-Agent": "weekly-content-planner/1.0" },
-    signal: AbortSignal.timeout(8000),
-    cache: "no-store"
-  });
-  if (!response.ok) throw new Error(`${config.source} feed request failed`);
+  try {
+    const response = await fetch(config.url, {
+      headers: { "User-Agent": "weekly-content-planner/1.0" },
+      signal: AbortSignal.timeout(8000),
+      cache: "no-store"
+    });
+    if (!response.ok) throw new Error(`${config.source} feed request failed`);
 
-  return parseFeed(await response.text(), config);
+    return parseFeed(await response.text(), config);
+  } catch (error: unknown) {
+    console.error(`Error fetching feed from ${config.source}:`, error instanceof Error ? error.message : "Unknown error");
+    return [];
+  }
 }
 
 export function normalizeItem(item: ParsedFeedItem, index: number): TrendSnapshotItem {

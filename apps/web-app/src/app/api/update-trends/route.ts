@@ -80,14 +80,18 @@ export async function POST() {
   try {
     const isLocal = process.env.NODE_ENV === "development";
     const executablePath = isLocal 
-      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      ? process.env.CHROME_EXECUTABLE_PATH
       : await chromium.executablePath();
+
+    if (isLocal && !executablePath) {
+      throw new Error("CHROME_EXECUTABLE_PATH is not set in local environment.");
+    }
 
     browser = await puppeteer.launch({
       args: isLocal ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-notifications'] : chromium.args,
-      defaultViewport: chromium.defaultViewport,
+      defaultViewport: (chromium as any).defaultViewport,
       executablePath,
-      headless: isLocal ? true : chromium.headless,
+      headless: isLocal ? true : ((chromium as any).headless === true ? true : false),
     });
 
     let rawItems: ScrapedItem[] = [];

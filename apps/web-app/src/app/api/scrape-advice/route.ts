@@ -14,8 +14,12 @@ export async function POST(request: Request) {
     const isLocal = process.env.NODE_ENV === "development";
 
     const executablePath = isLocal 
-      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+      ? process.env.CHROME_EXECUTABLE_PATH
       : await chromium.executablePath();
+
+    if (isLocal && !executablePath) {
+      throw new Error("CHROME_EXECUTABLE_PATH is not set in local environment.");
+    }
 
     const browser = await puppeteer.launch({ 
       args: isLocal ? [] : chromium.args,
@@ -66,8 +70,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ price: markedUpPrice });
-  } catch (error: any) {
-    console.error("Scrape error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    console.error("Scrape error:", error instanceof Error ? error.message : error);
+    return NextResponse.json({ error: error instanceof Error ? error.message : "Unknown error" }, { status: 500 });
   }
 }
