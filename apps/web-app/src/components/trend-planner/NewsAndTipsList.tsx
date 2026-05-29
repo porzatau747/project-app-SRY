@@ -32,7 +32,7 @@ export function NewsAndTipsList({
             </div>
             <button 
               className={activeTab === 'tips' ? "secondaryButton tipsAddBtn" : "secondaryButton"} 
-              onClick={() => onAdd(activeTab === 'tips' ? { ...item, category: "Tips & Tricks" as any } : item)}
+              onClick={() => onAdd(activeTab === 'tips' ? { ...item, category: "Tips & Tricks" } : item)}
               disabled={loading}
             >
               {activeTab === 'news' ? '+ เพิ่มลงปฏิทิน' : '+ เพิ่มทิปส์'}

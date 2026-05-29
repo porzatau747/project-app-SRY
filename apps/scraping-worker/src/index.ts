@@ -24,6 +24,7 @@ async function main() {
     console.log('Successfully inserted mock scraping data.');
   } catch (error) {
     console.error('Error running scraping worker:', error);
+    console.error('ALERT: Scraping Worker Failed! Please check the logs.');
   } finally {
     await prisma.$disconnect();
     console.log('Scraping worker finished.');

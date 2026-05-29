@@ -53,7 +53,8 @@ export type TrendSnapshotItem = {
     | "Notebook"
     | "Office Productivity"
     | "Security / Smart Device"
-    | "General IT";
+    | "General IT"
+    | "Tips & Tricks";
 };
 
 export type TrendSnapshot = {

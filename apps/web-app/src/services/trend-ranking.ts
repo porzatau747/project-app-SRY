@@ -134,10 +134,11 @@ export function scoreInventoryAgainstTrend(name: string, trend: TrendSnapshotIte
     AI: ["ai", "rtx", "gpu", "notebook", "pc"],
     "Windows / PC Pain": ["windows", "pc", "ram", "ssd", "notebook", "desktop", "คอม"],
     "RTX / PCGaming": ["gaming", "rtx", "mouse", "keyboard", "headset", "monitor", "vga", "gpu"],
-    Notebook: ["notebook", "laptop", "ram", "ssd", "mouse", "hub"],
-    "Office Productivity": ["office", "printer", "notebook", "keyboard", "mouse", "wifi", "hub"],
-    "Security / Smart Device": ["camera", "security", "network", "router", "smart", "plug", "wifi"],
-    "General IT": ["pc", "computer", "network", "accessories", "monitor"]
+    Notebook: ["notebook", "laptop", "macbook", "โน้ตบุ๊ก", "พกพา", "ทำงาน"],
+    "Office Productivity": ["office", "print", "monitor", "mouse", "keyboard", "usb", "ทำงาน", "เอกสาร"],
+    "Security / Smart Device": ["cctv", "router", "wifi", "smart", "iot", "กล้อง", "เน็ต"],
+    "General IT": ["cable", "flashdrive", "power", "สาย", "อุปกรณ์"],
+    "Tips & Tricks": ["tips", "trick", "how to", "วิธี", "แนะนำ", "สอน"]
   };
 
   for (const hint of categoryBoost[trend.category]) {

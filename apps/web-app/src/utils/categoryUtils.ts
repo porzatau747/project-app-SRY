@@ -1,5 +1,7 @@
 export type MacroCategory =
   | "Notebook & PC"
+  | "BUNDLE COMSET"
+  | "BUNDLE Notebook"
   | "Component"
   | "Monitor & Display"
   | "Gaming & Stream"
@@ -12,6 +14,8 @@ export type MacroCategory =
 
 export const MACRO_CATEGORIES: MacroCategory[] = [
   "Notebook & PC",
+  "BUNDLE COMSET",
+  "BUNDLE Notebook",
   "Component",
   "Monitor & Display",
   "Gaming & Stream",
@@ -29,6 +33,9 @@ export function getMacroCategory(rawType: string | undefined | null): MacroCateg
   const typeLower = rawType.toLowerCase().trim();
 
   if (typeLower.includes("clearance")) return "Clearance";
+  
+  if (typeLower.includes("bundle comset")) return "BUNDLE COMSET";
+  if (typeLower.includes("bundle notebook")) return "BUNDLE Notebook";
   
   if (
     typeLower.includes("notebook") || 
@@ -129,7 +136,7 @@ export function calculateMarkedUpPrice(rawPrice: number | null | undefined, item
   let finalPrice = rawPrice;
 
   // 1. Notebook override: +2000 THB
-  if (macroCategory === "Notebook & PC" && typeLower.includes("notebook") && !typeLower.includes("acces") && !typeLower.includes("อะไหล่")) {
+  if ((macroCategory === "Notebook & PC" || macroCategory === "BUNDLE Notebook") && typeLower.includes("notebook") && !typeLower.includes("acces") && !typeLower.includes("อะไหล่")) {
     finalPrice = rawPrice + 2000;
   }
   // 2. Printer or Monitor override: +300 THB
