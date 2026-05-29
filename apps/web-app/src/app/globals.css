@@ -1000,3 +1000,17 @@ h1 {
 .island-button:hover .island-button-icon {
   transform: translateX(4px) scale(1.05);
 }
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-grid > * {
+    grid-column: span 1 !important;
+  }
+}
