@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 
 export default function GuidePage() {
   return (
@@ -12,7 +13,7 @@ export default function GuidePage() {
           <Link className="activeNav" href="/guide">คู่มือการใช้งาน</Link>
         </nav>
 
-        <header className="appHero" style={{ marginBottom: '20px' }}>
+        <header className="appHero" style={{ marginBottom: '32px' }}>
           <div>
             <p className="eyebrow">User Guide</p>
             <h1>คู่มือการใช้งาน Weekly Content Planner</h1>
@@ -22,57 +23,66 @@ export default function GuidePage() {
           </div>
         </header>
 
-        <div className="panel" style={{ padding: '30px', lineHeight: '1.7', color: '#d6d3d1' }}>
+        <section className="bento-grid" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           
-          <h2 style={{ color: '#fff', borderBottom: '1px solid #292524', paddingBottom: '10px', marginTop: '0' }}>
-            📦 1. หน้า แผนจากสต็อก (Stock Planner)
-          </h2>
-          <p>หน้านี้ใช้สำหรับวิเคราะห์ข้อมูลสต็อกสินค้าของร้าน เพื่อคัดเลือกสินค้ามาทำโปรโมชันหรือนำมาสร้างเป็นคอนเทนต์</p>
-          <ul style={{ marginLeft: '20px', marginBottom: '30px' }}>
-            <li><strong>ดึงข้อมูลสต็อกและราคากลาง:</strong> เมื่อกดปุ่ม ระบบจะส่งบอท (แบบล่องหน) ไปดึงข้อมูลสต็อกและราคาขายล่าสุดจากระบบ Nescen ของร้านโดยอัตโนมัติ โดยจะแสดงเวลา "อัปเดตล่าสุด" ด้านล่างปุ่มเสมอ</li>
-            <li><strong>การบวกกำไร (Markup):</strong> ระบบจะบวกกำไรเข้ากับราคากลางโดยอัตโนมัติ ตามเงื่อนไขดังนี้:
-              <ul style={{ marginLeft: '20px', color: '#a8a29e' }}>
-                <li>สินค้าราคา &lt; 500 บาท: <strong>+30%</strong></li>
-                <li>สินค้าราคา 500 - 1,000 บาท: <strong>+15%</strong></li>
-                <li>สินค้าราคา &gt; 1,000 บาท: <strong>+10%</strong></li>
-                <li><em>ข้อยกเว้น:</em> Notebook <strong>+2,000 บาท</strong>, Printer และ Monitor <strong>+300 บาท</strong></li>
-                <li>ราคาสุทธิจะถูก <strong>ปัดเศษหลักหน่วยเป็น 0 เสมอ</strong></li>
+          <FadeUpReveal delay={100} className="double-bezel-outer">
+            <div className="double-bezel-inner" style={{ padding: '32px', lineHeight: '1.7' }}>
+              <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
+                📦 1. หน้า แผนจากสต็อก (Stock Planner)
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)' }}>หน้านี้ใช้สำหรับวิเคราะห์ข้อมูลสต็อกสินค้าของร้าน เพื่อคัดเลือกสินค้ามาทำโปรโมชันหรือนำมาสร้างเป็นคอนเทนต์</p>
+              <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
+                <li style={{ marginBottom: '12px' }}><strong>ดึงข้อมูลสต็อกและราคากลาง:</strong> ระบบสามารถจำลองการดึงข้อมูลและจัดการราคาขายล่าสุดจากระบบของร้าน</li>
+                <li style={{ marginBottom: '12px' }}><strong>การบวกกำไร (Markup):</strong> ระบบช่วยบวกกำไรตามช่วงราคาของสินค้า เช่น สินค้า &lt; 500 บาท บวก 30% หรือ Notebook บวก 2,000 บาทอัตโนมัติ</li>
+                <li style={{ marginBottom: '12px' }}><strong>ค้นหาราคาจากเว็บ Advice (Scraping):</strong> หากสินค้าใดไม่มีราคากลาง บอท (Web Scraper) จะวิ่งไปดึงข้อมูลราคาล่าสุดจากเว็บ advice.co.th และบันทึกไว้ในระบบ</li>
+                <li style={{ marginBottom: '12px' }}><strong>ตัวกรองหมวดหมู่:</strong> กรองดูสินค้าตาม 9 กลุ่มหลัก (เช่น Notebook & PC, Accessories) เพื่อความรวดเร็ว</li>
+                <li><strong>Aging (อายุสินค้า):</strong> ติดตามอายุสินค้าในคลังเพื่อวางแผนจัด Clearance Sale</li>
               </ul>
-            </li>
-            <li><strong>ค้นหาราคาจากเว็บ Advice:</strong> หากสินค้าใดไม่มีราคากลางในตาราง คุณสามารถกดปุ่ม "ค้นหาราคา" ท้ายรายการสินค้านั้น บอทจะวิ่งไปหาข้อมูลจากเว็บ advice.co.th และ <strong>บันทึกราคานั้นไว้ให้ใช้งานแบบถาวร</strong></li>
-            <li><strong>ตัวกรองหมวดหมู่:</strong> เราได้จัดกลุ่มสินค้ากว่า 90 ชนิด ให้เหลือเพียง <strong>9 กลุ่มหลัก</strong> คุณสามารถติ๊กเลือกเฉพาะหมวดหมู่ที่สนใจ (เช่น Notebook & PC, Accessories) เพื่อกรองดูสินค้าในตารางได้อย่างง่ายดาย</li>
-            <li><strong>Aging (อายุสินค้า):</strong> ช่วยบอกว่าสินค้านั้นค้างอยู่ในคลังมากี่วัน เหมาะแก่การนำมาทำคอนเทนต์ประเภท Clearance</li>
-          </ul>
+            </div>
+          </FadeUpReveal>
 
-          <h2 style={{ color: '#fff', borderBottom: '1px solid #292524', paddingBottom: '10px' }}>
-            📈 2. หน้า แผนจากเทรนด์ (Trend Planner)
-          </h2>
-          <p>หน้านี้ใช้สำหรับวางแผนตารางโพสต์ล่วงหน้า 7 วัน โดยอิงจากกระแสและข่าวสารล่าสุดในวงการไอที</p>
-          <ul style={{ marginLeft: '20px', marginBottom: '30px' }}>
-            <li><strong>อัปเดตกระแสล่าสุด:</strong> ระบบจะใช้ AI รวบรวมข่าวสารจากเว็บไซต์ไอทีชั้นนำ และเพจ Facebook ต่างๆ เพื่อคัดกรองว่าช่วงนี้มีเรื่องอะไรที่กำลังเป็นกระแส (Viral) หรือมีทิปส์การใช้งานที่น่าสนใจ</li>
-            <li><strong>สร้างแผน 7 วันด้วย AI:</strong> เพียงกดปุ่ม ระบบจะนำสินค้าเด่นในสต็อก ผสมผสานกับข่าวที่กำลังเป็นกระแส มาจัดตารางเป็นปฏิทินโพสต์ 7 วัน โดยครอบคลุมทั้งโพสต์ขายของ (Sales), ข่าว (News), มุกตลก (Meme), และสร้างการมีส่วนร่วม (Engagement)</li>
-            <li><strong>Export:</strong> สามารถกดปุ่ม "ดาวน์โหลดเป็น Excel" เพื่อส่งออกตารางทั้งหมดเป็นไฟล์ <code>.xlsx</code> ไปใช้ส่งมอบงานต่อได้ทันที</li>
-          </ul>
+          <FadeUpReveal delay={200} className="double-bezel-outer">
+            <div className="double-bezel-inner" style={{ padding: '32px', lineHeight: '1.7' }}>
+              <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
+                📈 2. หน้า แผนจากเทรนด์ (Trend Planner)
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)' }}>วางแผนตารางโพสต์ล่วงหน้า 7 วัน โดยอิงจากกระแส ข่าวสารล่าสุดในวงการไอที และเทรนด์ไวรัล</p>
+              <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
+                <li style={{ marginBottom: '12px' }}><strong>อัปเดตข่าวสารอัตโนมัติ:</strong> ดึงข้อมูลข่าวสารล่าสุดจากสำนักข่าวไอที (RSS Feeds) และกวาดโพสต์ยอดฮิตจากเพจ Facebook ชั้นนำแบบเรียลไทม์</li>
+                <li style={{ marginBottom: '12px' }}><strong>AI กรองข่าวสาร (AI Content Filtering):</strong> ใช้พลังจาก Gemini AI เพื่อคัดกรองเฉพาะ "เนื้อหาที่เกี่ยวกับสินค้าในร้าน" และวิเคราะห์ Engagement ว่าเป็น "ข่าวที่มีกระแสความสนใจสูงจริง" ทำให้ได้ข่าวเน้นๆ ไม่หลุดกรอบ</li>
+                <li style={{ marginBottom: '12px' }}><strong>สร้างแผน 7 วันด้วย AI:</strong> ปัญญาประดิษฐ์จะออกแบบปฏิทินโพสต์ 7 วัน โดยคำนวณและจัดสัดส่วนทั้งโพสต์ขายของ (Sales), ข่าว (News), มุกตลก (Meme), และสร้างการมีส่วนร่วม (Engagement)</li>
+                <li><strong>Export แผนงาน:</strong> ดาวน์โหลดตารางแผนงานทั้งหมดออกมาเป็นไฟล์ <code>.xlsx</code> (Excel) เพื่อส่งต่องานให้ทีมกราฟิกและทีมการตลาดได้อย่างง่ายดาย</li>
+              </ul>
+            </div>
+          </FadeUpReveal>
 
-          <h2 style={{ color: '#fff', borderBottom: '1px solid #292524', paddingBottom: '10px' }}>
-            🤖 3. หน้า สร้างคอนเทนต์ด้วย AI (AI Content Creator)
-          </h2>
-          <p>หน้านี้คือผู้ช่วยคิดแคปชันและเขียนคำสั่ง (Prompt) เพื่อนำไปสั่ง AI วาดภาพ (เช่น Midjourney) ในการทำรูปโปรโมท</p>
-          <ul style={{ marginLeft: '20px', marginBottom: '30px' }}>
-            <li><strong>เลือกรูปแบบงาน (Template):</strong> มีเทมเพลตให้เลือกหลายแบบ เช่น ป้ายโปรโมท Notebook, อุปกรณ์ Gaming, หรือรูปป้าย Clearance </li>
-            <li><strong>ใส่ข้อมูล / วางลิงก์:</strong> สามารถวางรหัสสินค้า หรือใส่ข้อมูลที่ต้องการให้ AI วิเคราะห์</li>
-            <li><strong>สร้าง Prompt โฆษณา:</strong> AI จะคิด <em>แคปชันสำหรับโพสต์โซเชียลมีเดีย</em> ที่น่าสนใจ พร้อมกับ <em>Prompt สั่งวาดภาพภาษาอังกฤษ</em> โดยอิงอัตราส่วนและโทนสี (Corporate Identity) ที่เหมาะสม</li>
-            <li><strong>ใช้งานต่อทันที:</strong> สามารถกดไอคอนคัดลอก (Copy) เพื่อนำข้อความเหล่านั้นไปแปะในระบบสร้างภาพ หรือโพสต์ลง Facebook ได้ทันที</li>
-          </ul>
+          <FadeUpReveal delay={300} className="double-bezel-outer">
+            <div className="double-bezel-inner" style={{ padding: '32px', lineHeight: '1.7' }}>
+              <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
+                🤖 3. หน้า สร้างคอนเทนต์ด้วย AI (AI Content Creator)
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)' }}>ผู้ช่วยอัจฉริยะในการคิดแคปชันและเขียนคำสั่ง (Prompt) เพื่อสั่ง AI วาดภาพ (เช่น Midjourney)</p>
+              <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
+                <li style={{ marginBottom: '12px' }}><strong>เทมเพลตพร้อมใช้:</strong> เลือกโครงสร้างการโพสต์ เช่น ป้ายโปรโมท Notebook, อุปกรณ์ Gaming, หรือรูปโปรโมตสินค้าล้างสต็อก</li>
+                <li style={{ marginBottom: '12px' }}><strong>สร้างแคปชันและ Prompt:</strong> AI จะแต่งแคปชันภาษาไทยที่ดึงดูดสำหรับโซเชียลมีเดีย พร้อมแต่งคำสั่งภาษาอังกฤษ (Image Prompt) สำหรับให้โปรแกรมสร้างภาพวาด โดยคุมโทนสีของแบรนด์ให้ด้วย</li>
+                <li><strong>คัดลอกใช้งานไว:</strong> กดคัดลอกข้อความทั้งหมดเพียงคลิกเดียว เพื่อนำไปใช้บนหน้าเพจเฟซบุ๊ก หรือโปรแกรมสร้างรูปได้ทันที</li>
+              </ul>
+            </div>
+          </FadeUpReveal>
 
-          <div style={{ marginTop: '40px', padding: '15px', background: '#292524', borderRadius: '8px', borderLeft: '4px solid #f97316' }}>
-            <h4 style={{ margin: '0 0 10px 0', color: '#fff' }}>💡 ทิปส์การใช้งาน</h4>
-            <p style={{ margin: 0, fontSize: '0.9rem', color: '#a8a29e' }}>
-              ข้อมูลสถานะต่างๆ (เช่น ราคาสินค้า, แผนคอนเทนต์) จะถูก <strong>บันทึกอยู่ในระบบอัตโนมัติ</strong> คุณสามารถสลับหน้าไปมา หรือปิดโปรแกรมแล้วเปิดใหม่ ข้อมูลเดิมก็จะยังคงอยู่จนกว่าจะกด "ดึงข้อมูลใหม่" อีกครั้งครับ
-            </p>
-          </div>
+          <FadeUpReveal delay={400} className="double-bezel-outer" style={{ borderColor: 'var(--color-accent)', background: 'linear-gradient(to right, rgba(235,235,245,0.02), rgba(235,235,245,0))' }}>
+            <div className="double-bezel-inner" style={{ padding: '24px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+              <div style={{ fontSize: '1.5rem' }}>💡</div>
+              <div>
+                <h4 style={{ margin: '0 0 8px 0', color: 'var(--color-text-primary)', fontSize: '1.1rem' }}>ทิปส์การใช้งานระบบอัตโนมัติ</h4>
+                <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
+                  ระบบจะบันทึกสถานะล่าสุดของคุณโดยอัตโนมัติ (Auto-Save) ทั้งราคาสินค้าที่ Scrap มาได้, ลิสต์รายการข่าวที่ดึงมา, และตารางงานที่เพิ่ง Generate เสร็จ หากคุณปิดเบราว์เซอร์ไป ข้อมูลก็จะยังคงอยู่เมื่อเปิดเข้ามาใหม่จนกว่าคุณจะกดอัปเดตหรือโหลดข้อมูลทับ
+                </p>
+              </div>
+            </div>
+          </FadeUpReveal>
 
-        </div>
+        </section>
       </div>
     </main>
   );
