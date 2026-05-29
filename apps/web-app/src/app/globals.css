@@ -1014,3 +1014,17 @@ h1 {
     grid-column: span 1 !important;
   }
 }
+
+.fade-up-section {
+  opacity: 0;
+  transform: translateY(48px);
+  filter: blur(8px);
+  transition: opacity 0.8s var(--transition-cubic), transform 0.8s var(--transition-cubic), filter 0.8s var(--transition-cubic);
+  will-change: opacity, transform, filter;
+}
+
+.fade-up-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}

@@ -12,6 +12,7 @@ import { PanelTitle } from "../../components/trend-planner/PanelTitle";
 import { TrendRadarList } from "../../components/trend-planner/TrendRadarList";
 import { TopPostCard } from "../../components/trend-planner/TopPostCard";
 import { TrendPostCard } from "../../components/trend-planner/TrendPostCard";
+import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 
 export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendContentPlan }) {
   const { plan, updateDataMutation, generatePlanMutation, addNewsToPlan } = useTrendQuery(initialPlan);
@@ -52,7 +53,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
         </header>
 
         <section className="bento-grid">
-          <div className="double-bezel-outer" style={{ gridColumn: 'span 8' }}>
+          <FadeUpReveal delay={100} className="double-bezel-outer" style={{ gridColumn: 'span 8' }}>
             <div className="double-bezel-inner">
               <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
               <PanelTitle
@@ -91,9 +92,9 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
               </button>
             </div>
             </div>
-          </div>
+          </FadeUpReveal>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridColumn: 'span 4' }}>
+          <FadeUpReveal delay={200} style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridColumn: 'span 4' }}>
             <NewsAndTipsList 
               activeTab={activeTab} 
               items={plan.trendSnapshot.items} 
@@ -117,11 +118,11 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
               </div>
               </div>
             </section>
-          </div>
+          </FadeUpReveal>
 
         </section>
 
-        <section className="double-bezel-outer" style={{ marginTop: '24px' }}>
+        <FadeUpReveal delay={300} className="double-bezel-outer" style={{ marginTop: '24px' }}>
           <div className="double-bezel-inner">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <PanelTitle
@@ -150,7 +151,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
             ))}
           </div>
           </div>
-        </section>
+        </FadeUpReveal>
       </div>
     </main>
   );
