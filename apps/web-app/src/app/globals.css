@@ -1,8 +1,15 @@
 :root {
+  --color-oled-black: #050505;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-text-primary: #fafaf9;
+  --color-text-secondary: #a8a29e;
+  --transition-cubic: cubic-bezier(0.32, 0.72, 0, 1);
+  --font-plus-jakarta: "Plus Jakarta Sans", "Noto Sans Thai", sans-serif;
   color-scheme: dark;
-  background: #0c0a09;
-  color: #fafaf9;
-  font-family: Arial, "Noto Sans Thai", sans-serif;
+  background: var(--color-oled-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-plus-jakarta);
 }
 
 * {
@@ -11,7 +18,7 @@
 
 body {
   margin: 0;
-  background: #0c0a09;
+  background: var(--color-oled-black);
 }
 
 button,
