@@ -10,7 +10,6 @@ import { StatusBox } from "../../components/trend-planner/StatusBox";
 import { NewsAndTipsList } from "../../components/trend-planner/NewsAndTipsList";
 import { PanelTitle } from "../../components/trend-planner/PanelTitle";
 import { TrendRadarList } from "../../components/trend-planner/TrendRadarList";
-import { TopPostCard } from "../../components/trend-planner/TopPostCard";
 import { TrendPostCard } from "../../components/trend-planner/TrendPostCard";
 import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 
@@ -18,10 +17,6 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
   const { plan, updateDataMutation, generatePlanMutation, addNewsToPlan } = useTrendQuery(initialPlan);
   const { activeTrendTab: activeTab, setActiveTrendTab: setActiveTab } = useUIStore();
   
-  const topPosts = useMemo(
-    () => [...plan.weeklyPosts].sort((a, b) => b.viralScore - a.viralScore).slice(0, 3),
-    [plan.weeklyPosts]
-  );
   const loading = updateDataMutation.isPending || generatePlanMutation.isPending;
   const isUpdating = updateDataMutation.isPending;
 
@@ -73,7 +68,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
                   onClick={() => updateDataMutation.mutate()} 
                   disabled={loading}
                 >
-                  {isUpdating ? "กำลังดึงข้อมูล..." : (activeTab === 'news' ? "อัปเดตข้อมูลข่าวจากเว็บล่าสุด" : "อัปเดตข้อมูลทิปส์ไอที")}
+                  {isUpdating ? "กำลังดึงข้อมูล..." : (activeTab === 'news' ? "อัปเดตโพสต์ล่าสุดจาก 4 เพจ Facebook" : "อัปเดตข้อมูลทิปส์ไอที")}
                 </button>
                 {plan.trendSnapshot.fetchedAt && (
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
@@ -101,23 +96,6 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
               onAdd={addNewsToPlan} 
               loading={loading} 
             />
-
-            <section className="double-bezel-outer">
-              <div className="double-bezel-inner">
-              <div className="sectionHeader">
-                <PanelTitle
-                  step="Viral Radar"
-                  title="หัวข้อที่ควรดันหนัก"
-                  description="เรียงจากคะแนนไวรัลและความเหมาะกับตัวตนเพจ Techtainment"
-                />
-              </div>
-              <div className="topPostGrid" style={{ gridTemplateColumns: 'repeat(1, minmax(0, 1fr))' }}>
-                {topPosts.map((post) => (
-                  <TopPostCard post={post} key={post.id} />
-                ))}
-              </div>
-              </div>
-            </section>
           </FadeUpReveal>
 
         </section>
