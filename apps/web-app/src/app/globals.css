@@ -936,3 +936,53 @@ h1 {
   font-size: 0.75rem;
   color: #a8a29e;
 }
+
+/* High-End Design Components */
+.double-bezel-outer {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  padding: 8px;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.double-bezel-inner {
+  background: rgba(12, 10, 9, 0.8);
+  border-radius: calc(2rem - 8px);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.05);
+  padding: 24px;
+  height: 100%;
+}
+
+.island-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafaf9;
+  color: #0c0a09;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 800;
+  transition: transform 0.4s var(--transition-cubic);
+  cursor: pointer;
+}
+
+.island-button:hover, .island-button:active {
+  transform: scale(0.96);
+}
+
+.island-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  transition: transform 0.4s var(--transition-cubic);
+}
+
+.island-button:hover .island-button-icon {
+  transform: translateX(4px) scale(1.05);
+}
