@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     const browser = await puppeteer.launch({ 
       args: isLocal ? [] : chromium.args,
       executablePath,
-      headless: isLocal ? true : (chromium as any).headless,
+      headless: isLocal ? true : ((chromium as any).headless === true ? true : false),
     });
     const page = await browser.newPage();
     

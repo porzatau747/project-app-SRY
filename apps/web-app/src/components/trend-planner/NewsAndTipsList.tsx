@@ -15,7 +15,8 @@ export function NewsAndTipsList({
   const filteredItems = items.filter(item => activeTab === 'news' ? item.type !== 'tip' : item.type === 'tip');
 
   return (
-    <div className="panel listPanel">
+    <div className="double-bezel-outer">
+      <div className="double-bezel-inner">
       <h2 className="listHeader">
         {activeTab === 'news' ? '📰 คลังข่าว IT ล่าสุด' : '💡 คลังทิปส์ไอที ล่าสุด'}
       </h2>
@@ -31,14 +32,16 @@ export function NewsAndTipsList({
               </p>
             </div>
             <button 
-              className={activeTab === 'tips' ? "secondaryButton tipsAddBtn" : "secondaryButton"} 
+              className={activeTab === 'tips' ? "island-button tipsAddBtn" : "island-button"} 
               onClick={() => onAdd(activeTab === 'tips' ? { ...item, category: "Tips & Tricks" } : item)}
               disabled={loading}
+              style={{ padding: '8px 16px', fontSize: '0.8rem' }}
             >
               {activeTab === 'news' ? '+ เพิ่มลงปฏิทิน' : '+ เพิ่มทิปส์'}
             </button>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

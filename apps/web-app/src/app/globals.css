@@ -1,8 +1,15 @@
 :root {
+  --color-oled-black: #050505;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-text-primary: #fafaf9;
+  --color-text-secondary: #a8a29e;
+  --transition-cubic: cubic-bezier(0.32, 0.72, 0, 1);
+  --font-plus-jakarta: "Plus Jakarta Sans", "Noto Sans Thai", sans-serif;
   color-scheme: dark;
-  background: #0c0a09;
-  color: #fafaf9;
-  font-family: Arial, "Noto Sans Thai", sans-serif;
+  background: var(--color-oled-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-plus-jakarta);
 }
 
 * {
@@ -11,7 +18,7 @@
 
 body {
   margin: 0;
-  background: #0c0a09;
+  background: var(--color-oled-black);
 }
 
 button,
@@ -31,7 +38,7 @@ button:disabled {
 
 .appShell {
   min-height: 100vh;
-  background: #0c0a09;
+  background: radial-gradient(circle at 50% 0%, rgba(34,211,238,0.08), transparent 60%), var(--color-oled-black);
 }
 
 .appPage {
@@ -44,28 +51,42 @@ button:disabled {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 24px auto 32px;
+  width: max-content;
+  padding: 8px;
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 999px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  position: sticky;
+  top: 24px;
+  z-index: 50;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
 .topNav a {
   display: inline-flex;
   align-items: center;
   min-height: 38px;
-  border: 1px solid #292524;
-  border-radius: 8px;
-  padding: 0 14px;
-  background: #1c1917;
-  color: #d6d3d1;
+  border-radius: 999px;
+  padding: 0 20px;
+  background: transparent;
+  color: var(--color-text-secondary);
   font-size: 0.86rem;
   font-weight: 800;
   text-decoration: none;
+  border: none;
+  transition: all 0.4s var(--transition-cubic);
 }
 
 .topNav a:hover,
 .topNav .activeNav {
-  border-color: rgba(34, 211, 238, 0.55);
-  background: rgba(8, 145, 178, 0.2);
-  color: #a5f3fc;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  transform: scale(0.96);
 }
 
 .appHero {
@@ -928,4 +949,82 @@ h1 {
 .trendRadarMeta {
   font-size: 0.75rem;
   color: #a8a29e;
+}
+
+/* High-End Design Components */
+.double-bezel-outer {
+  background: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
+  padding: 8px;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.double-bezel-inner {
+  background: rgba(12, 10, 9, 0.8);
+  border-radius: calc(2rem - 8px);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.05);
+  padding: 24px;
+  height: 100%;
+}
+
+.island-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafaf9;
+  color: #0c0a09;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 800;
+  transition: transform 0.4s var(--transition-cubic);
+  cursor: pointer;
+}
+
+.island-button:hover, .island-button:active {
+  transform: scale(0.96);
+}
+
+.island-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  transition: transform 0.4s var(--transition-cubic);
+}
+
+.island-button:hover .island-button-icon {
+  transform: translateX(4px) scale(1.05);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-grid > * {
+    grid-column: span 1 !important;
+  }
+}
+
+.fade-up-section {
+  opacity: 0;
+  transform: translateY(48px);
+  filter: blur(8px);
+  transition: opacity 0.8s var(--transition-cubic), transform 0.8s var(--transition-cubic), filter 0.8s var(--transition-cubic);
+  will-change: opacity, transform, filter;
+}
+
+.fade-up-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }

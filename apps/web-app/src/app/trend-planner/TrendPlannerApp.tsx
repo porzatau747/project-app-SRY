@@ -12,6 +12,7 @@ import { PanelTitle } from "../../components/trend-planner/PanelTitle";
 import { TrendRadarList } from "../../components/trend-planner/TrendRadarList";
 import { TopPostCard } from "../../components/trend-planner/TopPostCard";
 import { TrendPostCard } from "../../components/trend-planner/TrendPostCard";
+import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 
 export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendContentPlan }) {
   const { plan, updateDataMutation, generatePlanMutation, addNewsToPlan } = useTrendQuery(initialPlan);
@@ -51,14 +52,15 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
           }} />
         </header>
 
-        <section className="gridTwo">
-          <div className="panel stepPanel">
-            <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
-            <PanelTitle
-              step="Auto Trend Radar"
-              title={activeTab === 'news' ? "หัวข้อข่าวไวรัลที่ AI ใช้จับกระแส" : "ทิปส์ไอทีที่กำลังเป็นที่สนใจ"}
-              description={activeTab === 'news' ? "จัดหมวด AI, Windows / PC Pain, RTX / PCGaming, Notebook, Office Productivity และ Security / Smart Device" : "คัดเน้นเฉพาะเนื้อหาที่สัมพันธ์กับสินค้าในร้าน"}
-            />
+        <section className="bento-grid">
+          <FadeUpReveal delay={100} className="double-bezel-outer" style={{ gridColumn: 'span 8' }}>
+            <div className="double-bezel-inner">
+              <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
+              <PanelTitle
+                step="Auto Trend Radar"
+                title={activeTab === 'news' ? "หัวข้อข่าวไวรัลที่ AI ใช้จับกระแส" : "ทิปส์ไอทีที่กำลังเป็นที่สนใจ"}
+                description={activeTab === 'news' ? "จัดหมวด AI, Windows / PC Pain, RTX / PCGaming, Notebook, Office Productivity และ Security / Smart Device" : "คัดเน้นเฉพาะเนื้อหาที่สัมพันธ์กับสินค้าในร้าน"}
+              />
             <TrendRadarList 
               items={plan.trendSnapshot.items.filter(item => activeTab === 'news' ? item.type !== 'tip' : item.type === 'tip')} 
               fetchedAt={plan.trendSnapshot.fetchedAt} 
@@ -67,7 +69,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <button 
-                  className="secondaryButton" 
+                  className="island-button" 
                   onClick={() => updateDataMutation.mutate()} 
                   disabled={loading}
                 >
@@ -80,17 +82,19 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
                 )}
               </div>
               <button 
-                className="primaryButton" 
+                className="island-button" 
                 onClick={() => generatePlanMutation.mutate()} 
                 disabled={loading}
-                style={{ marginLeft: 'auto' }}
+                style={{ marginLeft: 'auto', background: 'var(--color-text-primary)' }}
               >
                 Generate แผนเทรนด์ 7 วัน
+                <span className="island-button-icon">✨</span>
               </button>
             </div>
-          </div>
+            </div>
+          </FadeUpReveal>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <FadeUpReveal delay={200} style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridColumn: 'span 4' }}>
             <NewsAndTipsList 
               activeTab={activeTab} 
               items={plan.trendSnapshot.items} 
@@ -98,7 +102,8 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
               loading={loading} 
             />
 
-            <section className="panel stepPanel">
+            <section className="double-bezel-outer">
+              <div className="double-bezel-inner">
               <div className="sectionHeader">
                 <PanelTitle
                   step="Viral Radar"
@@ -111,12 +116,14 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
                   <TopPostCard post={post} key={post.id} />
                 ))}
               </div>
+              </div>
             </section>
-          </div>
+          </FadeUpReveal>
 
         </section>
 
-        <section className="panel stepPanel">
+        <FadeUpReveal delay={300} className="double-bezel-outer" style={{ marginTop: '24px' }}>
+          <div className="double-bezel-inner">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <PanelTitle
               step="ตาราง 7 วัน"
@@ -125,7 +132,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
             />
             {plan.weeklyPosts.length > 0 && (
               <button 
-                className="secondaryButton" 
+                className="island-button" 
                 onClick={() => {
                   import("../../utils/exportUtils").then(({ exportTrendPlanToExcel }) => {
                     exportTrendPlanToExcel(plan);
@@ -133,16 +140,18 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
                   });
                 }}
               >
-                📊 Export เป็น Excel
+                Export เป็น Excel
+                <span className="island-button-icon">📊</span>
               </button>
             )}
           </div>
-          <div className="trendCalendar">
+          <div className="trendCalendar bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
             {plan.weeklyPosts.map((post) => (
               <TrendPostCard post={post} key={post.id} />
             ))}
           </div>
-        </section>
+          </div>
+        </FadeUpReveal>
       </div>
     </main>
   );
