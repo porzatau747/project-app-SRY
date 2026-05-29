@@ -14,12 +14,8 @@ export async function POST(request: Request) {
     const isLocal = process.env.NODE_ENV === "development";
 
     const executablePath = isLocal 
-      ? process.env.CHROME_EXECUTABLE_PATH
+      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
       : await chromium.executablePath();
-
-    if (isLocal && !executablePath) {
-      throw new Error("CHROME_EXECUTABLE_PATH is not set in local environment.");
-    }
 
     const browser = await puppeteer.launch({ 
       args: isLocal ? [] : chromium.args,

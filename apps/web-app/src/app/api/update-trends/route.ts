@@ -80,12 +80,8 @@ export async function POST() {
   try {
     const isLocal = process.env.NODE_ENV === "development";
     const executablePath = isLocal 
-      ? process.env.CHROME_EXECUTABLE_PATH
+      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
       : await chromium.executablePath();
-
-    if (isLocal && !executablePath) {
-      throw new Error("CHROME_EXECUTABLE_PATH is not set in local environment.");
-    }
 
     browser = await puppeteer.launch({
       args: isLocal ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-notifications'] : chromium.args,
@@ -184,8 +180,9 @@ export async function POST() {
 
     return NextResponse.json({ success: true, count: topItems.length });
   } catch (error: unknown) {
-    console.error("Trend update error:", error instanceof Error ? error.message : error);
+    const msg = error instanceof Error ? error.message : "Unknown error";
+    console.error("Trend update error:", msg);
     if (browser) await browser.close();
-    return NextResponse.json({ error: "Failed to update trends" }, { status: 500 });
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
