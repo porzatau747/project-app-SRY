@@ -6,7 +6,6 @@ import { launch } from "cloakbrowser/puppeteer";
 
 const FB_PAGES = [
   { url: "https://www.facebook.com/comcraft.ds", source: "comcraft.ds" },
-  { url: "https://www.facebook.com/techhub.arip", source: "techhub.arip" },
   { url: "https://www.facebook.com/notebookspec", source: "notebookspec" },
   { url: "https://www.facebook.com/overclockzonefanpage", source: "overclockzonefanpage" }
 ];

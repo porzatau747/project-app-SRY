@@ -162,7 +162,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imag
                   onClick={handleUpdateTrends} 
                   disabled={loading}
                 >
-                  {loading ? "กำลังดึงข้อมูล..." : "อัปเดตโพสต์ล่าสุดจาก 4 เพจ Facebook"}
+                  {loading ? "กำลังดึงข้อมูล..." : "ดึงโพสต์ล่าสุดเพจคู่แข่ง"}
                 </button>
                 {fetchedAt && (
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
