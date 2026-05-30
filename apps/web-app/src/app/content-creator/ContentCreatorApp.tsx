@@ -94,6 +94,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts)
       <nav className="topNav">
         <Link href="/">แผนจากสต็อก</Link>
         <Link href="/trend-planner">แผนจากเทรนด์</Link>
+        <Link href="/promotion-combo">Promotion Combo</Link>
         <Link className="activeNav" href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
         <Link href="/guide">คู่มือการใช้งาน</Link>
       </nav>

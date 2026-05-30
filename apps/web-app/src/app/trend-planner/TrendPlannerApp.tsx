@@ -121,6 +121,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imag
           <Link className="activeNav" href="/trend-planner">
             แผนจากเทรนด์
           </Link>
+          <Link href="/promotion-combo">Promotion Combo</Link>
           <Link href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
           <Link href="/guide">คู่มือการใช้งาน</Link>
         </nav>

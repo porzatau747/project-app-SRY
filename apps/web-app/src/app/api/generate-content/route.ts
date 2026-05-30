@@ -205,6 +205,30 @@ export async function POST(req: Request) {
           "(อธิบายภาพประกอบข่าว 1 ภาพแบบเข้าใจง่าย)"
         ]
       }`;
+    } else if (template === "promotion-combo") {
+      let agentPromotion = "";
+      try {
+        const filePath = path.join(process.cwd(), "../../EXX/AgentPromotion.md");
+        agentPromotion = await fs.readFile(filePath, "utf-8");
+      } catch (err) {
+        console.error("Error reading AgentPromotion.md:", err);
+      }
+      
+      systemPrompt += `\nคุณต้องสร้างคอนเทนต์โปรโมชั่นแบบแลกซื้อ (Promotion Combo) โดยอ้างอิงข้อมูล:
+${prompt}
+
+บังคับให้แสดงผลลัพธ์เป็น JSON format เท่านั้น ห้ามมีข้อความอื่นปน โดยใช้โครงสร้างดังนี้:
+      {
+        "intro": "สร้างคอนเทนต์โปรโมชั่นแลกซื้อสุดคุ้ม สไตล์ร้าน Advice สาขาสามร้อยยอด",
+        "topic": "(พาดหัวโปรโมชั่นสั้นๆ ดึงดูดความสนใจ เช่น 'ซื้อ A แลกซื้อ B ในราคาโคตรถูก!')",
+        "hook": "(ประโยค Hook เปิดโพสต์ด้วยมีมไวรัล หรือกระแสปัจจุบัน)",
+        "contextAndTrend": "(ขยี้ปัญหา + เทรนด์ไอทีที่เกี่ยวข้องกับสินค้าทั้งสองตัว)",
+        "promotion": "(อธิบายโปรโมชั่นกระแทกใจคนสามร้อยยอด/คนชนบท เน้นความคุ้มค่า ผ่อนสบาย หรือของแถม)",
+        "cta": "(Call to Action พร้อมพิกัดร้านที่ไร่ใหม่)"
+      }
+
+อ้างอิงคู่มือ AgentPromotion ด้านล่างนี้อย่างเคร่งครัด:
+${agentPromotion}`;
     } else {
       systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}\nความยาวไม่เกิน 150 คำ`;
     }

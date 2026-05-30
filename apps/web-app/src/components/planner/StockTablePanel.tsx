@@ -6,7 +6,19 @@ import { getMacroCategory, MACRO_CATEGORIES, MacroCategory } from "../../utils/c
 
 const moneyFormatter = new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB' });
 
-export function StockTablePanel({ inventory, onSelectProduct, onSearchPrice, loading }: { inventory: InventoryItem[]; onSelectProduct: (code: string) => void; onSearchPrice: (code: string) => void; loading: boolean }) {
+export function StockTablePanel({ 
+  inventory, 
+  onSelectProduct, 
+  onSearchPrice, 
+  loading,
+  renderCustomAction
+}: { 
+  inventory: InventoryItem[]; 
+  onSelectProduct?: (code: string) => void; 
+  onSearchPrice: (code: string) => void; 
+  loading: boolean;
+  renderCustomAction?: (item: InventoryItem) => React.ReactNode;
+}) {
   const [selectedCats, setSelectedCats] = useState<Set<MacroCategory>>(new Set());
 
   if (!inventory || !inventory.length) return null;
@@ -107,9 +119,13 @@ export function StockTablePanel({ inventory, onSelectProduct, onSearchPrice, loa
                       ค้นหาราคา
                     </button>
                   )}
-                  <button className="secondaryButton compactButton" onClick={() => onSelectProduct(item.code)} disabled={loading} style={{ padding: '2px 8px', fontSize: '0.8em', minHeight: '28px', minWidth: 'auto' }}>
-                    ✨ สร้างคอนเทนต์
-                  </button>
+                  {renderCustomAction ? (
+                    renderCustomAction(item)
+                  ) : onSelectProduct ? (
+                    <button className="secondaryButton compactButton" onClick={() => onSelectProduct(item.code)} disabled={loading} style={{ padding: '2px 8px', fontSize: '0.8em', minHeight: '28px', minWidth: 'auto' }}>
+                      ✨ สร้างคอนเทนต์
+                    </button>
+                  ) : null}
                 </td>
               </tr>
             ))}
