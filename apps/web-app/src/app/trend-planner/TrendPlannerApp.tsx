@@ -83,6 +83,7 @@ Bridge Content:
 - Product: ${parsed.bridgeContent?.product}
 Visual Direction: ${parsed.visualDirection}
 
+${parsed.layout ? `Layout: ${parsed.layout}\n` : ''}
 ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imagePrompts.join('\n')}` : ''}`;
 
       return (

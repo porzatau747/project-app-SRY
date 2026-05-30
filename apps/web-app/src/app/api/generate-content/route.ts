@@ -189,7 +189,18 @@ export async function POST(req: Request) {
       }
       \nเอกสารอ้างอิงการออกแบบ (Design Guidelines):\n${designGuide}`;
     } else if (template === "trend-news") {
+      let newsDesign = "";
+      try {
+        const newsDesignPath = path.join(process.cwd(), "../../EXX/EX Post/NEWS-design.md");
+        newsDesign = await fs.readFile(newsDesignPath, "utf-8");
+      } catch (err) {
+        console.error("Error reading NEWS-design.md:", err);
+      }
+
       systemPrompt += `\nคุณต้องสร้างคอนเทนต์สำหรับโพสต์ลงเพจร้านขายสินค้าไอทีชื่อ Advice สามร้อยยอด โดยอ้างอิงจากข้อมูลข่าว: ${prompt}
+      
+      และคุณต้องสร้างโครงสร้าง Prompt สำหรับนำไปป้อนให้ AI "ChatGPT Images 2.0 (DALL-E 3)" วาดภาพข่าวด้วย
+      
       บังคับให้แสดงผลลัพธ์เป็น JSON format เท่านั้น ห้ามมีข้อความอื่นปน โดยใช้โครงสร้างดังนี้:
       {
         "intro": "สร้างคอนเทนต์ข่าวไอที สั้น กระชับ อ่านจบปุ๊บรู้เรื่องปั๊บ มี Hook ดึงดูด",
@@ -200,11 +211,15 @@ export async function POST(req: Request) {
           "meme": "(ข้อความขำขันหรือมีมที่เข้ากับข่าว)",
           "product": "(โยงเข้าหาสินค้าหรือบริการของ Advice สามร้อยยอดแบบเนียนๆ)"
         },
-        "visualDirection": "ภาพประกอบข่าว 1 ภาพ เน้นข้อความพาดหัวชัดเจน เข้าใจง่าย",
+        "visualDirection": "(อ้างอิงจากหมวด 6. Trend & News Image Style ในเอกสาร NEWS-design กำหนดทิศทางของภาพและสีสัน)",
+        "layout": "(เลือกใช้ 60/40 Split Layout หรือ Diagonal/Geometric Overlay จากเอกสาร NEWS-design พร้อมอธิบายการจัดวาง)",
         "imagePrompts": [
-          "(อธิบายภาพประกอบข่าว 1 ภาพแบบเข้าใจง่าย)"
+          "(สร้าง Prompt ภาษาอังกฤษแบบเจาะจง ให้ AI นำไปใช้วาดภาพประกอบข่าวได้เลย โดยระบุโทนสี สไตล์ และเลย์เอาต์ตามเอกสาร NEWS-design)"
         ]
-      }`;
+      }
+      
+      อ้างอิงสไตล์การทำภาพจากเอกสาร NEWS-design ด้านล่างนี้:
+      ${newsDesign}`;
     } else if (template === "promotion-combo") {
       let agentPromotion = "";
       try {
