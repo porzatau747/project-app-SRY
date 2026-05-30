@@ -47,12 +47,12 @@ export default function GuidePage() {
               <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
                 📈 2. หน้า แผนจากเทรนด์ (Trend Planner)
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)' }}>วางแผนตารางโพสต์ล่วงหน้า 7 วัน โดยอิงจากกระแส ข่าวสารล่าสุดในวงการไอที และเทรนด์ไวรัล</p>
+              <p style={{ color: 'var(--color-text-secondary)' }}>เกาะกระแสโซเชียลและข่าวสารวงการไอที เพื่อสร้างคอนเทนต์ข่าวไวรัลได้แบบทันท่วงที</p>
               <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
-                <li style={{ marginBottom: '12px' }}><strong>อัปเดตข่าวสารอัตโนมัติ:</strong> ดึงข้อมูลข่าวสารล่าสุดจากสำนักข่าวไอที (RSS Feeds) และกวาดโพสต์ยอดฮิตจากเพจ Facebook ชั้นนำแบบเรียลไทม์</li>
-                <li style={{ marginBottom: '12px' }}><strong>AI กรองข่าวสาร (AI Content Filtering):</strong> ใช้พลังจาก Gemini AI เพื่อคัดกรองเฉพาะ "เนื้อหาที่เกี่ยวกับสินค้าในร้าน" และวิเคราะห์ Engagement ว่าเป็น "ข่าวที่มีกระแสความสนใจสูงจริง" ทำให้ได้ข่าวเน้นๆ ไม่หลุดกรอบ</li>
-                <li style={{ marginBottom: '12px' }}><strong>สร้างแผน 7 วันด้วย AI:</strong> ปัญญาประดิษฐ์จะออกแบบปฏิทินโพสต์ 7 วัน โดยคำนวณและจัดสัดส่วนทั้งโพสต์ขายของ (Sales), ข่าว (News), มุกตลก (Meme), และสร้างการมีส่วนร่วม (Engagement)</li>
-                <li><strong>Export แผนงาน:</strong> ดาวน์โหลดตารางแผนงานทั้งหมดออกมาเป็นไฟล์ <code>.xlsx</code> (Excel) เพื่อส่งต่องานให้ทีมกราฟิกและทีมการตลาดได้อย่างง่ายดาย</li>
+                <li style={{ marginBottom: '12px' }}><strong>Auto Trend Radar:</strong> ดึงโพสต์ล่าสุดจาก 4 เพจไอทีชั้นนำ (Comcraft, NotebookSpec, Extreme IT, Overclockzone) คัดเฉพาะหัวข้อเด่นเพจละ 4 โพสต์</li>
+                <li style={{ marginBottom: '12px' }}><strong>ข้อมูลสดใหม่เสมอ:</strong> ล้างข้อมูลเก่าทิ้งทุกครั้งที่เปิดหน้านี้ใหม่ เพื่อให้มั่นใจว่าคุณกำลังดูเฉพาะเทรนด์ปัจจุบัน</li>
+                <li style={{ marginBottom: '12px' }}><strong>แปลงข่าวเป็นคอนเทนต์:</strong> กดเลือกข่าวที่น่าสนใจเพื่อให้ AI สรุปพาดหัวข่าวสั้นกระชับ พร้อมข้อความ Hook ดึงดูดสายตา</li>
+                <li><strong>ดีไซน์ภาพข่าวระดับโปร:</strong> AI สร้าง Prompt วาดภาพประกอบข่าว (สำหรับ DALL-E 3) พร้อมกำหนด Layout การวางข้อความ 60/40 แบบเพจชั้นนำให้ทันที</li>
               </ul>
             </div>
           </FadeUpReveal>
@@ -62,11 +62,25 @@ export default function GuidePage() {
               <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
                 🤖 3. หน้า สร้างคอนเทนต์ด้วย AI (AI Content Creator)
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)' }}>ผู้ช่วยอัจฉริยะในการคิดแคปชันและเขียนคำสั่ง (Prompt) เพื่อสั่ง AI วาดภาพ (เช่น Midjourney)</p>
+              <p style={{ color: 'var(--color-text-secondary)' }}>ผู้ช่วยอัจฉริยะในการคิดแคปชันและเขียนคำสั่ง (Prompt) เพื่อสั่ง AI วาดภาพ (เช่น ChatGPT Images)</p>
               <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
-                <li style={{ marginBottom: '12px' }}><strong>เทมเพลตพร้อมใช้:</strong> เลือกโครงสร้างการโพสต์ เช่น ป้ายโปรโมท Notebook, อุปกรณ์ Gaming, หรือรูปโปรโมตสินค้าล้างสต็อก</li>
-                <li style={{ marginBottom: '12px' }}><strong>สร้างแคปชันและ Prompt:</strong> AI จะแต่งแคปชันภาษาไทยที่ดึงดูดสำหรับโซเชียลมีเดีย พร้อมแต่งคำสั่งภาษาอังกฤษ (Image Prompt) สำหรับให้โปรแกรมสร้างภาพวาด โดยคุมโทนสีของแบรนด์ให้ด้วย</li>
-                <li><strong>คัดลอกใช้งานไว:</strong> กดคัดลอกข้อความทั้งหมดเพียงคลิกเดียว เพื่อนำไปใช้บนหน้าเพจเฟซบุ๊ก หรือโปรแกรมสร้างรูปได้ทันที</li>
+                <li style={{ marginBottom: '12px' }}><strong>เทมเพลตพร้อมใช้:</strong> มีรูปแบบให้เลือกเช่น ทิปส์ไอที, คำแนะนำก่อนซื้อ, โพสต์ขาย/โปรโมชัน, และพิมพ์คำสั่งเอง (Free-text)</li>
+                <li style={{ marginBottom: '12px' }}><strong>รู้ใจชาวสามร้อยยอด:</strong> โหมด "โพสต์ขาย/โปรโมชัน" จะดึงคู่มือ `AgentPromotion` มาใช้ เพื่อเขียนแคปชันให้เข้าถึงคนในพื้นที่ (เช่น อ้างอิงพิกัดสาขาไร่ใหม่) และใช้ภาษาวัยรุ่นผสมมีม</li>
+                <li><strong>คัดลอกใช้งานไว:</strong> กดปุ่มคัดลอกข้อความโครงสร้าง Prompt เพื่อนำไปเจเนอเรตภาพต่อได้เพียงคลิกเดียว</li>
+              </ul>
+            </div>
+          </FadeUpReveal>
+
+          <FadeUpReveal delay={400} className="double-bezel-outer">
+            <div className="double-bezel-inner" style={{ padding: '32px', lineHeight: '1.7' }}>
+              <h2 style={{ color: 'var(--color-text-primary)', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', marginTop: '0', fontSize: '1.5rem' }}>
+                🎁 4. หน้า Promotion Combo (โปรโมชันคอมโบ)
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)' }}>สร้างแคมเปญกระตุ้นยอดขายด้วยโปรโมชัน "ซื้อคู่ถูกกว่า" หรือการแลกซื้อสุดพิเศษ</p>
+              <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
+                <li style={{ marginBottom: '12px' }}><strong>จับคู่สินค้าในสต็อก:</strong> เลือกสินค้าหลัก (Main Product) และสินค้ารอง (Secondary Product) จากหน้ารายการสินค้า</li>
+                <li style={{ marginBottom: '12px' }}><strong>AI เขียนคำโปรย:</strong> AI จะสร้างข้อความโฆษณาที่ขยี้ปัญหา (Pain Point) เพื่อกระตุ้นให้ลูกค้าเห็นความคุ้มค่าของการซื้อคู่</li>
+                <li><strong>ใช้งานร่วมกับ AI Content:</strong> สไตล์การเขียนถูกปรับจูนมาเพื่อลูกค้าท้องถิ่น (Localization) ให้มีความเป็นกันเอง ไม่เป็นทางการจนเกินไป</li>
               </ul>
             </div>
           </FadeUpReveal>
