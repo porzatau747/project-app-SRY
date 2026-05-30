@@ -35,15 +35,15 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
         <header className="appHero">
           <div>
             <p className="eyebrow">Techtainment Page Planner</p>
-            <h1>สร้างตารางโพสต์ 7 วันจากข่าว IT ใหญ่และมีมไวรัลไทย</h1>
+            <h1>สร้างตารางโพสต์ 7 วันจากข่าว IT ใหญ่และเทรนด์ไวรัลไทย</h1>
             <p className="intro">
-              เมื่อกด Generate แผนเทรนด์ 7 วัน ระบบจะให้น้ำหนักข่าว IT จากประเทศไทยประมาณ 80% และต่างประเทศ 20% แล้วคัดเฉพาะข่าวใหญ่หรือข่าวที่มีสัญญาณคนสนใจสูง
+              กดอัปเดตข่าวสาร IT จากเพจหรือเว็บข่าว แล้วเลือกข่าวที่น่าสนใจเพื่อเพิ่มลงในแผนการโพสต์รายสัปดาห์
             </p>
           </div>
           <StatusBox action={{ 
             loading, 
             message: loading ? "กำลังดำเนินการ..." : "พร้อมใช้งาน", 
-            error: updateDataMutation.error?.message || generatePlanMutation.error?.message || "" 
+            error: updateDataMutation.error?.message || "" 
           }} />
         </header>
 
@@ -76,15 +76,6 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
                   </span>
                 )}
               </div>
-              <button 
-                className="island-button" 
-                onClick={() => generatePlanMutation.mutate()} 
-                disabled={loading}
-                style={{ marginLeft: 'auto', background: 'var(--color-text-primary)' }}
-              >
-                Generate แผนเทรนด์ 7 วัน
-                <span className="island-button-icon">✨</span>
-              </button>
             </div>
             </div>
           </FadeUpReveal>

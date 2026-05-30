@@ -26,7 +26,18 @@ export function useTrendQuery(initialPlan: TrendContentPlan) {
       if (!res.ok) throw new Error(data.error || "อัปเดตข้อมูลไม่สำเร็จ");
       return data;
     },
-    onSuccess: (data) => toast.success(`อัปเดตข้อมูลล่าสุดสำเร็จ (${data.count} โพสต์)`),
+    onSuccess: (data) => {
+      if (data.snapshot) {
+        queryClient.setQueryData(["trendPlan"], (old: TrendContentPlan | undefined) => {
+          if (!old) return old;
+          return {
+            ...old,
+            trendSnapshot: data.snapshot
+          };
+        });
+      }
+      toast.success(`อัปเดตข้อมูลล่าสุดสำเร็จ (${data.count} โพสต์)`);
+    },
     onError: (error) => toast.error(error.message),
   });
 

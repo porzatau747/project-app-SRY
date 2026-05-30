@@ -12,6 +12,7 @@
     "@repo/database": "*",
     "@tanstack/react-query": "^5.100.14",
     "cheerio": "^1.2.0",
+    "cloakbrowser": "^0.3.31",
     "next": "^15.0.0",
     "openai": "^4.0.0",
     "react": "^18.0.0",

@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import OpenAI from "openai";
-import puppeteer from "puppeteer-core";
-import chromium from "@sparticuz/chromium";
+import { launch } from "cloakbrowser/puppeteer";
 
 const FB_PAGES = [
   { url: "https://www.facebook.com/comcraft.ds", source: "comcraft.ds" },
@@ -78,16 +77,9 @@ ${payload}`;
 export async function POST() {
   let browser = null;
   try {
-    const isLocal = process.env.NODE_ENV === "development";
-    const executablePath = isLocal 
-      ? process.env.CHROME_EXECUTABLE_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-      : await chromium.executablePath();
-
-    browser = await puppeteer.launch({
-      args: isLocal ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-notifications'] : chromium.args,
-      defaultViewport: (chromium as any).defaultViewport,
-      executablePath,
-      headless: isLocal ? true : ((chromium as any).headless === true ? true : false),
+    browser = await launch({
+      headless: process.env.NODE_ENV !== "development",
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-notifications']
     });
 
     let rawItems: ScrapedItem[] = [];
@@ -178,7 +170,11 @@ export async function POST() {
     const dataPath = path.join(process.cwd(), "data", "rss_news.json");
     await fs.writeFile(dataPath, JSON.stringify({ items: topItems }, null, 2), "utf-8");
 
-    return NextResponse.json({ success: true, count: topItems.length });
+    // Fetch the parsed snapshot to return to the frontend
+    const { getCurrentTrendSnapshot } = await import("../../../services/trends");
+    const snapshot = await getCurrentTrendSnapshot();
+
+    return NextResponse.json({ success: true, count: topItems.length, snapshot });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : "Unknown error";
     console.error("Trend update error:", msg);
