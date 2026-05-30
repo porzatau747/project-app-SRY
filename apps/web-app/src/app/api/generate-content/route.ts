@@ -229,6 +229,16 @@ ${prompt}
 
 อ้างอิงคู่มือ AgentPromotion ด้านล่างนี้อย่างเคร่งครัด:
 ${agentPromotion}`;
+    } else if (template === "โปรโมชัน") {
+      let agentPromotion = "";
+      try {
+        const filePath = path.join(process.cwd(), "../../EXX/AgentPromotion.md");
+        agentPromotion = await fs.readFile(filePath, "utf-8");
+      } catch (err) {
+        console.error("Error reading AgentPromotion.md:", err);
+      }
+      
+      systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}\n\nคุณต้องสร้างคอนเทนต์โปรโมชั่น/โพสต์ขาย โดยอ้างอิงคู่มือ AgentPromotion ด้านล่างนี้อย่างเคร่งครัด:\n${agentPromotion}`;
     } else {
       systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}\nความยาวไม่เกิน 150 คำ`;
     }
