@@ -113,7 +113,7 @@ export async function POST() {
         const posts = await page.evaluate(() => {
           const articles = Array.from(document.querySelectorAll('[role="article"]'));
           if (articles.length > 0) {
-            return articles.slice(0, 10).map(article => {
+            return articles.slice(0, 15).map(article => {
               // Check if it has a content image (exclude tiny icons)
               const images = Array.from(article.querySelectorAll('img'));
               const hasContentImage = images.some(img => {
@@ -164,8 +164,17 @@ export async function POST() {
     // Filter to keep only relevant news (true)
     const filteredItems = rawItems.filter((_, index) => isRelevantArray[index]);
 
-    // Sort by newest (since we use current time, they will be ordered by scrape order)
-    const topItems = filteredItems.slice(0, 40);
+    // Group by source and take up to 4 per source (to ensure trending posts per page)
+    const groupedItems: Record<string, ScrapedItem[]> = {};
+    for (const item of filteredItems) {
+      if (!groupedItems[item.source]) groupedItems[item.source] = [];
+      if (groupedItems[item.source].length < 4) {
+        groupedItems[item.source].push(item);
+      }
+    }
+    
+    // Flatten back to a single array
+    const topItems = Object.values(groupedItems).flat();
 
     const dataPath = path.join(process.cwd(), "data", "rss_news.json");
     await fs.writeFile(dataPath, JSON.stringify({ items: topItems }, null, 2), "utf-8");

@@ -48,7 +48,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
         </header>
 
         <section className="bento-grid">
-          <FadeUpReveal delay={100} className="double-bezel-outer" style={{ gridColumn: 'span 8' }}>
+          <FadeUpReveal delay={100} className="double-bezel-outer" style={{ gridColumn: 'span 7' }}>
             <div className="double-bezel-inner">
               <TabSwitcher activeTab={activeTab} setActiveTab={setActiveTab} />
               <PanelTitle
@@ -80,7 +80,7 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
             </div>
           </FadeUpReveal>
 
-          <FadeUpReveal delay={200} style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridColumn: 'span 4' }}>
+          <FadeUpReveal delay={200} style={{ display: 'flex', flexDirection: 'column', gap: '24px', gridColumn: 'span 5' }}>
             <NewsAndTipsList 
               activeTab={activeTab} 
               items={plan.trendSnapshot.items} 
