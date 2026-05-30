@@ -49,7 +49,7 @@ export default function GuidePage() {
               </h2>
               <p style={{ color: 'var(--color-text-secondary)' }}>เกาะกระแสโซเชียลและข่าวสารวงการไอที เพื่อสร้างคอนเทนต์ข่าวไวรัลได้แบบทันท่วงที</p>
               <ul style={{ marginLeft: '24px', marginBottom: '0', color: 'var(--color-text-secondary)' }}>
-                <li style={{ marginBottom: '12px' }}><strong>Auto Trend Radar:</strong> ดึงโพสต์ล่าสุดจาก 4 เพจไอทีชั้นนำ (Comcraft, NotebookSpec, Extreme IT, Overclockzone) คัดเฉพาะหัวข้อเด่นเพจละ 4 โพสต์</li>
+                <li style={{ marginBottom: '12px' }}><strong>Auto Trend Radar:</strong> ดึงโพสต์ล่าสุดจาก 3 เพจคู่แข่ง (Comcraft, NotebookSpec, Overclockzone) คัดเฉพาะหัวข้อเด่นเพจละ 4 โพสต์</li>
                 <li style={{ marginBottom: '12px' }}><strong>ข้อมูลสดใหม่เสมอ:</strong> ล้างข้อมูลเก่าทิ้งทุกครั้งที่เปิดหน้านี้ใหม่ เพื่อให้มั่นใจว่าคุณกำลังดูเฉพาะเทรนด์ปัจจุบัน</li>
                 <li style={{ marginBottom: '12px' }}><strong>แปลงข่าวเป็นคอนเทนต์:</strong> กดเลือกข่าวที่น่าสนใจเพื่อให้ AI สรุปพาดหัวข่าวสั้นกระชับ พร้อมข้อความ Hook ดึงดูดสายตา</li>
                 <li><strong>ดีไซน์ภาพข่าวระดับโปร:</strong> AI สร้าง Prompt วาดภาพประกอบข่าว (สำหรับ DALL-E 3) พร้อมกำหนด Layout การวางข้อความ 60/40 แบบเพจชั้นนำให้ทันที</li>
