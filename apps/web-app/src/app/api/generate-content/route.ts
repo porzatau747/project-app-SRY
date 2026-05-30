@@ -231,14 +231,40 @@ ${prompt}
 ${agentPromotion}`;
     } else if (template === "โปรโมชัน") {
       let agentPromotion = "";
+      let newsDesign = "";
       try {
-        const filePath = path.join(process.cwd(), "../../EXX/AgentPromotion.md");
-        agentPromotion = await fs.readFile(filePath, "utf-8");
+        const agentPath = path.join(process.cwd(), "../../EXX/AgentPromotion.md");
+        agentPromotion = await fs.readFile(agentPath, "utf-8");
+        const newsDesignPath = path.join(process.cwd(), "../../EXX/NEWS-design.md");
+        newsDesign = await fs.readFile(newsDesignPath, "utf-8");
       } catch (err) {
-        console.error("Error reading AgentPromotion.md:", err);
+        console.error("Error reading EXX files:", err);
       }
       
-      systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}\n\nคุณต้องสร้างคอนเทนต์โปรโมชั่น/โพสต์ขาย โดยอ้างอิงคู่มือ AgentPromotion ด้านล่างนี้อย่างเคร่งครัด:\n${agentPromotion}`;
+      systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}
+      
+คุณต้องสร้างโครงสร้าง Prompt สำหรับนำไปป้อนให้ AI "ChatGPT Images 2.0 (DALL-E 3)" วาดภาพต่อ และสร้างคอนเทนต์โปรโมชั่น/โพสต์ขาย โดยอ้างอิงจากข้อมูลด้านบน
+
+บังคับให้แสดงผลลัพธ์เป็น JSON format เท่านั้น ห้ามมีข้อความอื่นปน โดยใช้โครงสร้างดังนี้:
+      {
+        "intro": "สร้างภาพคอนเทนต์โปรโมชั่นขายสินค้า สไตล์โปสเตอร์สำหรับโพสลงเพจร้านขายสินค้าไอทีชื่อ Advice สามร้อยยอด",
+        "topic": "(พาดหัวโปรโมชั่นสั้นๆ ดึงดูดความสนใจ หรือชูจุดเด่น)",
+        "hook": "(ประโยค Hook เปิดโพสต์ด้วยมีมไวรัล หรือกระแสปัจจุบัน)",
+        "contextAndTrend": "(ขยี้ปัญหา + เทรนด์ไอทีที่เกี่ยวข้องกับสินค้า)",
+        "promotion": "(อธิบายโปรโมชั่นกระแทกใจคนสามร้อยยอด/คนชนบท เน้นความคุ้มค่า ผ่อนสบาย หรือของแถม)",
+        "cta": "(Call to Action พร้อมพิกัดร้านที่ไร่ใหม่)",
+        "visualDirection": "(อ้างอิง Visual Direction จากเอกสาร NEWS-design)",
+        "layout": "(อ้างอิง Layout จากเอกสาร NEWS-design)",
+        "imagePrompts": [
+          "(อธิบายภาพโปรโมชั่น 1 ภาพแบบเจาะจง ให้ AI วาดตามได้เลย โชว์สินค้าเด่นชัด และมีพื้นที่สำหรับใส่ข้อความโปรโมชั่น)"
+        ]
+      }
+
+อ้างอิงแนวทางการเขียนคอนเทนต์ (Content Style) จากคู่มือ AgentPromotion ด้านล่างนี้อย่างเคร่งครัด:
+${agentPromotion}
+
+อ้างอิงแนวทางการออกแบบภาพ (Visual & Layout Style) จากเอกสาร NEWS-design ด้านล่างนี้อย่างเคร่งครัด:
+${newsDesign}`;
     } else {
       systemPrompt += `\nประเภทคอนเทนต์: ${template}\nหัวข้อ/สินค้า: ${prompt}\nความยาวไม่เกิน 150 คำ`;
     }

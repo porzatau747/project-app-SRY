@@ -37,8 +37,39 @@ export default function ContentCreatorApp() {
     if (!res) return null;
     try {
       const parsed = JSON.parse(res);
-      // Construct the full prompt text
-      const promptText = `${parsed.intro}
+      let promptText = "";
+      let uiDisplay = null;
+
+      if (parsed.promotion) {
+        // โปรโมชัน template
+        promptText = `${parsed.intro}
+หัวข้อ: ${parsed.topic}
+Hook: ${parsed.hook}
+ขยี้ปัญหา/เทรนด์: ${parsed.contextAndTrend}
+โปรโมชัน: ${parsed.promotion}
+Call to Action: ${parsed.cta}
+Visual Direction: ${parsed.visualDirection || ''}
+
+${parsed.layout || ''}
+
+${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts):\n${parsed.imagePrompts.join('\n')}` : ''}`;
+        
+        uiDisplay = (
+          <div style={{ backgroundColor: "var(--bg-secondary)", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>
+            <p><strong>หัวข้อ:</strong> {parsed.topic}</p>
+            <p><strong>Hook:</strong> {parsed.hook}</p>
+            <p><strong>โปรโมชัน:</strong> {parsed.promotion}</p>
+            <p><strong>Visual Direction:</strong> {parsed.visualDirection}</p>
+            {parsed.imagePrompts && (
+              <div style={{ marginTop: "8px" }}>
+                <strong>รูปแบบภาพ:</strong> {parsed.imagePrompts.length} ภาพ
+              </div>
+            )}
+          </div>
+        );
+      } else {
+        // ทิปส์ไอที template
+        promptText = `${parsed.intro}
 หัวข้อ: ${parsed.topic}
 Pain Point: ${parsed.painPoint}
 Insight: ${parsed.insight}
@@ -54,9 +85,8 @@ Visual Direction: ${parsed.visualDirection}
 ${parsed.layout}
 
 ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts):\n${parsed.imagePrompts.join('\n')}` : ''}`;
-
-      return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        
+        uiDisplay = (
           <div style={{ backgroundColor: "var(--bg-secondary)", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>
             <p><strong>หัวข้อ:</strong> {parsed.topic}</p>
             <p><strong>Pain Point:</strong> {parsed.painPoint}</p>
@@ -68,6 +98,12 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts)
               </div>
             )}
           </div>
+        );
+      }
+
+      return (
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {uiDisplay}
           <p style={{ fontSize: "13px", color: "var(--text-secondary)" }}>โครงสร้าง Prompt ฉบับเต็ม:</p>
           <pre style={{ whiteSpace: "pre-wrap", backgroundColor: "#1e1e1e", color: "#d4d4d4", padding: "12px", borderRadius: "8px", fontSize: "13px", fontFamily: "inherit" }}>
             {promptText}
