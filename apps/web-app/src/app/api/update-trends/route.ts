@@ -41,13 +41,11 @@ async function filterAdviceRelevantNewsWithAI(items: ScrapedItem[]): Promise<boo
       baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/"
     });
     const payload = items.map((item, index) => `${index}. ${item.contentSnippet}`).join("\n\n---\n\n");
-    const prompt = `You are a strict news filter for an IT retail store (Advice IT) which sells computers, laptops, PC hardware, gaming gear, printers, networking, AI tech, and software.
-I will give you a list of news posts, including their full text and engagement numbers (likes, comments, shares) at the bottom.
+    const prompt = `You are an IT news content curator for a retail store (Advice IT).
+I will give you a list of recent Facebook posts from top IT pages.
 You must return a valid JSON object with a single key "results" which contains an array of booleans (e.g. {"results": [true, false, true]}).
-Return 'true' IF AND ONLY IF the post meets BOTH of these conditions:
-1. It is about products sold at Advice (Computers, Laptops, PC Hardware, Gaming Gear, Monitors, Printers, Networking, Software, AI tech). Do not accept mobile phones, smartphones, tablets, or non-IT topics.
-2. It has "good engagement" (กระแสดี) based on the numbers in the text compared to typical posts. Look for high like, comment, or share numbers.
-Return 'false' if it fails either condition.
+Return 'true' for posts that are related to IT, computers, PC Hardware, Gaming Gear, Laptops, AI, or tech news that would be interesting to IT followers.
+Return 'false' ONLY if the post is completely irrelevant (e.g. food, politics), spam, or exclusively about smartphones/mobile plans.
 Length of the array must be exactly ${items.length}.
 
 Input:
