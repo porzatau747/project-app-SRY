@@ -4,3 +4,4 @@
 | 2. Implement the Scraper Logic | [x] done | Resilient navigation logic implemented. |
 | 3. Create API Route | [x] done | `/api/sync-stock` created. |
 | 4. Update Frontend App | [x] done | `PlannerApp.tsx` and `useInventoryQuery.ts` updated. |
+| 5. Update Trend Photo Scraping | [x] done | Modifying API route to fetch 5 posts and include Techhub. |

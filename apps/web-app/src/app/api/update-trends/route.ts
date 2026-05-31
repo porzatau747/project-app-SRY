@@ -7,6 +7,7 @@ import { launch } from "cloakbrowser/puppeteer";
 const FB_PAGES = [
   { url: "https://www.facebook.com/comcraft.ds", source: "comcraft.ds" },
   { url: "https://www.facebook.com/notebookspec", source: "notebookspec" },
+  { url: "https://www.facebook.com/techhub.arip", source: "techhub.arip" },
   { url: "https://www.facebook.com/overclockzonefanpage", source: "overclockzonefanpage" }
 ];
 
@@ -165,7 +166,7 @@ export async function POST() {
     const groupedItems: Record<string, ScrapedItem[]> = {};
     for (const item of filteredItems) {
       if (!groupedItems[item.source]) groupedItems[item.source] = [];
-      if (groupedItems[item.source].length < 4) {
+      if (groupedItems[item.source].length < 5) {
         groupedItems[item.source].push(item);
       }
     }

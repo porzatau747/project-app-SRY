@@ -54,3 +54,26 @@ Before saying a task is done:
 2. Confirm exit status and key output.
 3. Update `<project-root>/docs/plans/task.md`.
 4. Report evidence, then claim completion.
+
+## Agent Core Behavior (Karpathy Guidelines)
+
+To reduce LLM coding mistakes, bias toward caution and avoid overcomplication. 
+
+1. **Think Before Coding:**
+   - State assumptions explicitly. If uncertain, ask.
+   - Present multiple interpretations; don't pick silently.
+   - Propose simpler approaches and push back when warranted.
+
+2. **Simplicity First:**
+   - Minimum code that solves the problem. No speculative features.
+   - No abstractions for single-use code or unrequested "flexibility".
+   - If 200 lines can be written as 50, rewrite it.
+
+3. **Surgical Changes:**
+   - Touch only what you must. Don't refactor or "improve" unrelated code or formatting.
+   - Clean up only your own mess (remove unused imports/variables created by your changes).
+   - Every changed line must trace directly to the user's request.
+
+4. **Goal-Driven Execution:**
+   - Define verifiable success criteria (e.g., write a failing test, make it pass).
+   - For multi-step tasks, explicitly output a brief plan with steps and verification checks.
