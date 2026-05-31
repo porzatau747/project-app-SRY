@@ -45,7 +45,7 @@ ${parsed.imagePrompts ? parsed.imagePrompts.join('\n') : ''}`;
       // Badge Logic Fix: rely on 'template' state instead of JSON keys
       let badgeLabel = "";
       if (template === "product-a-notebook") badgeLabel = "โปสเตอร์ Notebook 3 รุ่น";
-      else if (template === "product-a-chair") badgeLabel = "โปสเตอร์เก้าอี้ Before/After";
+      else if (template === "product-a-chair") badgeLabel = "โปสเตอร์เก้าอี้เกมมิ่ง";
       else if (template === "product-a-gaming") badgeLabel = "โปสเตอร์ Gaming สายสเปค";
       else if (template === "product-a-printer") badgeLabel = "โปสเตอร์ Printer แจกของแถม";
       else if (template === "product-a-speaker") badgeLabel = "โปสเตอร์ Speaker แต่งโต๊ะคอม";
@@ -93,7 +93,7 @@ ${parsed.imagePrompts ? parsed.imagePrompts.join('\n') : ''}`;
           <select value={template} onChange={e => setAITemplate(e.target.value)} className="trendBox">
             <optgroup label="Product A (สินค้ามูลค่าสูง / พรีเมียม)">
               <option value="product-a-notebook">Notebook (โปสเตอร์ 3 ส่วนโชว์สเปค/ของแถม)</option>
-              <option value="product-a-chair">เก้าอี้ (แก้ปวดหลัง / Before vs After)</option>
+              <option value="product-a-chair">เก้าอี้เกมมิ่ง (นั่งสบาย / อัพเกรดสเตชั่น)</option>
               <option value="product-a-gaming">Gaming Gear (สายเกมมิ่ง โชว์ฟีเจอร์จัดเต็ม)</option>
               <option value="product-a-printer">Printer (เน้นประหยัดคุ้มค่า / ของแถมชิ้นใหญ่)</option>
               <option value="product-a-speaker">Speaker (แต่งโต๊ะคอม / มินิมอล Lifestyle)</option>
