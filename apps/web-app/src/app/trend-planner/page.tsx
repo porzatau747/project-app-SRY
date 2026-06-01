@@ -1,15 +1,13 @@
 import TrendPlannerApp from "./TrendPlannerApp";
 import type { TrendContentPlan } from "../../types/planner";
+import { getCurrentTrendSnapshot } from "../../services/trends";
 
-export default function TrendPlannerPage() {
-  const emptyPlan: TrendContentPlan = {
+export default async function TrendPlannerPage() {
+  const snapshot = await getCurrentTrendSnapshot();
+  
+  const initialPlan: TrendContentPlan = {
     generatedAt: "",
-    trendSnapshot: {
-      fetchedAt: new Date().toISOString(),
-      generatedFrom: "fallback",
-      headline: "รอการดึงข่าว IT ล่าสุด...",
-      items: [],
-    },
+    trendSnapshot: snapshot,
     memeSignals: [],
     positioning: "รอการวิเคราะห์เพจ",
     trendSourcesNote: "คลิกปุ่ม Generate แผนเทรนด์ 7 วัน เพื่อเริ่มค้นหาข่าว IT และเทรนด์ไวรัลไทย",
@@ -20,5 +18,5 @@ export default function TrendPlannerPage() {
     weeklyPosts: [],
   };
 
-  return <TrendPlannerApp initialPlan={emptyPlan} />;
+  return <TrendPlannerApp initialPlan={initialPlan} />;
 }

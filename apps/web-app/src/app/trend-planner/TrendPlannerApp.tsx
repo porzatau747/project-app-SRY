@@ -11,8 +11,8 @@ import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 import toast from "react-hot-toast";
 
 export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendContentPlan }) {
-  const [snapshotItems, setSnapshotItems] = useState<TrendSnapshotItem[]>([]);
-  const [fetchedAt, setFetchedAt] = useState<string | null>(null);
+  const [snapshotItems, setSnapshotItems] = useState<TrendSnapshotItem[]>(initialPlan.trendSnapshot.items || []);
+  const [fetchedAt, setFetchedAt] = useState<string | null>(initialPlan.trendSnapshot.fetchedAt || null);
   const [loading, setLoading] = useState(false);
   
   const [selectedNews, setSelectedNews] = useState<TrendSnapshotItem | null>(null);
@@ -79,7 +79,6 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
 Hook: ${parsed.hook}
 Insight: ${parsed.insight}
 Bridge Content:
-- Meme: ${parsed.bridgeContent?.meme}
 - Product: ${parsed.bridgeContent?.product}
 Visual Direction: ${parsed.visualDirection}
 
