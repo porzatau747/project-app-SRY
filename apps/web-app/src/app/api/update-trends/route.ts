@@ -31,22 +31,21 @@ export type ScrapedItem = {
   type: "news" | "tip";
 };
 
-async function filterAdviceRelevantNewsWithAI(items: ScrapedItem[]): Promise<boolean[]> {
+async function summarizeNewsWithAI(items: ScrapedItem[]): Promise<string[]> {
   if (!process.env.GEMINI_API_KEY || items.length === 0) {
-    console.log("No GEMINI_API_KEY found or empty items, using fallback keyword filtering.");
-    return items.map((item) => isAdviceRelevantFallback(item.title, item.contentSnippet));
+    console.log("No GEMINI_API_KEY found or empty items, using raw snippet.");
+    return items.map((item) => item.contentSnippet.substring(0, 250));
   }
   try {
     const openai = new OpenAI({ 
       apiKey: process.env.GEMINI_API_KEY,
       baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/"
     });
-    const payload = items.map((item, index) => `${index}. ${item.contentSnippet}`).join("\n\n---\n\n");
-    const prompt = `You are an IT news content curator for a retail store (Advice IT).
-I will give you a list of recent Facebook posts from top IT pages.
-You must return a valid JSON object with a single key "results" which contains an array of booleans (e.g. {"results": [true, false, true]}).
-Return 'true' for posts that are related to IT, computers, PC Hardware, Gaming Gear, Laptops, AI, or tech news that would be interesting to IT followers.
-Return 'false' ONLY if the post is completely irrelevant (e.g. food, politics), spam, or exclusively about smartphones/mobile plans.
+    // Send a truncated snippet to save tokens
+    const payload = items.map((item, index) => `${index}. ${item.contentSnippet.substring(0, 800)}`).join("\n\n---\n\n");
+    const prompt = `You are an AI assistant. I will give you a list of Facebook posts.
+You must return a valid JSON object with a single key "results" which contains an array of strings.
+Each string must be a concise summary (1-3 sentences) of the corresponding post in Thai language, capturing the core news or product info.
 Length of the array must be exactly ${items.length}.
 
 Input:
@@ -55,7 +54,7 @@ ${payload}`;
     const response = await openai.chat.completions.create({
       model: "gemini-2.5-flash",
       messages: [{ role: "user", content: prompt }],
-      temperature: 0,
+      temperature: 0.3,
       response_format: { type: "json_object" }
     });
     const content = response.choices[0].message.content;
@@ -67,9 +66,9 @@ ${payload}`;
       }
     }
   } catch(e: unknown) {
-    console.error("AI filter failed, falling back", e instanceof Error ? e.message : e);
+    console.error("AI summarization failed, falling back", e instanceof Error ? e.message : e);
   }
-  return items.map((item) => isAdviceRelevantFallback(item.title, item.contentSnippet));
+  return items.map((item) => item.contentSnippet.substring(0, 250));
 }
 
 export async function POST() {
@@ -156,23 +155,27 @@ export async function POST() {
     await browser.close();
     browser = null;
 
-    // AI Filter
-    const isRelevantArray = await filterAdviceRelevantNewsWithAI(rawItems);
-    
-    // Filter to keep only relevant news (true)
-    const filteredItems = rawItems.filter((_, index) => isRelevantArray[index]);
-
-    // Group by source and take up to 4 per source (to ensure trending posts per page)
+    // Group by source and take up to 5 per source
     const groupedItems: Record<string, ScrapedItem[]> = {};
-    for (const item of filteredItems) {
+    for (const item of rawItems) {
       if (!groupedItems[item.source]) groupedItems[item.source] = [];
       if (groupedItems[item.source].length < 5) {
         groupedItems[item.source].push(item);
       }
     }
     
-    // Flatten back to a single array
+    // Flatten back to a single array of exactly 20 items (5 per page)
     const topItems = Object.values(groupedItems).flat();
+
+    // AI Summarization
+    const summaries = await summarizeNewsWithAI(topItems);
+    
+    // Update snippets with AI summaries
+    topItems.forEach((item, index) => {
+      if (summaries[index]) {
+        item.contentSnippet = summaries[index];
+      }
+    });
 
     const dataPath = path.join(process.cwd(), "data", "rss_news.json");
     await fs.writeFile(dataPath, JSON.stringify({ items: topItems }, null, 2), "utf-8");
