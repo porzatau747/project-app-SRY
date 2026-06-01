@@ -103,14 +103,16 @@ export async function POST() {
       try {
         await page.goto(feed.url, { waitUntil: 'networkidle2', timeout: 45000 });
         
-        // Scroll slightly to trigger lazy load for posts
-        await page.evaluate(() => window.scrollBy(0, 1500));
-        await new Promise(r => setTimeout(r, 2000)); // wait for network
+        // Scroll multiple times to ensure enough posts are loaded
+        for (let i = 0; i < 3; i++) {
+          await page.evaluate(() => window.scrollBy(0, 2000));
+          await new Promise(r => setTimeout(r, 1500));
+        }
 
         const posts = await page.evaluate(() => {
           const articles = Array.from(document.querySelectorAll('[role="article"]'));
           if (articles.length > 0) {
-            return articles.slice(0, 15).map(article => {
+            return articles.map(article => {
               // Check if it has a content image (exclude tiny icons)
               const images = Array.from(article.querySelectorAll('img'));
               const hasContentImage = images.some(img => {
@@ -119,13 +121,17 @@ export async function POST() {
                 return (w > 100 && h > 100) || (!w && !h && img.src && !img.src.includes('emoji'));
               });
 
+              // Also check for SVG images or div backgrounds that Facebook sometimes uses
+              const hasAlternativeImage = article.querySelectorAll('image').length > 0 || 
+                                         Array.from(article.querySelectorAll('div')).some(d => window.getComputedStyle(d).backgroundImage.includes('url("https://scontent'));
+
               // Extract full text to capture engagement numbers at the bottom
-              const text = (article as HTMLElement).innerText;
+              const text = (article as HTMLElement).innerText || "";
               
               const link = article.querySelector('a[role="link"][tabindex="0"]');
               const href = link ? (link as HTMLAnchorElement).href : window.location.href;
               
-              return { text: text.trim(), url: href, hasImage: hasContentImage };
+              return { text: text.trim(), url: href, hasImage: hasContentImage || hasAlternativeImage };
             }).filter(post => post.hasImage);
           }
           return [];
