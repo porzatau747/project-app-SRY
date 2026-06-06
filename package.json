@@ -7,7 +7,11 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=web-app",
-    "build": "npm run build --workspaces"
+    "build": "npm run build --workspaces",
+    "sync:branch": "npx tsx apps/scraping-worker/src/stock-scraper.ts --mode=all",
+    "sync:stock": "npx tsx apps/scraping-worker/src/stock-scraper.ts --mode=stock",
+    "sync:price": "npx tsx apps/scraping-worker/src/stock-scraper.ts --mode=price",
+    "sync:price:sample": "npx tsx apps/scraping-worker/src/stock-scraper.ts --mode=price --category-limit=2"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",
