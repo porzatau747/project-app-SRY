@@ -4,15 +4,17 @@ import { POST } from './route';
 // Mock dependencies
 vi.mock('openai', () => {
   return {
-    default: vi.fn().mockImplementation(() => ({
-      chat: {
-        completions: {
-          create: vi.fn().mockResolvedValue({
-            choices: [{ message: { content: 'mock generated content' } }]
-          })
+    default: vi.fn().mockImplementation(function() {
+      return {
+        chat: {
+          completions: {
+            create: vi.fn().mockResolvedValue({
+              choices: [{ message: { content: 'mock generated content' } }]
+            })
+          }
         }
-      }
-    }))
+      };
+    })
   };
 });
 
