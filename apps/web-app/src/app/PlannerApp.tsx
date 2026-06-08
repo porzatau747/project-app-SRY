@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { PanelTitle } from "../components/planner/PanelTitle";
 import { StockTablePanel } from "../components/planner/StockTablePanel";
+import { StockDashboard } from "../components/planner/StockDashboard";
 import { StockContentCreator } from "../components/planner/StockContentCreator";
 import { useInventoryQuery } from "../hooks/queries/useInventoryQuery";
 import { useUIStore } from "../store/uiStore";
@@ -134,6 +135,8 @@ export default function PlannerApp({ initialState }: { initialState: PlannerStat
             </div>
           </div>
         </section>
+
+        <StockDashboard inventory={state.inventory} />
 
         <StockTablePanel 
           inventory={state.inventory} 

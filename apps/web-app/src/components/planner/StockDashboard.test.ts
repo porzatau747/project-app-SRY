@@ -54,13 +54,13 @@ const mockInventory: InventoryItem[] = [
 
 describe("StockDashboard", () => {
   it("ควรคำนวณและเรนเดอร์ตัวชี้วัดทางการเงินถูกต้อง", () => {
-    const { getByText } = render(<StockDashboard inventory={mockInventory} />);
+    // ใช้ React.createElement แทน <StockDashboard inventory={mockInventory} />
+    const { getByText } = render(React.createElement(StockDashboard, { inventory: mockInventory }));
     // ทุนรวม = 5*100 + 2*1000 + 10*500 = 7500
     // คาดการณ์รายได้ = 1000 + 3000 + 6000 = 10000
     // กำไร = 10000 - 7500 = 2500
     // อัตรากำไร = 25% (25.0%)
     
-    // คาดหวังการแสดงผลตัวเลขและป้ายกำกับ
     expect(getByText(/7,500/)).toBeDefined();
     expect(getByText(/10,000/)).toBeDefined();
     expect(getByText(/2,500/)).toBeDefined();
@@ -68,8 +68,7 @@ describe("StockDashboard", () => {
   });
 
   it("ควรคัดแยก เมาส์และคีย์บอร์ด (ทั่วไป) ออกจากหมวดหมู่อื่นๆ", () => {
-    const { getByText } = render(<StockDashboard inventory={mockInventory} />);
-    // คาดหวังว่าจะมีป้ายกำกับ เมาส์และคีย์บอร์ด (ทั่วไป) ปรากฏบนจอ
+    const { getByText } = render(React.createElement(StockDashboard, { inventory: mockInventory }));
     expect(getByText(/เมาส์และคีย์บอร์ด \(ทั่วไป\)/)).toBeDefined();
   });
 });
