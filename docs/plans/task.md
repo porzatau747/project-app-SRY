@@ -6,4 +6,6 @@
 | 4. Update Frontend App | [x] done | `PlannerApp.tsx` and `useInventoryQuery.ts` updated. |
 | 5. Update Trend Photo Scraping | [x] done | Modifying API route to fetch 5 posts and include Techhub. |
 | 6. Implement Video Thumbnail Custom Inputs | [x] done | Add Video Topic and Image Brief inputs to StockContentCreator and route.ts |
+| 7. Move Video Thumbnail Template to ContentCreatorApp | [x] done | Remove video thumbnail template from StockContentCreator and implement in ContentCreatorApp |
+
 

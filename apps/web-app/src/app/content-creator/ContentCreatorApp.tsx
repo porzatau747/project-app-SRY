@@ -6,6 +6,8 @@ export default function ContentCreatorApp() {
   const [template, setTemplate] = useState("ทิปส์ไอที");
   const [imageLayout, setImageLayout] = useState("album5");
   const [prompt, setPrompt] = useState("");
+  const [videoTopic, setVideoTopic] = useState("");
+  const [videoBrief, setVideoBrief] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -15,7 +17,13 @@ export default function ContentCreatorApp() {
     try {
       const res = await fetch("/api/generate-content", {
         method: "POST",
-        body: JSON.stringify({ template, prompt, imageLayout })
+        body: JSON.stringify({ 
+          template, 
+          prompt: template === "video-thumbnail" ? "" : prompt, 
+          imageLayout,
+          videoTopic: template === "video-thumbnail" ? videoTopic : undefined,
+          videoBrief: template === "video-thumbnail" ? videoBrief : undefined
+        })
       });
       const data = await res.json();
       let finalResult = data.result || "เกิดข้อผิดพลาดในการสร้างคอนเทนต์";
@@ -40,7 +48,31 @@ export default function ContentCreatorApp() {
       let promptText = "";
       let uiDisplay = null;
 
-      if (parsed.promotion) {
+      if (template === "video-thumbnail") {
+        promptText = `${parsed.intro}
+หัวข้อ: ${parsed.topic}
+${parsed.subTopic ? `สโลแกน: ${parsed.subTopic}\n` : ''}${parsed.productName ? `ชื่อสินค้า: ${parsed.productName}\n` : ''}${parsed.presenter ? `พรีเซนเตอร์: ${parsed.presenter}\n` : ''}${parsed.features ? `จุดเด่น: ${parsed.features}\n` : ''}${parsed.mainFeatures ? `ฟีเจอร์หลัก: ${parsed.mainFeatures}\n` : ''}${parsed.memeAngle ? `Meme Angle: ${parsed.memeAngle}\n` : ''}${parsed.priceTag ? `ราคา: ${parsed.priceTag}\n` : ''}${parsed.productShowcase ? `รุ่นต่างๆ:\n- ${parsed.productShowcase.join('\n- ')}\n` : ''}
+Visual Direction: ${parsed.visualDirection}
+
+${parsed.layout}
+
+รายละเอียดภาพ (Image Prompts):
+${parsed.imagePrompts ? parsed.imagePrompts.join('\n') : ''}
+
+บังคับให้ใส่ข้อความต่อไปนี้ประกอบลงในด้านล่างสุดของภาพด้วย:
+[ไอคอน Line] @a0917611968
+[ไอคอนโทรศัพท์] 091-7611968
+มีบริการ รับ-ส่ง สินค้าและเครื่องซ่อม`;
+
+        uiDisplay = (
+          <div style={{ backgroundColor: "var(--bg-secondary)", padding: "12px", borderRadius: "8px", fontSize: "14px" }}>
+            <p><strong>หัวข้อ:</strong> {parsed.topic}</p>
+            <p><strong>แบบ:</strong> ภาพปกคลิป 6:9</p>
+            {parsed.presenter && <p><strong>พรีเซนเตอร์:</strong> {parsed.presenter}</p>}
+            {parsed.visualDirection && <p><strong>Visual Direction:</strong> {parsed.visualDirection}</p>}
+          </div>
+        );
+      } else if (parsed.promotion) {
         // โปรโมชัน template
         promptText = `${parsed.intro}
 หัวข้อ: ${parsed.topic}
@@ -148,6 +180,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts)
               <option value="ทิปส์ไอที">ทิปส์ไอที / แก้ปัญหาคอม</option>
               <option value="เลือกซื้อสินค้า">คำแนะนำก่อนซื้อ (Buying Guide)</option>
               <option value="โปรโมชัน">โพสต์ขาย/โปรโมชัน</option>
+              <option value="video-thumbnail">ภาพปกคลิป (Video Thumbnail)</option>
               <option value="free-text">พิมพ์คำสั่งเอง (Free-text)</option>
             </select>
           </div>
@@ -168,21 +201,50 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts)
             </div>
           )}
 
-          <div className="fileInput">
-            <label>{template === "free-text" ? "คำสั่งสำหรับ AI (Prompt)" : "หัวข้อ / สินค้า (เช่น 'วิธีเลือกเมาส์เกมมิ่ง' หรือ 'Notebook Acer')"}</label>
-            {template === "free-text" ? (
-              <textarea 
-                value={prompt} 
-                onChange={e => setPrompt(e.target.value)} 
-                className="trendBox"
-                placeholder='เช่น "ช่วยเขียนโพสต์แนะนำวิธีเลือกซื้อการ์ดจอสำหรับงบ 10,000 บาทหน่อย"'
-                rows={5}
-              />
-            ) : (
-              <input value={prompt} onChange={e => setPrompt(e.target.value)} />
-            )}
-          </div>
-          <button className="primaryButton" onClick={handleGenerate} disabled={loading || !prompt}>
+          {template === "video-thumbnail" ? (
+            <>
+              <div className="fileInput">
+                <label>หัวข้อของคอนเทนต์คลิป <span style={{ color: "#ef4444" }}>*</span></label>
+                <input 
+                  type="text" 
+                  value={videoTopic} 
+                  onChange={e => setVideoTopic(e.target.value)} 
+                  className="trendBox"
+                  placeholder="เช่น แนะนำ 5 ฟีเจอร์ลับ Windows 11 ที่ทุกคนต้องรู้"
+                />
+              </div>
+              <div className="fileInput">
+                <label>บรีฟที่อยากได้ในภาพ</label>
+                <textarea 
+                  value={videoBrief} 
+                  onChange={e => setVideoBrief(e.target.value)} 
+                  className="trendBox"
+                  rows={3}
+                  placeholder="ระบุสไตล์ องค์ประกอบ หรือฉากหลัง เช่น พรีเซนเตอร์ผู้หญิงยืนทำหน้าตื่นเต้น มีแท่นวางโน้ตบุ๊กเรืองแสง โทนสีม่วง/ส้ม"
+                />
+              </div>
+            </>
+          ) : (
+            <div className="fileInput">
+              <label>{template === "free-text" ? "คำสั่งสำหรับ AI (Prompt)" : "หัวข้อ / สินค้า (เช่น 'วิธีเลือกเมาส์เกมมิ่ง' หรือ 'Notebook Acer')"}</label>
+              {template === "free-text" ? (
+                <textarea 
+                  value={prompt} 
+                  onChange={e => setPrompt(e.target.value)} 
+                  className="trendBox"
+                  placeholder='เช่น "ช่วยเขียนโพสต์แนะนำวิธีเลือกซื้อการ์ดจอสำหรับงบ 10,000 บาทหน่อย"'
+                  rows={5}
+                />
+              ) : (
+                <input value={prompt} onChange={e => setPrompt(e.target.value)} className="trendBox" />
+              )}
+            </div>
+          )}
+          <button 
+            className="primaryButton" 
+            onClick={handleGenerate} 
+            disabled={loading || (template === "video-thumbnail" ? !videoTopic : !prompt)}
+          >
             {loading ? "กำลังร่างคอนเทนต์..." : "ร่างคอนเทนต์ด้วย Gemini"}
           </button>
         </div>

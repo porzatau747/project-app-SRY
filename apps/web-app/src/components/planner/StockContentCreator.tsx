@@ -12,21 +12,11 @@ export function StockContentCreator() {
   const setAIPrompt = useUIStore(state => state.setAIPrompt);
   const freeGift = useUIStore(state => state.aiFreeGift);
   const setAIFreeGift = useUIStore(state => state.setAIFreeGift);
-  const videoTopic = useUIStore(state => state.aiVideoTopic);
-  const setAIVideoTopic = useUIStore(state => state.setAIVideoTopic);
-  const videoBrief = useUIStore(state => state.aiVideoBrief);
-  const setAIVideoBrief = useUIStore(state => state.setAIVideoBrief);
   const [copied, setCopied] = useState(false);
   const generateMutation = useGenerateContentMutation();
 
   function handleGenerateContent() {
-    generateMutation.mutate({ 
-      template, 
-      prompt, 
-      freeGift,
-      videoTopic: template === "video-thumbnail" ? videoTopic : undefined,
-      videoBrief: template === "video-thumbnail" ? videoBrief : undefined
-    });
+    generateMutation.mutate({ template, prompt, freeGift });
   }
 
   const loadingContent = generateMutation.isPending;
@@ -66,7 +56,6 @@ ${parsed.imagePrompts ? parsed.imagePrompts.join('\n') : ''}
       else if (template === "product-a-speaker") badgeLabel = "โปสเตอร์ Speaker แต่งโต๊ะคอม";
       else if (template === "stock-product-b") badgeLabel = "โปสเตอร์ภาพเดี่ยว Clearance";
       else if (template === "stock-product-b-general") badgeLabel = "โปสเตอร์ภาพเดี่ยว สินค้าทั่วไป";
-      else if (template === "video-thumbnail") badgeLabel = "ภาพปกคลิป 6:9";
 
       return (
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -119,65 +108,31 @@ ${parsed.imagePrompts ? parsed.imagePrompts.join('\n') : ''}
               <option value="stock-product-b">Product B (โปสเตอร์ภาพเดี่ยว Clearance)</option>
               <option value="stock-product-b-general">Product B (โปสเตอร์ภาพเดี่ยว สินค้าทั่วไป)</option>
             </optgroup>
-            <optgroup label="Video / Social Media">
-              <option value="video-thumbnail">ภาพปกคลิป (Video Thumbnail)</option>
-            </optgroup>
           </select>
         </div>
-        {template === "video-thumbnail" ? (
-          <>
-            <div className="fileInput">
-              <label>หัวข้อของคอนเทนต์คลิป <span style={{ color: "#ef4444" }}>*</span></label>
-              <input 
-                type="text" 
-                value={videoTopic} 
-                onChange={e => setAIVideoTopic(e.target.value)} 
-                className="trendBox"
-                placeholder="เช่น แนะนำ 5 ฟีเจอร์ลับ Windows 11 ที่ทุกคนต้องรู้"
-              />
-            </div>
-            <div className="fileInput">
-              <label>บรีฟที่อยากได้ในภาพ</label>
-              <textarea 
-                value={videoBrief} 
-                onChange={e => setAIVideoBrief(e.target.value)} 
-                className="trendBox"
-                rows={3}
-                placeholder="ระบุสไตล์ องค์ประกอบ หรือฉากหลัง เช่น พรีเซนเตอร์ผู้หญิงยืนทำหน้าตื่นเต้น มีแท่นวางโน้ตบุ๊กเรืองแสง โทนสีม่วง/ส้ม"
-              />
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="fileInput">
-              <label>ข้อมูลสินค้า (กด "✨ สร้างคอนเทนต์" จากตารางด้านบน)</label>
-              <textarea 
-                value={prompt} 
-                onChange={e => setAIPrompt(e.target.value)} 
-                className="trendBox"
-                rows={3}
-                placeholder="เลือกสินค้าจากตารางเพื่อดึงข้อมูลมาไว้ที่นี่..."
-              />
-            </div>
-            {template === "product-a-notebook" && (
-              <div className="fileInput">
-                <label>ของแถม (ชื่อและมูลค่า)</label>
-                <input 
-                  type="text" 
-                  value={freeGift} 
-                  onChange={e => setAIFreeGift(e.target.value)} 
-                  className="trendBox"
-                  placeholder="เช่น กระเป๋าเป้และเมาส์ไร้สาย มูลค่า 1,290 บาท"
-                />
-              </div>
-            )}
-          </>
+        <div className="fileInput">
+          <label>ข้อมูลสินค้า (กด "✨ สร้างคอนเทนต์" จากตารางด้านบน)</label>
+          <textarea 
+            value={prompt} 
+            onChange={e => setAIPrompt(e.target.value)} 
+            className="trendBox"
+            rows={3}
+            placeholder="เลือกสินค้าจากตารางเพื่อดึงข้อมูลมาไว้ที่นี่..."
+          />
+        </div>
+        {template === "product-a-notebook" && (
+          <div className="fileInput">
+            <label>ของแถม (ชื่อและมูลค่า)</label>
+            <input 
+              type="text" 
+              value={freeGift} 
+              onChange={e => setAIFreeGift(e.target.value)} 
+              className="trendBox"
+              placeholder="เช่น กระเป๋าเป้และเมาส์ไร้สาย มูลค่า 1,290 บาท"
+            />
+          </div>
         )}
-        <button 
-          className="primaryButton" 
-          onClick={handleGenerateContent} 
-          disabled={loadingContent || (template === "video-thumbnail" ? !videoTopic : !prompt)}
-        >
+        <button className="primaryButton" onClick={handleGenerateContent} disabled={loadingContent || !prompt}>
           {loadingContent ? "กำลังร่าง Prompt..." : "ร่าง Prompt ด้วย Gemini"}
         </button>
       </div>
