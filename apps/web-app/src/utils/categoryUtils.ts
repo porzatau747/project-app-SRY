@@ -6,10 +6,12 @@ export type MacroCategory =
   | "Monitor & Display"
   | "Gaming & Stream"
   | "Network & CCTV"
-  | "Printer & Ink"
+  | "Printer"
+  | "Ink"
   | "Accessories"
   | "Clearance"
   | "Services & Others"
+  | "เมาส์และคีย์บอร์ด (ทั่วไป)"
   | "อื่นๆ";
 
 export const MACRO_CATEGORIES: MacroCategory[] = [
@@ -20,10 +22,12 @@ export const MACRO_CATEGORIES: MacroCategory[] = [
   "Monitor & Display",
   "Gaming & Stream",
   "Network & CCTV",
-  "Printer & Ink",
+  "Printer",
+  "Ink",
   "Accessories",
   "Clearance",
   "Services & Others",
+  "เมาส์และคีย์บอร์ด (ทั่วไป)",
   "อื่นๆ"
 ];
 
@@ -80,18 +84,27 @@ export function getMacroCategory(rawType: string | undefined | null): MacroCateg
     return "Network & CCTV";
   }
 
+  if (typeLower.includes("printer")) {
+    return "Printer";
+  }
+
   if (
-    typeLower.includes("printer") || 
     typeLower.includes("หมึก") || 
     typeLower.includes("toner") || 
-    typeLower.includes("paper")
+    typeLower.includes("paper") ||
+    typeLower.includes("ink")
   ) {
-    return "Printer & Ink";
+    return "Ink";
   }
 
   if (
     typeLower.includes("mouse") || 
-    typeLower.includes("keyboard") || 
+    typeLower.includes("keyboard")
+  ) {
+    return "เมาส์และคีย์บอร์ด (ทั่วไป)";
+  }
+
+  if (
     typeLower.includes("headphone") || 
     typeLower.includes("mic") || 
     typeLower.includes("speaker") || 
@@ -140,7 +153,7 @@ export function calculateMarkedUpPrice(rawPrice: number | null | undefined, item
     finalPrice = rawPrice + 2000;
   }
   // 2. Printer or Monitor override: +300 THB
-  else if (macroCategory === "Monitor & Display" || macroCategory === "Printer & Ink") {
+  else if (macroCategory === "Monitor & Display" || macroCategory === "Printer") {
     if (typeLower.includes("monitor") || typeLower.includes("printer")) {
       finalPrice = rawPrice + 300;
     }
