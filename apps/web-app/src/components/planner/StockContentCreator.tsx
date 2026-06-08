@@ -34,7 +34,7 @@ export function StockContentCreator() {
       const parsed = JSON.parse(res);
       const promptText = `${parsed.intro}
 หัวข้อ: ${parsed.topic}
-${parsed.subTopic ? `สโลแกน: ${parsed.subTopic}\n` : ''}${parsed.productName ? `ชื่อสินค้า: ${parsed.productName}\n` : ''}${parsed.presenter ? `พรีเซนเตอร์: ${parsed.presenter}\n` : ''}${parsed.features ? `จุดเด่น: ${parsed.features}\n` : ''}${parsed.mainFeatures ? `ฟีเจอร์หลัก: ${parsed.mainFeatures}\n` : ''}${parsed.memeAngle ? `Meme Angle: ${parsed.memeAngle}\n` : ''}${parsed.priceTag ? `ราคา: ${parsed.priceTag}\n` : ''}${parsed.productShowcase ? `รุ่นต่างๆ:\n- ${parsed.productShowcase.join('\n- ')}\n` : ''}
+${parsed.subTopic ? `สโลแกน: ${parsed.subTopic}\n` : ''}${parsed.hook ? `Hook: ${parsed.hook}\n` : ''}${parsed.productName ? `ชื่อสินค้า: ${parsed.productName}\n` : ''}${parsed.presenter ? `พรีเซนเตอร์: ${parsed.presenter}\n` : ''}${parsed.features ? `จุดเด่น: ${parsed.features}\n` : ''}${parsed.mainFeatures ? `ฟีเจอร์หลัก: ${parsed.mainFeatures}\n` : ''}${parsed.useful ? `Useful: ${parsed.useful}\n` : ''}${parsed.product ? `Product (ข้อมูลเชื่อมโยง): ${parsed.product}\n` : ''}${parsed.memeAngle ? `Meme Angle: ${parsed.memeAngle}\n` : ''}${parsed.priceTag ? `ราคา: ${parsed.priceTag}\n` : ''}${parsed.productShowcase ? `รุ่นต่างๆ:\n- ${parsed.productShowcase.join('\n- ')}\n` : ''}
 Visual Direction: ${parsed.visualDirection}
 
 ${parsed.layout}
