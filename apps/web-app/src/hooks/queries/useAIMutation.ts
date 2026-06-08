@@ -5,6 +5,8 @@ type GenerateContentPayload = {
   template: string;
   prompt: string;
   freeGift: string;
+  videoTopic?: string;
+  videoBrief?: string;
 };
 
 export function useGenerateContentMutation() {

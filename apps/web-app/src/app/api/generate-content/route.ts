@@ -5,7 +5,7 @@ import path from "path";
 
 export async function POST(req: Request) {
   try {
-    const { template, prompt, imageLayout, freeGift } = await req.json();
+    const { template, prompt, imageLayout, freeGift, videoTopic, videoBrief } = await req.json();
 
     if (!process.env.GEMINI_API_KEY) {
       console.error("Missing GEMINI_API_KEY in environment variables.");
@@ -119,10 +119,11 @@ export async function POST(req: Request) {
           "(สเปค 3 เช่น แบตเตอรี่)"
         ],
         "priceTag": "(ราคาพิเศษตัวใหญ่ๆสะดุดตา และราคาปกติขีดทิ้ง)",
-        "visualDirection": "(อ้างอิงจากหมวด 1.3 Gaming Gear ใน Design Guidelines)",
-        "layout": "(อ้างอิงจากหมวด 1.3 Gaming Gear ใน Design Guidelines)",
+        "memeAngle": "(คิดมุกตลกหรือมีมไวรัลที่เข้ากับเกมเมอร์ เพื่อนำมาแทรกเป็นเพียงองค์ประกอบเล็กๆ ในมุมใดมุมหนึ่งของภาพ)",
+        "visualDirection": "(อ้างอิงจากหมวด 1.3 Gaming Gear ใน Design Guidelines โดยเน้นสินค้าหลักให้ใหญ่และเด่นชัดที่สุด)",
+        "layout": "(อ้างอิงจากหมวด 1.3 Gaming Gear ใน Design Guidelines โดยให้ Meme เป็นแค่กิมมิคเล็กๆ ประกอบฉากเท่านั้น)",
         "imagePrompts": [
-          "(อ้างอิงรายละเอียดองค์ประกอบภาพจากหมวด 1.3 Gaming Gear)"
+          "(อ้างอิงรายละเอียดองค์ประกอบภาพจากหมวด 1.3 Gaming Gear และสั่งให้ AI วาด Meme ตามที่คิดไว้ใน memeAngle แทรกเข้าไปเป็นแค่ส่วนประกอบเล็กๆ ไม่แย่งซีนสินค้าหลัก)"
         ]
       }
       \nเอกสารอ้างอิงการออกแบบ (Design Guidelines):\n${designGuide}`;
@@ -187,6 +188,50 @@ export async function POST(req: Request) {
         ]
       }
       \nเอกสารอ้างอิงการออกแบบ (Design Guidelines):\n${designGuide}`;
+    } else if (template === "stock-product-b-general") {
+      const designGuide = await loadMarkdown("Stock-Design.md");
+      systemPrompt += `\nคุณต้องสร้างโครงสร้าง Prompt สำหรับนำไปป้อนให้ AI "ChatGPT Images 2.0 (DALL-E 3)" วาดภาพต่อ โดยอ้างอิงจากข้อมูลสินค้า: ${prompt} 
+      บังคับให้แสดงผลลัพธ์เป็น JSON format เท่านั้น ห้ามมีข้อความอื่นปน โดยใช้โครงสร้างดังนี้:
+      {
+        "intro": "สร้างภาพโปรโมทสินค้าทั่วไป (Product B) สไตล์โปสเตอร์สำหรับโพสลงเพจร้านขายสินค้าไอทีชื่อ Advice สามร้อยยอด โดยใช้ข้อมูลทั้งหมดนี้:",
+        "topic": "(หัวข้อแนะนำสินค้าที่น่าสนใจ ดึงดูดความสนใจ โดยห้ามใช้คำว่า Clearance หรือ Sale เด็ดขาด)",
+        "productName": "(ชื่อและรุ่นของสินค้าอย่างชัดเจน)",
+        "features": "(จุดเด่นสำคัญ 3-4 ข้อแบบสรุปกระชับ)",
+        "priceTag": "(ราคาขายปกติ หรือราคาพิเศษถ้ามี)",
+        "visualDirection": "(อ้างอิงจากหมวด 2. Product B ใน Design Guidelines เน้นความพรีเมียม ห้ามมี Meme Angle หรือมุกตลกเด็ดขาด และห้ามมีคำว่า Clearance หรือ Sale เด็ดขาด)",
+        "layout": "(อ้างอิงจากหมวด 2. Product B ใน Design Guidelines แบบสวยงามเป็นทางการ ห้ามใส่ Meme Angle เด็ดขาด)",
+        "imagePrompts": [
+          "(อ้างอิงรายละเอียดองค์ประกอบภาพจากหมวด 2. Product B แต่ห้ามสั่งให้ AI ใส่ข้อความ Clearance หรือ Sale ลงในภาพเด็ดขาด และห้ามมี Meme Angle (มุกตลก/มีม) ประกอบในภาพอย่างเด็ดขาด)"
+        ]
+      }
+      \nเอกสารอ้างอิงการออกแบบ (Design Guidelines):\n${designGuide}`;
+    } else if (template === "video-thumbnail") {
+      let thumbnailContext = "";
+      if (videoTopic) {
+        thumbnailContext += `หัวข้อของคอนเทนต์คลิป: ${videoTopic}\n`;
+      }
+      if (videoBrief) {
+        thumbnailContext += `บรีฟภาพ/องค์ประกอบที่ต้องการ: ${videoBrief}\n`;
+      }
+      if (!thumbnailContext) {
+        thumbnailContext = prompt;
+      }
+
+      systemPrompt += `\nคุณต้องสร้างโครงสร้าง Prompt สำหรับนำไปป้อนให้ AI "ChatGPT Images 2.0 (DALL-E 3)" วาดภาพต่อ โดยอ้างอิงจากข้อมูลด้านล่างนี้:
+${thumbnailContext}
+      บังคับให้แสดงผลลัพธ์เป็น JSON format เท่านั้น ห้ามมีข้อความอื่นปน โดยใช้โครงสร้างสไตล์ภาพปกคลิป YouTube ดังนี้:
+      {
+        "intro": "สร้างภาพปกคลิป (Video Thumbnail) สไตล์ YouTube อัตราส่วน 6:9 สำหรับเพจร้านขายสินค้าไอทีชื่อ Advice สามร้อยยอด โดยใช้ข้อมูลทั้งหมดนี้:",
+        "topic": "(พาดหัวโชว์ความโปร น่าตื่นเต้น เป็นตัวหนังสือ 3D ขนาดใหญ่เรืองแสง มีขอบหนา)",
+        "productName": "(ชื่อรุ่นสินค้าขนาดใหญ่เด่นชัด วางบนแท่นหรือพื้นหลังไฮเทค)",
+        "presenter": "(ระบุให้วาดบุคคล หรือพรีเซนเตอร์ยืนอยู่ฝั่งซ้ายหรือขวา ทำท่าทางชี้ไปที่สินค้าหรือข้อความ)",
+        "mainFeatures": "(ฟีเจอร์หลักๆ ที่ลอยอยู่เป็นกล่องข้อความหรือไอคอนรอบๆ สินค้า)",
+        "visualDirection": "(โทนสีเข้ม สไตล์ Tech/Cyberpunk มีแสงนีออนจัดจ้าน ฟ้า/ม่วง/แดง ตัดกับพรีเซนเตอร์และสินค้าหลักที่สว่างชัดเจน)",
+        "layout": "(การจัดวางแบบ 6:9 แบ่งฝั่งซ้ายขวาหรือบนล่างชัดเจน เช่น พรีเซนเตอร์อยู่ฝั่งนึง สินค้าและข้อความ 3D อยู่อีกฝั่งนึง)",
+        "imagePrompts": [
+          "(สร้าง Prompt ภาษาอังกฤษแบบเจาะจง สั่งให้ AI วาดภาพปกคลิป 6:9 ตามรายละเอียดข้างต้น บังคับให้มีพรีเซนเตอร์ชี้สินค้า ตัวหนังสือพาดหัว 3D ขนาดใหญ่ และบรรยากาศนีออนล้ำสมัย)"
+        ]
+      }`;
     } else if (template === "trend-news") {
       let newsDesign = "";
       try {
