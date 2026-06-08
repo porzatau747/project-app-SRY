@@ -10,6 +10,7 @@ import { useInventoryQuery } from "../hooks/queries/useInventoryQuery";
 import { useUIStore } from "../store/uiStore";
 import type { PlannerState } from "../types/planner";
 import { calculateAgingDiscount } from "../utils/plannerUtils";
+import { HistoryDrawer } from "../components/history/HistoryDrawer";
 
 import { useQueryClient } from "@tanstack/react-query";
 
@@ -24,6 +25,7 @@ export default function PlannerApp({ initialState }: { initialState: PlannerStat
   // Local file state
   const [stockFile, setStockFile] = useState<File | null>(null);
   const [priceFile, setPriceFile] = useState<File | null>(null);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
   function handleSelectProduct(code: string) {
     const item = state.inventory.find(i => i.code === code);
@@ -75,13 +77,34 @@ export default function PlannerApp({ initialState }: { initialState: PlannerStat
     <main className="appShell">
       <div className="appPage">
         <nav className="topNav" aria-label="เมนูหลัก">
-          <Link className="activeNav" href="/">
-            แผนจากสต็อก
-          </Link>
+          <div className="navBranding" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', fontWeight: 900, fontSize: '1.2rem', color: '#fafaf9' }}>
+            <span style={{ color: '#22d3ee', textShadow: '0 0 10px #22d3ee' }}>Advice</span>
+            <span style={{ fontSize: '0.65rem', marginLeft: '6px', color: '#facc15', border: '1px solid #facc15', padding: '2px 4px', borderRadius: '4px' }}>สามร้อยยอด</span>
+          </div>
+          <Link className="activeNav" href="/">แผนจากสต็อก</Link>
           <Link href="/trend-planner">แผนจากเทรนด์</Link>
           <Link href="/promotion-combo">Promotion Combo</Link>
           <Link href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
           <Link href="/guide">คู่มือการใช้งาน</Link>
+          <button 
+            onClick={() => setIsHistoryOpen(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--color-neon-cyan)',
+              cursor: 'pointer',
+              fontSize: '0.86rem',
+              fontWeight: '800',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 0.3s'
+            }}
+            title="เปิดคลังประวัติแคมเปญ"
+          >
+            🕒 ประวัติ
+          </button>
         </nav>
 
         <header className="appHero">
@@ -147,6 +170,7 @@ export default function PlannerApp({ initialState }: { initialState: PlannerStat
 
         <StockContentCreator />
         
+        <HistoryDrawer isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       </div>
     </main>
   );
@@ -156,17 +180,53 @@ export default function PlannerApp({ initialState }: { initialState: PlannerStat
 function Stepper({ currentStep }: { currentStep: number }) {
   const steps = ["อัปโหลดสต็อก", "เลือกสินค้า", "สร้าง Prompt", "คัดลอกไปเจนภาพ"];
   return (
-    <nav className="stepper" aria-label="ความคืบหน้าการทำงาน">
-      {steps.map((step, index) => {
-        const active = currentStep >= index + 1;
-        return (
-          <div className={active ? "step activeStep" : "step"} key={step}>
-            <span>{index + 1}</span>
-            <p>{step}</p>
-          </div>
-        );
-      })}
-    </nav>
+    <div className="stepperContainer" style={{ position: 'relative', margin: '32px 0 24px 0' }}>
+      {/* ท่อสายไฟเชื่อมสเต็ป */}
+      <div className="stepperConduit" style={{ position: 'absolute', top: '25px', left: '12.5%', right: '12.5%', height: '4px', background: '#292524', zIndex: 1 }}>
+        <div style={{ height: '100%', background: '#22d3ee', boxShadow: '0 0 8px #22d3ee', width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`, transition: 'width 0.4s ease' }} />
+      </div>
+      
+      <nav className="stepper" style={{ position: 'relative', zIndex: 2 }}>
+        {steps.map((step, index) => {
+          const active = currentStep === index + 1;
+          const completed = currentStep > index + 1;
+          return (
+            <div 
+              key={step} 
+              className={`step ${active ? "activeStep" : ""}`}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '8px',
+                background: active ? 'rgba(34,211,238,0.1)' : (completed ? 'rgba(34,211,238,0.03)' : '#0a0d16'),
+                borderColor: active ? '#facc15' : (completed ? '#22d3ee' : '#292524'),
+                boxShadow: active ? '0 0 15px rgba(250,204,21,0.2)' : 'none',
+                borderRadius: '12px',
+                padding: '16px 12px',
+                minHeight: 'auto',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              <span style={{
+                background: active ? '#facc15' : (completed ? '#22d3ee' : '#1c1917'),
+                color: active || completed ? '#02040a' : '#a8a29e',
+                boxShadow: active ? '0 0 10px #facc15' : (completed ? '0 0 8px #22d3ee' : 'none'),
+                width: '32px',
+                height: '32px',
+                display: 'grid',
+                placeItems: 'center',
+                borderRadius: '50%',
+                fontWeight: 800
+              }}>
+                {completed ? "✓" : index + 1}
+              </span>
+              <p style={{ margin: 0, fontSize: '0.8rem', color: active ? '#fafaf9' : '#a8a29e', textAlign: 'center' }}>{step}</p>
+            </div>
+          );
+        })}
+      </nav>
+    </div>
   );
 }
 

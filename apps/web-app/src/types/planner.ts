@@ -202,3 +202,13 @@ export type TrendContentPlan = {
   memeLibrary: MemeLibraryItem[];
   weeklyPosts: TrendContentPost[];
 };
+
+export interface HistoryItem {
+  id: string;
+  timestamp: string;
+  pageType: "stock" | "trend" | "combo" | "creator";
+  title: string;
+  result: string;
+  inputState: any;
+  isPinned: boolean;
+}

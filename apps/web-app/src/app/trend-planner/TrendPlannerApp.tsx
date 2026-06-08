@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { TrendContentPlan, TrendSnapshotItem } from "../../types/planner";
 import { StatusBox } from "../../components/trend-planner/StatusBox";
 import { NewsAndTipsList } from "../../components/trend-planner/NewsAndTipsList";
@@ -9,6 +9,7 @@ import { PanelTitle } from "../../components/trend-planner/PanelTitle";
 import { TrendRadarList } from "../../components/trend-planner/TrendRadarList";
 import { FadeUpReveal } from "../../components/ui/FadeUpReveal";
 import toast from "react-hot-toast";
+import { HistoryDrawer } from "../../components/history/HistoryDrawer";
 
 export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendContentPlan }) {
   const [snapshotItems, setSnapshotItems] = useState<TrendSnapshotItem[]>(initialPlan.trendSnapshot.items || []);
@@ -18,6 +19,23 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
   const [selectedNews, setSelectedNews] = useState<TrendSnapshotItem | null>(null);
   const [aiResult, setAiResult] = useState<string>("");
   const [generatingAI, setGeneratingAI] = useState(false);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+
+  // Restore history event listener
+  useEffect(() => {
+    const handleRestore = (e: Event) => {
+      const item = (e as CustomEvent).detail;
+      if (item.pageType === "trend") {
+        const state = item.inputState;
+        if (state) {
+          setSelectedNews(state);
+          setAiResult(item.result);
+        }
+      }
+    };
+    window.addEventListener("restore-campaign", handleRestore);
+    return () => window.removeEventListener("restore-campaign", handleRestore);
+  }, []);
 
   const handleUpdateTrends = async () => {
     setLoading(true);
@@ -63,6 +81,16 @@ export default function TrendPlannerApp({ initialPlan }: { initialPlan: TrendCon
       }
       
       setAiResult(finalResult);
+      if (data.result) {
+        import("../../utils/historyUtils").then(({ saveToHistory }) => {
+          saveToHistory({
+            pageType: "trend",
+            title: `แผนเทรนด์: ${item.label}`,
+            result: finalResult,
+            inputState: item
+          });
+        });
+      }
     } catch (e) {
       setAiResult("Error generating content");
     } finally {
@@ -92,17 +120,17 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imag
             <p><strong>Hook:</strong> {parsed.hook}</p>
             <p><strong>Insight:</strong> {parsed.insight}</p>
           </div>
-          <p style={{ fontSize: "13px", color: "var(--text-secondary)" }}>โครงสร้างฉบับเต็ม:</p>
-          <pre style={{ whiteSpace: "pre-wrap", backgroundColor: "#1e1e1e", color: "#d4d4d4", padding: "12px", borderRadius: "8px", fontSize: "13px", fontFamily: "inherit" }}>
+          <p style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>โครงสร้างฉบับเต็ม:</p>
+          <pre style={{ whiteSpace: "pre-wrap", backgroundColor: "rgba(2,4,10,0.8)", border: "1px solid var(--color-glass-border)", color: "#fafaf9", padding: "12px", borderRadius: "8px", fontSize: "13px", fontFamily: "inherit" }}>
             {promptText}
           </pre>
           <button 
-            className="secondaryButton" 
+            className="primaryButton" 
             onClick={() => {
               navigator.clipboard.writeText(promptText);
               toast.success("คัดลอกข้อความเรียบร้อยแล้ว!");
             }}
-            style={{ alignSelf: "flex-start", marginTop: "8px" }}
+            style={{ alignSelf: "flex-start", marginTop: "8px", width: "auto" }}
           >
             📋 คัดลอกไปทำภาพ/โพสต์
           </button>
@@ -117,13 +145,34 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imag
     <main className="appShell">
       <div className="appPage">
         <nav className="topNav" aria-label="เมนูหลัก">
+          <div className="navBranding" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', fontWeight: 900, fontSize: '1.2rem', color: '#fafaf9' }}>
+            <span style={{ color: '#22d3ee', textShadow: '0 0 10px #22d3ee' }}>Advice</span>
+            <span style={{ fontSize: '0.65rem', marginLeft: '6px', color: '#facc15', border: '1px solid #facc15', padding: '2px 4px', borderRadius: '4px' }}>สามร้อยยอด</span>
+          </div>
           <Link href="/">แผนจากสต็อก</Link>
-          <Link className="activeNav" href="/trend-planner">
-            แผนจากเทรนด์
-          </Link>
+          <Link className="activeNav" href="/trend-planner">แผนจากเทรนด์</Link>
           <Link href="/promotion-combo">Promotion Combo</Link>
           <Link href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
           <Link href="/guide">คู่มือการใช้งาน</Link>
+          <button 
+            onClick={() => setIsHistoryOpen(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--color-neon-cyan)',
+              cursor: 'pointer',
+              fontSize: '0.86rem',
+              fontWeight: '800',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 0.3s'
+            }}
+            title="เปิดคลังประวัติแคมเปญ"
+          >
+            🕒 ประวัติ
+          </button>
         </nav>
 
         <header className="appHero">
@@ -203,6 +252,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ:\n${parsed.imag
             </div>
           </FadeUpReveal>
         )}
+        <HistoryDrawer isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       </div>
     </main>
   );

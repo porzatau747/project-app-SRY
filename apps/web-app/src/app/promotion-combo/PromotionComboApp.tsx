@@ -10,6 +10,7 @@ import { StatusBox } from "../../components/trend-planner/StatusBox";
 import { useInventoryQuery } from "../../hooks/queries/useInventoryQuery";
 import type { PlannerState, InventoryItem } from "../../types/planner";
 import toast from "react-hot-toast";
+import { HistoryDrawer } from "../../components/history/HistoryDrawer";
 
 const numberFormatter = new Intl.NumberFormat("th-TH");
 const moneyFormatter = new Intl.NumberFormat("th-TH", { style: "currency", currency: "THB", maximumFractionDigits: 0 });
@@ -24,6 +25,25 @@ export default function PromotionComboApp({ initialState }: { initialState: Plan
   
   const [generatingAI, setGeneratingAI] = useState(false);
   const [aiResult, setAiResult] = useState("");
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+
+  // Restore history event listener
+  React.useEffect(() => {
+    const handleRestore = (e: Event) => {
+      const item = (e as CustomEvent).detail;
+      if (item.pageType === "combo") {
+        const state = item.inputState;
+        if (state) {
+          if (state.productA) setProductA(state.productA);
+          if (state.productB) setProductB(state.productB);
+          if (state.promoPriceB) setPromoPriceB(state.promoPriceB);
+          setAiResult(item.result);
+        }
+      }
+    };
+    window.addEventListener("restore-campaign", handleRestore);
+    return () => window.removeEventListener("restore-campaign", handleRestore);
+  }, []);
 
   const handleSearchPrice = async (code: string) => {
     const toastId = toast.loading("กำลังดึงราคาจาก Advice...");
@@ -89,6 +109,16 @@ export default function PromotionComboApp({ initialState }: { initialState: Plan
       }
       
       setAiResult(finalResult);
+      if (data.result) {
+        import("../../utils/historyUtils").then(({ saveToHistory }) => {
+          saveToHistory({
+            pageType: "combo",
+            title: `โปรโมชันคู่ ${productA.product} + ${productB.product}`,
+            result: finalResult,
+            inputState: { productA, productB, promoPriceB }
+          });
+        });
+      }
     } catch (e) {
       setAiResult("Error generating content");
     } finally {
@@ -115,17 +145,17 @@ Call to Action: ${parsed.cta}`;
             <p><strong>โปรโมชั่น:</strong> {parsed.promotion}</p>
             <p><strong>Call to Action:</strong> {parsed.cta}</p>
           </div>
-          <p style={{ fontSize: "13px", color: "var(--text-secondary)" }}>โครงสร้างฉบับเต็ม:</p>
-          <pre style={{ whiteSpace: "pre-wrap", backgroundColor: "#1e1e1e", color: "#d4d4d4", padding: "12px", borderRadius: "8px", fontSize: "13px", fontFamily: "inherit" }}>
+          <p style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>โครงสร้างฉบับเต็ม:</p>
+          <pre style={{ whiteSpace: "pre-wrap", backgroundColor: "rgba(2,4,10,0.8)", border: "1px solid var(--color-glass-border)", color: "#fafaf9", padding: "12px", borderRadius: "8px", fontSize: "13px", fontFamily: "inherit" }}>
             {promptText}
           </pre>
           <button 
-            className="secondaryButton" 
+            className="primaryButton" 
             onClick={() => {
               navigator.clipboard.writeText(promptText);
               toast.success("คัดลอกข้อความเรียบร้อยแล้ว!");
             }}
-            style={{ alignSelf: "flex-start", marginTop: "8px" }}
+            style={{ alignSelf: "flex-start", marginTop: "8px", width: "auto" }}
           >
             📋 คัดลอกข้อความไปโพสต์
           </button>
@@ -140,11 +170,34 @@ Call to Action: ${parsed.cta}`;
     <main className="appShell">
       <div className="appPage">
         <nav className="topNav" aria-label="เมนูหลัก">
+          <div className="navBranding" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', fontWeight: 900, fontSize: '1.2rem', color: '#fafaf9' }}>
+            <span style={{ color: '#22d3ee', textShadow: '0 0 10px #22d3ee' }}>Advice</span>
+            <span style={{ fontSize: '0.65rem', marginLeft: '6px', color: '#facc15', border: '1px solid #facc15', padding: '2px 4px', borderRadius: '4px' }}>สามร้อยยอด</span>
+          </div>
           <Link href="/">แผนจากสต็อก</Link>
           <Link href="/trend-planner">แผนจากเทรนด์</Link>
           <Link className="activeNav" href="/promotion-combo">Promotion Combo</Link>
           <Link href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
           <Link href="/guide">คู่มือการใช้งาน</Link>
+          <button 
+            onClick={() => setIsHistoryOpen(true)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--color-neon-cyan)',
+              cursor: 'pointer',
+              fontSize: '0.86rem',
+              fontWeight: '800',
+              padding: '0 12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'all 0.3s'
+            }}
+            title="เปิดคลังประวัติแคมเปญ"
+          >
+            🕒 ประวัติ
+          </button>
         </nav>
 
         <header className="appHero">
@@ -260,6 +313,7 @@ Call to Action: ${parsed.cta}`;
           )}
         />
         
+        <HistoryDrawer isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       </div>
     </main>
   );

@@ -28,6 +28,55 @@ export function StockContentCreator() {
     }
   }
 
+  // Save to history when result is successfully generated
+  React.useEffect(() => {
+    if (generateMutation.data?.result) {
+      let finalResult = generateMutation.data.result;
+      if (typeof finalResult === "string" && finalResult.startsWith("```json")) {
+        finalResult = finalResult.replace(/^```json\n?/, "").replace(/\n?```$/, "");
+      }
+      try {
+        const parsed = JSON.parse(finalResult);
+        const title = `แผนสต็อก: ${parsed.topic || template}`;
+        import("../../utils/historyUtils").then(({ saveToHistory }) => {
+          saveToHistory({
+            pageType: "stock",
+            title,
+            result: finalResult,
+            inputState: { template, prompt, freeGift }
+          });
+        });
+      } catch (e) {
+        const title = `แผนสต็อก: ${template}`;
+        import("../../utils/historyUtils").then(({ saveToHistory }) => {
+          saveToHistory({
+            pageType: "stock",
+            title,
+            result: finalResult,
+            inputState: { template, prompt, freeGift }
+          });
+        });
+      }
+    }
+  }, [generateMutation.data?.result, template, prompt, freeGift]);
+
+  // Restore history event listener
+  React.useEffect(() => {
+    const handleRestore = (e: Event) => {
+      const item = (e as CustomEvent).detail;
+      if (item.pageType === "stock") {
+        const state = item.inputState;
+        if (state) {
+          if (state.template) setAITemplate(state.template);
+          if (state.prompt) setAIPrompt(state.prompt);
+          if (state.freeGift !== undefined) setAIFreeGift(state.freeGift);
+        }
+      }
+    };
+    window.addEventListener("restore-campaign", handleRestore);
+    return () => window.removeEventListener("restore-campaign", handleRestore);
+  }, [setAITemplate, setAIPrompt, setAIFreeGift]);
+
   function renderResult(res: string) {
     if (!res) return null;
     try {
