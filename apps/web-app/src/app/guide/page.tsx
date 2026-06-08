@@ -7,6 +7,10 @@ export default function GuidePage() {
     <main className="appShell">
       <div className="appPage">
         <nav className="topNav" aria-label="เมนูหลัก">
+          <div className="navBranding" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', fontWeight: 900, fontSize: '1.2rem', color: '#fafaf9' }}>
+            <span style={{ color: '#22d3ee', textShadow: '0 0 10px #22d3ee' }}>Advice</span>
+            <span style={{ fontSize: '0.65rem', marginLeft: '6px', color: '#facc15', border: '1px solid #facc15', padding: '2px 4px', borderRadius: '4px' }}>สามร้อยยอด</span>
+          </div>
           <Link href="/">แผนจากสต็อก</Link>
           <Link href="/trend-planner">แผนจากเทรนด์</Link>
           <Link href="/promotion-combo">Promotion Combo</Link>

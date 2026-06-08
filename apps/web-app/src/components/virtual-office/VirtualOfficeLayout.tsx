@@ -2,31 +2,36 @@
 
 import React, { ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import OfficeGrid from "./OfficeGrid";
+import { PixelOffice } from "./PixelOffice";
+
+if (typeof window !== "undefined") {
+  const originalError = window.onerror;
+  window.onerror = function (msg, url, line, col, error) {
+    if (typeof msg === "string" && (msg.includes("ResizeObserver loop limit exceeded") || msg.includes("ResizeObserver loop completed with undelivered notifications"))) {
+      return true;
+    }
+    if (originalError) return originalError(msg, url, line, col, error);
+    return false;
+  };
+}
 
 export default function VirtualOfficeLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Determine active desk based on current route
-  let activeDesk = "stock";
-  if (pathname.includes("/trend-planner")) activeDesk = "trend";
-  if (pathname.includes("/content-creator")) activeDesk = "creative";
-  if (pathname.includes("/promotion-combo") || pathname.includes("/guide")) activeDesk = "editor";
-
-  const handleSelectDesk = (id: string) => {
-    switch (id) {
-      case "trend":
+  const handleAgentClick = (agentId: number) => {
+    switch (agentId) {
+      case 1:
         router.push("/trend-planner");
         break;
-      case "stock":
+      case 2:
         router.push("/");
         break;
-      case "creative":
+      case 3:
         router.push("/content-creator");
         break;
-      case "editor":
-        router.push("/guide"); // Or promotion combo
+      case 4:
+        router.push("/guide");
         break;
     }
   };
@@ -34,8 +39,8 @@ export default function VirtualOfficeLayout({ children }: { children: ReactNode 
   return (
     <div className="flex h-screen w-full bg-gray-950 overflow-hidden">
       {/* Left Panel - The Virtual Office (Hidden on very small screens, visible on md+) */}
-      <div className="hidden lg:block lg:w-[60%] h-full relative border-r border-gray-800 shadow-2xl z-10">
-        <OfficeGrid activeDesk={activeDesk} onSelectDesk={handleSelectDesk} />
+      <div className="hidden lg:block lg:w-[60%] h-full min-h-0 relative border-r border-gray-800 shadow-2xl z-10">
+        <PixelOffice onAgentClick={handleAgentClick} />
         
         {/* Branding Overlay */}
         <div className="absolute top-6 left-6 z-20">
@@ -47,7 +52,7 @@ export default function VirtualOfficeLayout({ children }: { children: ReactNode 
       </div>
 
       {/* Right Panel - The Terminal / Workspace */}
-      <div className="w-full lg:w-[40%] h-full bg-[#1e1e1e] overflow-y-auto custom-scrollbar relative z-20 shadow-[-10px_0_30px_rgba(0,0,0,0.5)]">
+      <div className="w-full lg:w-[40%] h-full bg-[#050505] border-l border-[#292524] overflow-y-auto custom-scrollbar relative z-20 shadow-[-10px_0_30px_rgba(0,0,0,0.9)]">
         {/* The children is the standard Next.js page content */}
         <div className="min-h-full">
           {children}

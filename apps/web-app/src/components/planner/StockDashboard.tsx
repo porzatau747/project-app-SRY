@@ -71,7 +71,7 @@ export function StockDashboard({ inventory }: { inventory: InventoryItem[] }) {
     color: string;
   }
 
-  const colors = ["#06b6d4", "#10b981", "#8b5cf6", "#f59e0b"]; // Top 4 colors
+  const colors = ["#22d3ee", "#22c55e", "#a855f7", "#f97316"]; // Top 4 neon colors
   const segments: Segment[] = [];
 
   // เพิ่ม Top 4 ลงเซกเมนต์
@@ -90,7 +90,7 @@ export function StockDashboard({ inventory }: { inventory: InventoryItem[] }) {
       name: targetCategory,
       qty: categoryTotals[targetCategory].qty,
       value: categoryTotals[targetCategory].value,
-      color: "#f43f5e" // นีออนชมพู/แดง เพื่อความเด่นสะดุดตา
+      color: "#ec4899" // นีออนชมพูสะท้อนแสงสว่างเด่น
     });
   }
 
@@ -111,7 +111,7 @@ export function StockDashboard({ inventory }: { inventory: InventoryItem[] }) {
       name: "อื่นๆ",
       qty: othersQty,
       value: othersValue,
-      color: "#44403c" // สีก้อนหินเข้ม Stone-700
+      color: "#475569" // Slate-600
     });
   }
 
@@ -120,49 +120,49 @@ export function StockDashboard({ inventory }: { inventory: InventoryItem[] }) {
   return (
     <div className="panel stepPanel" style={{ marginBottom: "24px" }}>
       {/* 1. Header & Financial metrics */}
-      <h2 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "#f5f5f7", marginBottom: "16px" }}>แดชบอร์ดสรุปข้อมูลสต็อกสินค้า</h2>
+      <h2 style={{ fontSize: "1.1rem", fontWeight: "bold", color: "#fafaf9", marginBottom: "16px", textShadow: "0 0 10px rgba(250,204,21,0.15)" }}>แดชบอร์ดสรุปข้อมูลสต็อกสินค้า</h2>
       
       <div className="summaryTiles" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "12px", marginBottom: "20px" }}>
-        <div className="metricTile" style={{ borderLeft: "4px solid #78716c" }}>
-          <span style={{ fontSize: "0.75rem", color: "#a8a29e" }}>ทุนสะสม (Total Cost)</span>
-          <strong style={{ fontSize: "1.2rem", color: "#f5f5f7" }}>{moneyFormatter.format(totalCost)}</strong>
+        <div className="metricTile" style={{ borderLeft: "4px solid #94a3b8" }}>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>ทุนสะสม (Total Cost)</span>
+          <strong style={{ fontSize: "1.2rem", color: "#fafaf9" }}>{moneyFormatter.format(totalCost)}</strong>
         </div>
-        <div className="metricTile" style={{ borderLeft: "4px solid #06b6d4" }}>
-          <span style={{ fontSize: "0.75rem", color: "#a8a29e" }}>รายได้คาดการณ์ (Projected Rev)</span>
-          <strong style={{ fontSize: "1.2rem", color: "#06b6d4" }}>{moneyFormatter.format(totalRevenue)}</strong>
+        <div className="metricTile" style={{ borderLeft: "4px solid var(--color-neon-cyan)", boxShadow: "0 0 10px rgba(34,211,238,0.05)" }}>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>รายได้คาดการณ์ (Projected Rev)</span>
+          <strong style={{ fontSize: "1.2rem", color: "var(--color-neon-cyan)" }}>{moneyFormatter.format(totalRevenue)}</strong>
         </div>
-        <div className="metricTile" style={{ borderLeft: "4px solid #10b981" }}>
-          <span style={{ fontSize: "0.75rem", color: "#a8a29e" }}>กำไรคาดการณ์ (Projected Margin)</span>
-          <strong style={{ fontSize: "1.2rem", color: "#10b981" }}>{moneyFormatter.format(totalMargin)}</strong>
+        <div className="metricTile" style={{ borderLeft: "4px solid var(--color-neon-yellow)", boxShadow: "0 0 10px rgba(250,204,21,0.05)" }}>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>กำไรคาดการณ์ (Projected Margin)</span>
+          <strong style={{ fontSize: "1.2rem", color: "var(--color-neon-yellow)" }}>{moneyFormatter.format(totalMargin)}</strong>
         </div>
-        <div className="metricTile" style={{ borderLeft: "4px solid #8b5cf6" }}>
-          <span style={{ fontSize: "0.75rem", color: "#a8a29e" }}>อัตรากำไรเฉลี่ย (Avg Margin %)</span>
-          <strong style={{ fontSize: "1.2rem", color: "#8b5cf6" }}>{percentFormatter.format(avgMarginPercent)}</strong>
+        <div className="metricTile" style={{ borderLeft: "4px solid #a855f7" }}>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>อัตรากำไรเฉลี่ย (Avg Margin %)</span>
+          <strong style={{ fontSize: "1.2rem", color: "#a855f7" }}>{percentFormatter.format(avgMarginPercent)}</strong>
         </div>
       </div>
 
       {/* 2. Aging Distribution */}
       <div style={{ marginBottom: "24px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-          <span style={{ fontSize: "0.85rem", color: "#a8a29e" }}>การกระจายอายุสินค้า (Aging Distribution)</span>
-          <span style={{ fontSize: "0.85rem", color: "#78716c" }}>ทั้งหมด {totalQty} ชิ้น</span>
+          <span style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)" }}>การกระจายอายุสินค้า (Aging Distribution)</span>
+          <span style={{ fontSize: "0.85rem", color: "#64748b" }}>ทั้งหมด {totalQty} ชิ้น</span>
         </div>
-        <div style={{ display: "flex", height: "10px", borderRadius: "5px", overflow: "hidden", background: "#1c1917", marginBottom: "8px", border: "1px solid #292524" }}>
-          {healthyQty > 0 && <div style={{ width: `${(healthyQty / totalQty) * 100}%`, background: "#10b981" }} title="0-30 วัน" />}
-          {warningQty > 0 && <div style={{ width: `${(warningQty / totalQty) * 100}%`, background: "#f59e0b" }} title="31-90 วัน" />}
-          {criticalQty > 0 && <div style={{ width: `${(criticalQty / totalQty) * 100}%`, background: "#f43f5e" }} title="91+ วัน" />}
+        <div style={{ display: "flex", height: "10px", borderRadius: "5px", overflow: "hidden", background: "rgba(2,4,10,0.8)", marginBottom: "8px", border: "1px solid var(--color-glass-border)" }}>
+          {healthyQty > 0 && <div style={{ width: `${(healthyQty / totalQty) * 100}%`, background: "#22c55e" }} title="0-30 วัน" />}
+          {warningQty > 0 && <div style={{ width: `${(warningQty / totalQty) * 100}%`, background: "var(--color-neon-yellow)" }} title="31-90 วัน" />}
+          {criticalQty > 0 && <div style={{ width: `${(criticalQty / totalQty) * 100}%`, background: "var(--color-clearance-red)" }} title="91+ วัน" />}
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", fontSize: "0.75rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#10b981" }} />
-            <span style={{ color: "#d6d3d1" }}>0-30 วัน (ปกติ): {healthyQty} ชิ้น ({percentFormatter.format(healthyQty / totalQty)})</span>
+            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#22c55e" }} />
+            <span style={{ color: "var(--color-text-secondary)" }}>0-30 วัน (ปกติ): {healthyQty} ชิ้น ({percentFormatter.format(healthyQty / totalQty)})</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#f59e0b" }} />
-            <span style={{ color: "#d6d3d1" }}>31-90 วัน (เฝ้าระวัง): {warningQty} ชิ้น ({percentFormatter.format(warningQty / totalQty)})</span>
+            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--color-neon-yellow)" }} />
+            <span style={{ color: "var(--color-text-secondary)" }}>31-90 วัน (เฝ้าระวัง): {warningQty} ชิ้น ({percentFormatter.format(warningQty / totalQty)})</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#f43f5e" }} />
+            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--color-clearance-red)" }} />
             <span style={{ color: "#fca5a5", fontWeight: "bold" }}>91+ วัน (สินค้า Clearance): {criticalQty} ชิ้น ({percentFormatter.format(criticalQty / totalQty)})</span>
           </div>
         </div>
@@ -171,10 +171,10 @@ export function StockDashboard({ inventory }: { inventory: InventoryItem[] }) {
       {/* 3. Category Allocation Bar */}
       <div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-          <span style={{ fontSize: "0.85rem", color: "#a8a29e" }}>สัดส่วนประเภทสินค้า (Category Allocation)</span>
+          <span style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)" }}>สัดส่วนประเภทสินค้า (Category Allocation)</span>
         </div>
         {/* Dynamic Category Bar */}
-        <div style={{ display: "flex", height: "20px", borderRadius: "6px", overflow: "hidden", background: "#1c1917", marginBottom: "12px", border: "1px solid #292524" }}>
+        <div style={{ display: "flex", height: "20px", borderRadius: "6px", overflow: "hidden", background: "rgba(2,4,10,0.8)", marginBottom: "12px", border: "1px solid var(--color-glass-border)" }}>
           {segments.map(seg => {
             const isHovered = hoveredCategory === seg.name;
             const hasHovered = hoveredCategory !== null;

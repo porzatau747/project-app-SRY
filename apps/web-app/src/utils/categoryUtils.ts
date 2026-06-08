@@ -12,6 +12,7 @@ export type MacroCategory =
   | "Clearance"
   | "Services & Others"
   | "เมาส์และคีย์บอร์ด (ทั่วไป)"
+  | "แฟลชไดร์ฟและเมมโมรี่การ์ด"
   | "อื่นๆ";
 
 export const MACRO_CATEGORIES: MacroCategory[] = [
@@ -28,6 +29,7 @@ export const MACRO_CATEGORIES: MacroCategory[] = [
   "Clearance",
   "Services & Others",
   "เมาส์และคีย์บอร์ด (ทั่วไป)",
+  "แฟลชไดร์ฟและเมมโมรี่การ์ด",
   "อื่นๆ"
 ];
 
@@ -102,6 +104,26 @@ export function getMacroCategory(rawType: string | undefined | null): MacroCateg
     typeLower.includes("keyboard")
   ) {
     return "เมาส์และคีย์บอร์ด (ทั่วไป)";
+  }
+
+  if (
+    typeLower.includes("flash drive") ||
+    typeLower.includes("flashdrive") ||
+    typeLower.includes("thumb drive") ||
+    typeLower.includes("thumbdrive") ||
+    typeLower.includes("memory card") ||
+    typeLower.includes("memorycard") ||
+    typeLower.includes("sd card") ||
+    typeLower.includes("sdcard") ||
+    typeLower.includes("micro sd") ||
+    typeLower.includes("microsd") ||
+    typeLower.includes("sdhc") ||
+    typeLower.includes("sdxc") ||
+    typeLower.includes("cf card") ||
+    typeLower.includes("handydrive") ||
+    typeLower.includes("handy drive")
+  ) {
+    return "แฟลชไดร์ฟและเมมโมรี่การ์ด";
   }
 
   if (

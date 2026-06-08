@@ -17,4 +17,10 @@ describe("getMacroCategory", () => {
     expect(getMacroCategory("headphone")).toBe("Accessories");
     expect(getMacroCategory("usb")).toBe("Accessories");
   });
+
+  it("ควรแยกแยะแฟลชไดร์ฟและเมมโมรี่การ์ดเป็นหมวดหมู่ แฟลชไดร์ฟและเมมโมรี่การ์ด", () => {
+    expect(getMacroCategory("USB Flash Drive")).toBe("แฟลชไดร์ฟและเมมโมรี่การ์ด");
+    expect(getMacroCategory("MicroSD Card")).toBe("แฟลชไดร์ฟและเมมโมรี่การ์ด");
+    expect(getMacroCategory("Thumb Drive")).toBe("แฟลชไดร์ฟและเมมโมรี่การ์ด");
+  });
 });
