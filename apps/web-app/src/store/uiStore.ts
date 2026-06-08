@@ -12,12 +12,6 @@ interface UIState {
   
   aiFreeGift: string;
   setAIFreeGift: (gift: string) => void;
-
-  aiVideoTopic: string;
-  setAIVideoTopic: (topic: string) => void;
-  
-  aiVideoBrief: string;
-  setAIVideoBrief: (brief: string) => void;
 }
 
 export const useUIStore = create<UIState>((set) => ({
@@ -32,10 +26,4 @@ export const useUIStore = create<UIState>((set) => ({
   
   aiFreeGift: "",
   setAIFreeGift: (gift) => set({ aiFreeGift: gift }),
-
-  aiVideoTopic: "",
-  setAIVideoTopic: (topic) => set({ aiVideoTopic: topic }),
-  
-  aiVideoBrief: "",
-  setAIVideoBrief: (brief) => set({ aiVideoBrief: brief }),
 }));
