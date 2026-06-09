@@ -18,7 +18,8 @@ export function useGenerateContentMutation() {
       });
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "เกิดข้อผิดพลาดในการสร้างคอนเทนต์");
+        const errorMsg = data.detail ? `${data.error}: ${data.detail}` : data.error;
+        throw new Error(errorMsg || "เกิดข้อผิดพลาดในการสร้างคอนเทนต์");
       }
       return data;
     },

@@ -17,5 +17,8 @@
     "@sparticuz/chromium": "^149.0.0",
     "cloakbrowser": "^0.3.31",
     "puppeteer-core": "^25.1.0"
+  },
+  "devDependencies": {
+    "@colbymchenry/codegraph": "^0.9.9"
   }
 }

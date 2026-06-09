@@ -334,8 +334,8 @@ ${newsDesign}`;
     });
     
     return NextResponse.json({ result: response.choices[0].message.content });
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("Gemini generation error:", error);
-    return NextResponse.json({ error: "Failed to generate" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to generate", detail: error.message || String(error) }, { status: 500 });
   }
 }

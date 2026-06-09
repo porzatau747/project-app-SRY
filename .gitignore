@@ -11,3 +11,5 @@ build/
 .env*
 .worktrees/
 data/scrape-logs/
+
+.codegraph/
