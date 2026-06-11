@@ -46,9 +46,18 @@ The system uses a **File-based Architecture** for data persistence rather than a
   - `ContentCreatorApp.tsx`
 - **State Management**: Uses `useInventoryQuery.ts`, `useTrendQuery.ts` (React Query) and `uiStore.ts` (Zustand).
 
+### 6. Promotion Content Module
+- **Location**: `apps/web-app/src/app/promotions`, `apps/web-app/src/services/promotion-*.ts`
+- **Role**: Builds Canva-ready promotion content from existing stock and market price data without changing the stock collector or pricing system.
+- **Source of Truth**: Reads `readPlannerState().inventory`; does not write to `planner-state.json`.
+- **Storage**: Uses separate file storage at `data/promotion-batches.json` for review batches.
+- **Review Flow**: User selects candidates -> generates safe Thai copy -> approves/rejects items -> exports Canva Bulk Create CSV.
+- **Database Readiness**: Prisma models `PromotionBatch`, `PromotionItem`, and `PromotionExport` exist for future database-backed storage.
+
 ## Data Flow
 1. **Ingest**: Workers scrape data -> save to `data/*.json`.
 2. **Load**: UI mounts -> calls Next.js API -> `storage.ts` reads `planner-state.json` -> returns to UI via React Query.
 3. **Action**: User clicks "Generate" -> UI POSTs to Next.js API -> API calls `ai.ts` with inventory/trend data.
 4. **Generate**: Gemini returns structured JSON content -> API formats it -> `storage.ts` saves to `planner-state.json` -> API returns success.
 5. **Update**: UI React Query invalidates and refetches fresh state.
+6. **Promotion Export**: Promotion module reads inventory -> creates batch copy -> stores review state separately -> exports approved rows to Canva CSV.

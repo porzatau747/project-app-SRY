@@ -200,6 +200,7 @@ ${parsed.imagePrompts ? `รายละเอียดภาพ (Image Prompts)
           <Link href="/">แผนจากสต็อก</Link>
           <Link href="/trend-planner">แผนจากเทรนด์</Link>
           <Link href="/promotion-combo">Promotion Combo</Link>
+          <Link href="/promotions">Promotion Bulk</Link>
           <Link className="activeNav" href="/content-creator">สร้างคอนเทนต์ด้วย AI</Link>
           <Link href="/guide">คู่มือการใช้งาน</Link>
           <button 

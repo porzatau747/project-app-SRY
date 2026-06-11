@@ -14,6 +14,7 @@
 - **`src/app/`**: Next.js App Router root.
   - `api/`: Backend API routes (`generate-content`, `sync-stock`, `scrape-advice`, etc.).
   - `content-creator/`, `guide/`, `promotion-combo/`, `trend-planner/`: Feature pages.
+  - `promotions/`: Batch promotion workflow for Canva Bulk Create CSV export.
   - `PlannerApp.tsx`: Main entry point for the Stock Planner UI.
 - **`src/components/`**: React UI components.
   - `planner/`: Dashboard, tables, calendars.
@@ -23,6 +24,7 @@
   - `ai.ts`: Google Gemini integration.
   - `storage.ts`: File-based database controller.
   - `trend-analyzer.ts`, `trend-fetcher.ts`: Logic for analyzing scraped trends.
+  - `promotion-engine.ts`, `promotion-copy-generator.ts`, `facebook-caption-generator.ts`, `canva-csv-exporter.ts`, `promotion-storage.ts`: Modular promotion workflow.
 - **`src/hooks/`**: React Query and custom hooks.
 - **`src/types/`**: TypeScript interfaces (`planner.ts`).
 - **`src/store/`**: Zustand global state (`uiStore.ts`).
@@ -30,3 +32,8 @@
 
 ## `apps/scraping-worker`
 - **`src/stock-scraper.ts`**: The main worker script that pulls inventory data.
+
+## Promotion Documentation
+- `docs/promotion-module-readme.md`: Promotion module overview and testing commands.
+- `docs/canva-bulk-create-workflow.md`: Canva import workflow.
+- `docs/examples/canva-promotion-example.csv`: Example Canva Bulk Create CSV.

@@ -39,3 +39,49 @@ model AppState {
   key   String @id
   value String
 }
+
+model PromotionBatch {
+  id         String   @id
+  name       String
+  campaignType   String   @default("clearance")
+  templatePreset String   @default("clearance")
+  status     String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  exportedAt DateTime?
+
+  items   PromotionItem[]
+  exports PromotionExport[]
+}
+
+model PromotionItem {
+  id                 String @id
+  batchId            String
+  productCode        String
+  productName        String
+  itemType           String
+  qty                Int
+  agingDays          Int
+  cost               Float
+  sellPrice          Float?
+  margin             Float?
+  score              Int
+  reasonsJson        String
+  recommendation     String
+  reviewStatus       String
+  generatedCopyJson  String
+  sourceSnapshotJson String
+
+  batch PromotionBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+}
+
+model PromotionExport {
+  id        String   @id
+  batchId   String
+  format    String
+  fileName  String
+  rowCount  Int
+  createdAt DateTime @default(now())
+
+  batch PromotionBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+}

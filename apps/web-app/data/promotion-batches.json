@@ -1,0 +1,163 @@
+{
+  "batches": [
+    {
+      "id": "promo-1781165966565",
+      "name": "Canva Promotion 11/6/2569",
+      "campaignType": "special-price",
+      "templatePreset": "gaming-gear",
+      "createdAt": "2026-06-11T08:19:26.565Z",
+      "updatedAt": "2026-06-11T08:20:21.446Z",
+      "exportedAt": "2026-06-11T08:20:21.446Z",
+      "status": "exported",
+      "items": [
+        {
+          "id": "A0154838-1781165966565-0",
+          "productCode": "A0154838",
+          "productName": "OPT-WL NUBWO NM-103W WHITE",
+          "itemType": "Gaming Mouse",
+          "qty": 1,
+          "agingDays": 297,
+          "cost": 303,
+          "sellPrice": 510,
+          "margin": 207,
+          "score": 182,
+          "reasons": [
+            "aged-stock",
+            "high-margin",
+            "seasonal-it"
+          ],
+          "recommendation": "ดันเป็นโปรเคลียร์สต็อก เน้นจำนวนจำกัดและความคุ้มค่า",
+          "reviewStatus": "exported",
+          "copy": {
+            "headline": "โปรราคาพิเศษ OPT-WL NUBWO NM-103W WHITE",
+            "subheadline": "Gaming Mouse | เหลือจำนวนจำกัด",
+            "priceText": "ราคา 510 บาท",
+            "bodyCopy": "สินค้าค้างสต็อก 297 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน",
+            "cta": "ทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด",
+            "facebookCaption": "โปรราคาพิเศษ OPT-WL NUBWO NM-103W WHITE\nGaming Mouse | เหลือจำนวนจำกัด\nราคา 510 บาท\n\nสินค้าค้างสต็อก 297 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน\n\nทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด\n\nราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "disclaimer": "ราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "hashtags": [
+              "#Adviceสามร้อยยอด",
+              "#โปรไอที",
+              "#GamingGear",
+              "#เกมมิ่ง"
+            ]
+          },
+          "sourceSnapshot": {
+            "itemType": "Gaming Mouse",
+            "code": "A0154838",
+            "product": "OPT-WL NUBWO NM-103W WHITE",
+            "serial": "2790247021",
+            "qty": 1,
+            "agingDays": 297,
+            "agingBucket": "240+ days",
+            "store": "001",
+            "cost": 303,
+            "sellPrice": 510,
+            "stockValue": 303,
+            "projectedRevenue": 510,
+            "margin": 207
+          }
+        },
+        {
+          "id": "A0173011-1781165966566-1",
+          "productCode": "A0173011",
+          "productName": "OPT-WL EGA M16 WHITE (BT)",
+          "itemType": "Gaming Mouse",
+          "qty": 1,
+          "agingDays": 242,
+          "cost": 235,
+          "sellPrice": 390,
+          "margin": 155,
+          "score": 181,
+          "reasons": [
+            "aged-stock",
+            "high-margin",
+            "seasonal-it"
+          ],
+          "recommendation": "ดันเป็นโปรเคลียร์สต็อก เน้นจำนวนจำกัดและความคุ้มค่า",
+          "reviewStatus": "exported",
+          "copy": {
+            "headline": "โปรราคาพิเศษ OPT-WL EGA M16 WHITE (BT)",
+            "subheadline": "Gaming Mouse | เหลือจำนวนจำกัด",
+            "priceText": "ราคา 390 บาท",
+            "bodyCopy": "สินค้าค้างสต็อก 242 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน",
+            "cta": "ทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด",
+            "facebookCaption": "โปรราคาพิเศษ OPT-WL EGA M16 WHITE (BT)\nGaming Mouse | เหลือจำนวนจำกัด\nราคา 390 บาท\n\nสินค้าค้างสต็อก 242 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน\n\nทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด\n\nราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "disclaimer": "ราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "hashtags": [
+              "#Adviceสามร้อยยอด",
+              "#โปรไอที",
+              "#GamingGear",
+              "#เกมมิ่ง"
+            ]
+          },
+          "sourceSnapshot": {
+            "itemType": "Gaming Mouse",
+            "code": "A0173011",
+            "product": "OPT-WL EGA M16 WHITE (BT)",
+            "serial": "8090266261",
+            "qty": 1,
+            "agingDays": 242,
+            "agingBucket": "240+ days",
+            "store": "001",
+            "cost": 235,
+            "sellPrice": 390,
+            "stockValue": 235,
+            "projectedRevenue": 390,
+            "margin": 155
+          }
+        },
+        {
+          "id": "A0168622-1781165966566-2",
+          "productCode": "A0168622",
+          "productName": "KB MOFII LOVE ME ILLUMINATE GREEN",
+          "itemType": "KEYBOARD",
+          "qty": 1,
+          "agingDays": 238,
+          "cost": 295,
+          "sellPrice": 440,
+          "margin": 145,
+          "score": 174,
+          "reasons": [
+            "aged-stock",
+            "high-margin",
+            "seasonal-it"
+          ],
+          "recommendation": "ดันเป็นโปรเคลียร์สต็อก เน้นจำนวนจำกัดและความคุ้มค่า",
+          "reviewStatus": "exported",
+          "copy": {
+            "headline": "โปรราคาพิเศษ KB MOFII LOVE ME ILLUMINATE GREEN",
+            "subheadline": "KEYBOARD | เหลือจำนวนจำกัด",
+            "priceText": "ราคา 440 บาท",
+            "bodyCopy": "สินค้าค้างสต็อก 238 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน",
+            "cta": "ทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด",
+            "facebookCaption": "โปรราคาพิเศษ KB MOFII LOVE ME ILLUMINATE GREEN\nKEYBOARD | เหลือจำนวนจำกัด\nราคา 440 บาท\n\nสินค้าค้างสต็อก 238 วัน จัดเป็นตัวคุ้มประจำรอบนี้ เหมาะสำหรับลูกค้าที่กำลังมองหาสินค้า IT ใช้งานจริงในราคาที่เช็กได้จากหน้าร้าน\n\nทักแชตเช็กสินค้าและราคาล่าสุด หรือแวะที่ Advice สามร้อยยอด\n\nราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "disclaimer": "ราคาและจำนวนสินค้าอาจเปลี่ยนแปลงได้ กรุณาทักเช็กก่อนสั่งซื้อ",
+            "hashtags": [
+              "#Adviceสามร้อยยอด",
+              "#โปรไอที",
+              "#GamingGear",
+              "#เกมมิ่ง"
+            ]
+          },
+          "sourceSnapshot": {
+            "itemType": "KEYBOARD",
+            "code": "A0168622",
+            "product": "KB MOFII LOVE ME ILLUMINATE GREEN",
+            "serial": "8801263417",
+            "qty": 1,
+            "agingDays": 238,
+            "agingBucket": "180-239 days",
+            "store": "001",
+            "cost": 295,
+            "sellPrice": 440,
+            "stockValue": 295,
+            "projectedRevenue": 440,
+            "margin": 145
+          }
+        }
+      ]
+    }
+  ]
+}
